@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Cerebros de cliente de Viralidad: contexto curado para que Claude escriba en la voz real de cada cliente",
-    "version": "1.0.1"
+    "version": "1.0.2"
   },
   "plugins": [
     {
       "name": "cerebros",
       "source": "./",
       "description": "Escribe ads, guiones de reel con planos, hooks, captions y nutricion en la voz real de un cliente de Viralidad, leyendo su cerebro curado. Incluye los cerebros de Gocho, El Sensei, Academia de Construccion y Bernardo Jurado.",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "author": {
         "name": "Ariel Serato"
       },
