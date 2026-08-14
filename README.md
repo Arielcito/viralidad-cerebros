@@ -109,7 +109,7 @@ git clone https://github.com/Arielcito/viralidad-cerebros.git
 cd viralidad-cerebros
 cp -r cerebros/bernardo cerebros/<slug-nuevo>     # esqueleto de arranque
 # ... vaciás el contenido y lo llenás con fuentes citadas ...
-git add . && git commit -m "cerebro: <cliente>" && git push
+node scripts/publicar.mjs "cerebro: <cliente>"
 ```
 
 Tres cosas que hay que tocar además de la carpeta, o el cliente nuevo queda
@@ -119,7 +119,24 @@ invisible:
 2. la tabla de clientes en `skills/cerebro-cliente/SKILL.md`,
 3. `CLIENTES` en `scripts/empaquetar.mjs`.
 
-Quien ya lo tenga instalado lo recibe con `/plugin update cerebros`.
+### Publicá con el script, no con `git push` a secas
+
+Claude Code cachea el plugin instalado **por versión**, en
+`~/.claude/plugins/cache/`. Si pusheás un cerebro nuevo sin subir la versión,
+`/plugin update` contesta *"already at the latest version"* y el equipo se queda
+con el contenido viejo sin enterarse.
+
+`scripts/publicar.mjs` sube la versión en los dos manifiestos (tienen que
+coincidir), commitea y pushea. Usá `--minor` cuando entre un cliente nuevo y el
+patch por defecto para material que se suma a uno que ya está.
+
+Del otro lado, para recibirlo:
+
+```
+/plugin update cerebros@viralidad-cerebros
+```
+
+y reiniciar la sesión de Claude Code.
 
 ### Sumar material a un cerebro que ya existe
 
