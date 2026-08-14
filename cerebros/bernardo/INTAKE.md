@@ -1,7 +1,13 @@
 # Intake de transcripciones — modo manual
 
-Las transcripciones se hacen a mano en el chat (decisión tomada: no consumir API).
-Este archivo define el loop para que sea lo más rápido posible.
+> **Los reels de Instagram ya no son manuales.** Desde 2026-08-13 se cosechan y
+> transcriben con dos comandos — ver `cerebros/INTAKE-INSTAGRAM.md`. Lo que sigue
+> acá vale para lo que ese pipeline no cubre (TikTok, YouTube, VSL) y como
+> respaldo manual.
+
+El loop manual que sigue se escribió cuando transcribir un reel costaba pegarlo a
+mano en el chat. Se conserva porque el catálogo, la numeración y el formato de
+salida siguen siendo los mismos.
 
 ## ⚠️ Paso 0 — el catálogo está vacío y hay que llenarlo primero
 

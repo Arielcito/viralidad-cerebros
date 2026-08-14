@@ -2,7 +2,7 @@
 // Empaqueta un cerebro para entregárselo a alguien de afuera del repo.
 //
 //   node scripts/empaquetar.mjs gocho
-//   node scripts/empaquetar.mjs --todos        (los 4, para la agencia)
+//   node scripts/empaquetar.mjs --todos        (los 5, para la agencia)
 //
 // Por defecto va UN cliente por paquete. No es burocracia: el cerebro de un
 // cliente tiene su oferta, sus precios y su investigación de audiencia, y eso no
@@ -28,6 +28,7 @@ const CLIENTES = {
   sensei: 'El Sensei',
   academia: 'Ramón — Academia de Construcción',
   bernardo: 'Bernardo Jurado',
+  victor: 'Víctor Heras',
 }
 
 const args = process.argv.slice(2)
@@ -71,7 +72,12 @@ for (const slug of slugs) {
   cpSync(desde, hasta, {
     recursive: true,
     // Los intermedios de cosecha no viajan.
-    filter: (src) => !/\/fuentes\/(subs-youtube|audio)(\/|$)/.test(src) && !src.endsWith('.raw'),
+    filter: (src) =>
+      !/\/fuentes\/(subs-youtube|audio)(\/|$)/.test(src) &&
+      !src.endsWith('.raw') &&
+      // El volcado de Apify son URLs firmadas que caducan en horas: adentro de
+      // un zip que se abre mañana es peso muerto y links rotos.
+      !src.endsWith('/fuentes/instagram.json'),
   })
 }
 

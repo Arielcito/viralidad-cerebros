@@ -57,14 +57,19 @@ dentro del paquete de otro.
 
 | Cliente | Fuentes | Transcripciones | Cerebro |
 |---|---|---|---|
-| **Gocho** (Franklin Ovalles — El Trading Club) | 193 reels IG + 106 videos YT en `catalogo.csv`; oferta y embudo leídos de la web y de Hotmart | **106 (488.435 palabras)** | ✅ **usable** — voz medida, oferta textual, audiencia del survey, 14 hooks con métricas, 12 historias. Precio y garantía `SIN DATO`. VSL no descargable. Primera salida en `cerebros/gocho/piezas/` |
-| **El Sensei** (Sebastián Rodríguez) | 879 links (ago–dic 2025) en `catalogo.csv` | 0 | esqueleto — oferta y embudo verificados, voz vacía, **compliance bloquea ads** |
-| **Ramón** (Academia de Construcción) | oferta + embudo leídos de la web; 125 conceptos de ClickUp en `catalogo.csv` (sin URLs ni views) | 0 | esqueleto |
-| **Bernardo Jurado** | landing de opt-in leída + 52 conceptos de ClickUp | 0 | esqueleto (oferta parcial) |
+| **Gocho** (Franklin Ovalles — El Trading Club) | 200 reels IG + 193 videos YT catalogados; oferta y embudo leídos de la web y de Hotmart | **196 (718.949 palabras)** | ✅ **usable** — voz medida, oferta textual, audiencia del survey, 14 hooks con métricas, 12 historias. Precio y garantía `SIN DATO`. VSL no descargable. Salidas en `cerebros/gocho/piezas/` |
+| **El Sensei** (Sebastián Rodríguez) | 95 reels IG + 879 links (ago–dic 2025) en `catalogo.csv` | 85 (23.388 palabras) | oferta y embudo verificados, **voz sin re-curar** con los reels nuevos. **Compliance bloquea ads** |
+| **Ramón** (Academia de Construcción) | 165 reels IG; oferta + embudo leídos de la web; 125 conceptos de ClickUp | 85 (30.142 palabras) | oferta y audiencia escritas, **voz sin re-curar** con los reels nuevos |
+| **Bernardo Jurado** | 200 reels IG + landing de opt-in leída | 89 (25.668 palabras) | oferta parcial y audiencia escritas, **voz sin re-curar** con los reels nuevos |
+| **Víctor Heras** | 240 reels IG (`@herasmedia` + `@victorherasemprendedor`) | 80 (28.326 palabras) | ⚠️ **sólo material bruto** — todavía no hay `CEREBRO.md`, `voz.md` ni `oferta.md` |
 
-Un esqueleto **sirve** para preguntar qué vende el cliente o cómo es su embudo.
-No sirve para escribir en su voz: sin transcripciones no hay voz medida, y la
-skill está instruida para avisarlo en vez de rellenar con oficio publicitario.
+El 2026-08-13 entró la cosecha automática de Instagram y los cuatro cerebros que
+estaban en cero pasaron a tener transcripciones. Eso es **materia prima, no
+cerebro**: los archivos curados (`voz.md`, `oferta.md`, `audiencia.md`) todavía
+no se rescribieron a partir de ellas. Sirve para preguntar qué vende el cliente o
+buscar una frase textual suya; para escribir en su voz, sólo `gocho` está
+terminado. La skill está instruida para avisarlo en vez de rellenar con oficio
+publicitario.
 
 ## Estructura
 
@@ -80,8 +85,9 @@ cerebros/<cliente>/
     hooks.md          ← hooks reales, ordenados por views
     historias.md      ← anécdotas y casos reutilizables
   fuentes/
-    catalogo.csv      ← inventario de contenido + métricas (la cola de trabajo)
-    transcripciones/  ← un .md por video: frontmatter + transcript literal
+    catalogo.csv            ← inventario de contenido + métricas (la cola de trabajo)
+    catalogo-instagram.csv  ← reels cosechados de IG, ordenados por views
+    transcripciones/        ← un .md por video: frontmatter + transcript literal
   piezas/             ← lo que ya se produjo con este cerebro
 
 skills/cerebro-cliente/   ← la skill que lee todo esto
@@ -143,13 +149,26 @@ y reiniciar la sesión de Claude Code.
 - **YouTube** — `yt-dlp --skip-download --write-auto-subs --sub-langs "es"
   --sub-format vtt`, después `node scripts/subs-a-transcripcion.mjs <slug>`.
   Gratis y automático; los subtítulos salen con puntuación.
-- **Instagram** — no tiene subtítulos. `node scripts/bajar-audio.mjs <slug>
-  --desde 1 --hasta 10` deja los `.m4a` listos para transcribir a mano en el
-  chat. Decisión tomada: no gastar API en esto.
-- Los intermedios (`fuentes/subs-youtube/`, `fuentes/audio/`, `*.raw`) están
-  gitignoreados: pesan ~69 MB contra 4 MB de markdown útil, y se regeneran.
+- **Instagram** — dos comandos, y hay que correrlos seguidos:
 
-Ambos scripts necesitan `yt-dlp` en el PATH.
+  ```bash
+  node scripts/cosechar-instagram.mjs <slug> <handle...>   # Apify → instagram.json
+  node scripts/transcribir-instagram.mjs <slug> --top 100  # Deepgram → transcripciones/
+  ```
+
+  yt-dlp choca contra el login wall de IG; el scraper de Apify devuelve un
+  `videoUrl` del CDN que se baja sin sesión. Esa URL está **firmada y caduca en
+  horas**, así que transcribir al día siguiente no funciona: hay que volver a
+  cosechar. El detalle está en
+  [docs/INTAKE-INSTAGRAM.md](docs/INTAKE-INSTAGRAM.md).
+
+  Necesita `APIFY_TOKEN` y `DEEPGRAM_API_KEY` en el entorno o en un `.env.local`
+  de la raíz — que está gitignoreado, y en un repo público conviene que siga así.
+- Los intermedios (`fuentes/subs-youtube/`, `fuentes/audio/`, `*.raw`,
+  `fuentes/instagram.json`) están gitignoreados: pesan decenas de MB, y se
+  regeneran.
+
+Los scripts de YouTube necesitan `yt-dlp` en el PATH.
 
 ## Ojo con esto
 

@@ -1,6 +1,6 @@
 ---
 name: cerebro-cliente
-description: Escribe piezas de contenido en la voz real de un cliente de Viralidad — ideas de ads, guiones de reel con planos, hooks, captions, emails de nutrición, guiones de VSL — leyendo el cerebro curado del cliente en cerebros/<slug>/. Usá esta skill siempre que se pida copy, contenido, guiones, planos, hooks, ángulos, ideas de ads o piezas de nutrición para Gocho / Franklin Ovalles / El Trading Club, El Sensei, Ramón / Academia de Construcción o Bernardo Jurado, incluso si no nombran el cerebro ni piden explícitamente "en su voz". Usala también cuando pregunten qué vende un cliente, qué le funcionó, cómo habla o cómo es su audiencia, y cuando haya que agregar material nuevo a un cerebro.
+description: Escribe piezas de contenido en la voz real de un cliente de Viralidad — ideas de ads, guiones de reel con planos, hooks, captions, emails de nutrición, guiones de VSL — leyendo el cerebro curado del cliente en cerebros/<slug>/. Usá esta skill siempre que se pida copy, contenido, guiones, planos, hooks, ángulos, ideas de ads o piezas de nutrición para Gocho / Franklin Ovalles / El Trading Club, El Sensei, Ramón / Academia de Construcción, Bernardo Jurado o Víctor Heras, incluso si no nombran el cerebro ni piden explícitamente "en su voz". Usala también cuando pregunten qué vende un cliente, qué le funcionó, cómo habla o cómo es su audiencia, y cuando haya que agregar material nuevo a un cerebro.
 ---
 
 # Cerebro de cliente
@@ -43,9 +43,10 @@ redactor genérico que esta skill existe para evitar.
 | Slug | Cliente | Marca / cuentas |
 |---|---|---|
 | `gocho` | Franklin Ovalles — "Gocho" | El Trading Club · `@elgocho` (IG) · `@Gocholive` (YT) |
-| `sensei` | El Sensei | `@senseielcoach` |
+| `sensei` | El Sensei — Sebastián Rodríguez | `@elsensei` (madre, IG) + red de ~30 satélites. `@senseielcoach` es TT/YT, **no existe en IG** |
 | `academia` | Ramón | Academia de Construcción · `@lordconstruye` |
 | `bernardo` | Bernardo Jurado | `@juradonegocios` |
+| `victor` | Víctor Heras | `@herasmedia` · `@victorherasemprendedor` |
 
 Los cerebros están en distinto grado de avance. `gocho` es el más completo. Si
 te piden un cliente cuyo cerebro es sólo catálogo, decilo antes de escribir en
@@ -199,9 +200,14 @@ Resumen de lo aprendido a fuerza de perder tiempo:
   --sub-langs "es" --sub-format vtt` baja los subtítulos sin descargar video, y
   salen con puntuación. Después `node scripts/subs-a-transcripcion.mjs <slug>`
   los convierte.
-- **Instagram no tiene subtítulos.** Los reels se transcriben a mano en el chat
-  (`node scripts/bajar-audio.mjs <slug> --desde 1 --hasta 10` deja los `.m4a`
-  listos para arrastrar). Decisión tomada: no gastar API en esto.
+- **Instagram también es automático** desde 2026-08-13, y era el cuello de
+  botella de todos los cerebros. Dos comandos:
+  `node scripts/cosechar-instagram.mjs <slug> <handle...>` y después
+  `node scripts/transcribir-instagram.mjs <slug> --top 100`. El truco es que
+  yt-dlp choca contra el login wall de IG, pero el scraper de Apify devuelve un
+  `videoUrl` del CDN que se baja sin sesión; de ahí va a Deepgram. El detalle
+  está en `docs/INTAKE-INSTAGRAM.md`, incluido por qué hay que transcribir
+  enseguida después de cosechar (la URL firmada caduca).
 - **yt-dlp sale con exit 0 y 0 archivos** si se corta la red. Verificá contando
   archivos, nunca leyendo el exit code.
 - Los intermedios (`fuentes/subs-youtube/`, `fuentes/audio/`) están gitignoreados

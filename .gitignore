@@ -4,6 +4,18 @@ cerebros/*/fuentes/subs-youtube/
 cerebros/*/fuentes/audio/
 cerebros/*/fuentes/*.raw
 
+# Volcado crudo de Apify (13 MB entre los cinco cerebros). Lo único que aporta
+# sobre catalogo-instagram.csv es `videoUrl`, una URL firmada del CDN que caduca
+# en horas: commitearla es guardar un link muerto. Se regenera con
+# scripts/cosechar-instagram.mjs, y hay que regenerarla igual antes de
+# transcribir.
+cerebros/*/fuentes/instagram.json
+
+# Las claves de cosecha (APIFY_TOKEN, DEEPGRAM_API_KEY) se leen de acá. Repo
+# público: nunca se commitean.
+.env
+.env.*
+
 # Zips de entrega. Los genera empaquetar.mjs a partir de lo que ya está acá; un
 # zip commiteado es una copia que se desactualiza en silencio.
 paquetes/

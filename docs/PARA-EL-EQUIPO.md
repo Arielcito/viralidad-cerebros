@@ -36,7 +36,7 @@ Para el equipo de contenido. Sin terminal, sin git.
    - `biblioteca/hooks.md`, `biblioteca/historias.md`
    - `fuentes/catalogo.csv` y `fuentes/catalogo-youtube.csv`
    - `piezas/` — lo que ya se produjo, sirve de ejemplo de formato
-5. Después, si entran, subí `fuentes/transcripciones/` (son ~106 archivos). Si el
+5. Después, si entran, subí `fuentes/transcripciones/` (entre 80 y 196 según el cliente). Si el
    proyecto se llena, **dejalos afuera y listo**: los cuatro archivos curados ya
    traen citado lo mejor de las transcripciones. Lo único que se pierde es la
    capacidad de encontrar frases nuevas.
@@ -50,9 +50,10 @@ Ya está. Pedile cosas en lenguaje normal:
 ## Forma 2 — Un zip de un cliente en Claude Code
 
 Si te pasaron un zip suelto en vez del plugin. La ventaja sobre la Forma 1 es la
-misma que la del plugin: Claude puede **buscar dentro de las 488.000 palabras de
-transcripciones**, así que encuentra frases textuales del cliente que no están en
-los archivos curados. Es la forma en que se armaron los guiones que ya viste.
+misma que la del plugin: Claude puede **buscar dentro de las transcripciones
+completas** —826.000 palabras entre los cinco clientes, 719.000 sólo en Gocho—,
+así que encuentra frases textuales del cliente que no están en los archivos
+curados. Es la forma en que se armaron los guiones que ya viste.
 
 1. Descomprimí el zip.
 2. Abrí una terminal en esa carpeta y corré `claude`.

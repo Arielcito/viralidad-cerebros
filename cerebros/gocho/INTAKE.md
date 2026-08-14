@@ -1,7 +1,7 @@
 # Intake de transcripciones
 
-Actualizado 2026-07-29. **YouTube ya está resuelto y fue gratis.** Lo único que
-queda manual son los reels de Instagram.
+Actualizado 2026-08-13. **YouTube y ahora también Instagram están resueltos.**
+Lo que queda manual es el VSL.
 
 ## Estado
 
@@ -10,11 +10,11 @@ queda manual son los reels de Instagram.
 | YouTube videos largos | 80 de 81 | subtítulos automáticos | ✅ listo |
 | YouTube shorts | 26 de 29 | subtítulos automáticos | ✅ listo |
 | YouTube lives (`/streams`) | 0 de 28 | subtítulos automáticos | pendiente, opcional |
-| **Reels de Instagram** | **0 de 193** | **manual en el chat** | pendiente |
+| **Reels de Instagram** | **90 de 200 cosechados** | **Apify + Deepgram** | ✅ listo |
 | VSL | 0 | pedido a Emilio | bloqueado |
 
-**488.435 palabras** transcriptas. Ya alcanza para `voz.md`, `hooks.md` §3 y
-`historias.md`.
+**506.545 palabras** transcriptas (488.435 de YouTube + 18.110 de reels de IG).
+Alcanza para `voz.md` con los tres registros, `hooks.md` §3 y `historias.md`.
 
 ## YouTube — automático, no requiere trabajo manual
 
@@ -44,10 +44,23 @@ Tres cosas que cuestan una hora si no se saben:
 Si se corta la red a mitad de camino, yt-dlp sigue "terminando bien" con exit 0 y
 0 archivos. **Verificar siempre contando archivos, no leyendo el exit code.**
 
-## Instagram — sí es manual
+## Instagram — ya no es manual
 
-Instagram no tiene subtítulos descargables, así que acá no hay atajo. Se
-transcribe a mano en el chat (decisión tomada: no gastar API).
+**Desde 2026-08-13 hay atajo.** Los reels se cosechan y transcriben con dos
+comandos; el detalle de por qué funciona está en `cerebros/INTAKE-INSTAGRAM.md`.
+
+```bash
+node cerebros/scripts/cosechar-instagram.mjs gocho elgocho
+node cerebros/scripts/transcribir-instagram.mjs gocho --top 100
+```
+
+Quedaron **90 reels transcriptos** (18.110 palabras) en
+`fuentes/transcripciones/ig-*.md`, con views/likes/comments reales en el
+frontmatter. Es la fuente de `biblioteca/hooks.md` §"Hooks de IG con métrica",
+que hasta ahora figuraba en 0.
+
+El loop manual que sigue queda como respaldo: sirve para un reel puntual, para
+el VSL, o si el CDN de Instagram deja de dar `videoUrl`.
 
 1. **Cola:** `fuentes/catalogo.csv`, 193 reels ordenados por views. De arriba
    hacia abajo — los que más vieron son los que definen el hook.
@@ -82,9 +95,9 @@ Para la entrega del viernes (ideas de ads + guiones + planos):
 
 1. **El VSL.** Sigue siendo lo de mayor valor por unidad de esfuerzo: 40 minutos
    de él vendiendo seguido. Está pedido en `fase-0-pedido.md` #5.
-2. **Top 10 reels de IG por views.** Es lo único que da el **hook hablado con
-   métrica real**. Todo lo de YouTube tiene 1.800 views o menos; el reel #1 tiene
-   8,66M. Para ads, 10 reels de IG valen más que los 80 videos de YouTube.
+2. ~~**Top 10 reels de IG por views.**~~ ✅ Hecho: 90 reels, el #1 con 9,08M
+   views. Era lo único que daba el **hook hablado con métrica real** — todo lo de
+   YouTube tiene 1.800 views o menos.
 3. **Los 5 testimonios en video** de `eltradingclub.com/homevideo`. Un caso con
    nombre y arco vale más que cualquier hook.
 4. Los 28 lives de YouTube. Muchísimo volumen (los 25 ya transcriptos dan 412.420
@@ -92,7 +105,9 @@ Para la entrega del viernes (ideas de ads + guiones + planos):
 
 ## Convención de archivo
 
-- IG manual: `fuentes/transcripciones/NNN-slug.md` (`NNN` = número de la cola).
+- IG automático: `fuentes/transcripciones/ig-NNN-slug.md` (`NNN` = puesto por
+  views, `fuente: deepgram-nova-2`).
+- IG manual (respaldo): `fuentes/transcripciones/NNN-slug.md`.
 - YouTube: `fuentes/transcripciones/yt-NNN-slug.md`, shorts `yt-sNNN-slug.md`.
 
 Plantilla en `fuentes/transcripciones/_PLANTILLA.md`. El frontmatter de las de
