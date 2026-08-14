@@ -1,0 +1,11 @@
+# Intermedios de cosecha. Se regeneran con los scripts de scripts/ y pesan mucho
+# más que el cerebro en sí (69 MB de .vtt y .m4a contra 4 MB de markdown útil).
+cerebros/*/fuentes/subs-youtube/
+cerebros/*/fuentes/audio/
+cerebros/*/fuentes/*.raw
+
+# Zips de entrega. Los genera empaquetar.mjs a partir de lo que ya está acá; un
+# zip commiteado es una copia que se desactualiza en silencio.
+paquetes/
+
+.DS_Store
