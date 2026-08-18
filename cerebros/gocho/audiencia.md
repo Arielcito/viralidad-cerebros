@@ -19,12 +19,12 @@ Cada pedazo de esa frase sale de una fuente:
 
 | Rasgo | Evidencia |
 |---|---|
-| Hispanohablante, mucho de Venezuela/EE.UU. | Español de Venezuela en el contenido; captions "Comenta CLASE si estás en Estados Unidos y quieres…" (#114, #137, #153); shorts de YouTube con `#inmigracion #venezolanos` |
-| Mayor de edad | Es la **primera** pregunta del survey después de los datos de contacto; desde may-2026 el propio hook lo filtra: "Si eres mayor de edad y quieres empezar desde 0 comenta…" |
+| Hispanohablante, mucho de Venezuela/EE.UU. | Español de Venezuela en el contenido; captions "Comenta CLASE 👇🏽 si estás en Estados Unidos y quieres…" — 4 posts entre 2025-12-14 y 2026-01-24, ninguno transcripto, 12k-17k views cada uno (`fuentes/catalogo-instagram.csv`); shorts de YouTube con `#inmigracion #venezolanos` |
+| Mayor de edad | Es la **primera** pregunta del survey después de los datos de contacto; entre el 2026-04-26 y el 2026-05-23 el propio caption lo filtra en **13 reels** seguidos: "Si eres mayor de edad y quieres empezar desde 0 comenta la palabra NASDAQ…" (el único transcripto de esa tanda es `ig-084`) |
 | Sin experiencia | El hook dominante es "empezar en trading **desde 0 sin experiencia**"; el nombre del producto es "Desde 0 a Trader" |
 | Sin capital | La promesa es "**sin usar tu capital**"; el mecanismo es fondeo |
 | Poco tiempo | "solo **3 horas al día**" en la promesa |
-| Trabaja en algo que no le gusta | Reel #145: "a mis 33 años hacía Uber y tenía una…"; #81: "si quieres dejar de depender de…" |
+| Trabaja en algo que no le gusta | Reel del 2026-01-28: "an mis 33 años hacia Uber y tenía una hija de la que cuidar" (13.228 views, sin transcribir); `ig-081`: "si quieres dejar de depender de una sola fuente de ingresos" (26.499 views) |
 
 ## Los 4 niveles, en palabras del cliente
 
@@ -61,13 +61,14 @@ Los que están confirmados por una fuente:
 | "Ya invertí en formación y no tengo resultados sólidos" | opción del survey, textual |
 | "Pierdo dinero cuando opero en real" | opción del survey: "no perder dinero en real" |
 | "No tengo capital propio para arriesgar" | promesa "sin usar tu capital" + mecanismo de fondeo |
-| "No tengo tiempo, tengo un trabajo" | "solo 3 horas al día"; #145 (Uber a los 33) |
-| "Me estafaron / desconfío de los que enseñan trading" | #13 "No te fíes de todos los que dicen hacer trading" (538k views); #20 "cuidado con los traders de 18 años" (271k views) |
-| "Dependo de un jefe / de un sueldo" | #81 "dejar de depender de…"; short de YT "¿Todos en este planeta van a ser Jefes?" |
+| "No tengo tiempo, tengo un trabajo" | "solo 3 horas al día"; caption del 2026-01-28 "an mis 33 años hacia Uber y tenía una hija de la que cuidar" (13.228 views, sin transcribir) |
+| "Me estafaron / desconfío de los que enseñan trading" | `ig-013` "No te fíes de todos los que dicen hacer “trading”." (538.208 views); `ig-019` "cuidado con los traders de 18 años con Lamborghini’s" (271.262 views) |
+| "Dependo de un jefe / de un sueldo" | `ig-081` "Sígueme en esta cuenta si quieres dejar de depender de una sola fuente de ingresos." (26.499 views); short de YT "¿Todos en este planeta van a ser Jefes?" (`yt-s004`) |
 | Tiene que consultar la decisión con la pareja, los padres o un tutor | pregunta 9 del survey — el cliente ya sabe que le pasa seguido |
 
 `SIN DATO` — **los dolores en palabras de la audiencia**. Para eso hay que leer los
-comentarios de los reels top (el #1 tiene 8.721 comentarios, el #5 tiene 36.823).
+comentarios de los reels top (`ig-001` tiene 9.045 comentarios y `ig-005`, 36.787
+— catálogo al 2026-08-12).
 Es el mejor material de copy que falta y no requiere transcribir nada.
 
 ## Creencias que hay que romper
@@ -81,9 +82,10 @@ Es el mejor material de copy que falta y no requiere transcribir nada.
 | "Es muy difícil, no soy de números" | "paso a paso", "desde 0" |
 
 **El diferencial que él mismo eligió es la edad y la honestidad, no el lujo.** Hay
-una familia entera de reels que rechaza el marketing de ostentación: #47 "Nada de
-nuevas Jordans", #67 "No me verás con ropa de gucci, pero si quieres saber cómo…",
-#49 "no te dejes llevar por los lujos". Con 50k+ views cada uno. Un ad de Gocho con
+una familia entera de reels que rechaza el marketing de ostentación: `ig-046`
+"Nada de nuevas Jordans!" (52.631 views), `ig-066` "No me veras con ropa de gucci,
+pero si quieres saber como…" (36.266) y el del 2025-06-21 "Sígueme 👇🏽 no te dejes
+llevar por los lujos" (50.842, sin transcribir). Un ad de Gocho con
 autos y relojes contradice su propio posicionamiento.
 
 ## Nivel de sofisticación
@@ -102,7 +104,7 @@ va en los primeros 3 segundos.**
 
 ## Lo que queda pendiente
 
-- Leer y citar comentarios de los reels top (#1, #5, #7, #12) — dolor en palabras
+- Leer y citar comentarios de los reels top (`ig-001`, `ig-005`, `ig-007`, `ig-006`) — dolor en palabras
   de la audiencia.
 - Segmentación geográfica real: hay evidencia de EE.UU. y Venezuela, falta saber si
   hay campañas por país.

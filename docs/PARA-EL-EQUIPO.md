@@ -5,22 +5,39 @@ oferta textual, su audiencia y el archivo de lo que ya le funcionó. Sirve para
 que Claude te escriba guiones, ads, hooks, captions y emails **que suenan a él**,
 no a un redactor publicitario.
 
-No hay que programar. Elegí una de las tres formas.
+No hay que programar. Elegí una de las tres formas — si estás en Cowork o
+en Claude Code, la Forma 0 es la buena.
 
 ---
 
-## Forma 0 — El plugin (la más rápida, si tenés Claude Code)
+## Forma 0 — El plugin (la más rápida)
 
-Dos comandos adentro de `claude`, una sola vez:
+Se instala una sola vez y quedan los cerebros de **todos** los clientes
+disponibles desde cualquier proyecto tuyo. Nombrás al cliente y la skill se
+activa sola.
+
+**Si trabajás en Cowork** (la mayoría del equipo), es por interfaz, no por
+comando:
+
+1. Pestaña **Cowork** → menú **Customize** → solapa **Plugins**.
+2. En **Personal plugins**, botón **+** → **Add marketplace**.
+3. **Add from a repository** y pegás
+   `https://github.com/Arielcito/viralidad-cerebros`.
+4. **Install** sobre el plugin `cerebros`.
+
+Si el botón de agregar marketplace no aparece, es que el admin de la
+organización tiene restringidos los plugins de terceros: avisá y se habilita.
+
+**Si usás Claude Code**, dos comandos adentro de `claude`:
 
 ```
 /plugin marketplace add Arielcito/viralidad-cerebros
 /plugin install cerebros@viralidad-cerebros
 ```
 
-Quedan los cerebros de todos los clientes disponibles desde cualquier proyecto
-tuyo, y `/plugin update cerebros` te trae los que se suban después. Nombrás al
-cliente y la skill se activa sola.
+Para traer los cerebros nuevos que se suban después: `/plugin update cerebros`
+en Claude Code, o el botón de update del plugin en Cowork. **Si algo que te
+dijeron que ya está no aparece, es esto**: tenés la versión vieja cacheada.
 
 ## Forma 1 — Un Proyecto en claude.ai (la más simple)
 

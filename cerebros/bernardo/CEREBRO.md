@@ -97,23 +97,46 @@ de la clase gratuita**. No se puede escribir nada que venda el programa pago.
 
 ## Cobertura de fuentes
 
+_Última actualización: 2026-08-14 — control de calidad sobre `voz.md` y
+`biblioteca/*.md`, ver método abajo._
+
 | Fuente | Estado |
 |---|---|
 | Landing de opt-in `juradoacademia.com` | ✅ leída completa (WebFetch) |
 | Sitio de la editorial `juradogrupoeditorial.com` | ✅ leído |
 | Bio + seguidores `@juradonegocios` / `@bernardojuradofacts` | ✅ verificados |
 | 52 conceptos de video jul-2026 (ClickUp) | ✅ leídos de DB, verbatim en `biblioteca/hooks.md` |
-| CTA orgánico textual | ✅ 1 CTA verbatim (`reel-to-guion/clients.json`) |
-| Catálogo de videos con URLs y views | ❌ vacío — `content_video` = 0 filas, y la tabla no tiene columna de URL |
-| Transcripciones | 0 — ver `INTAKE.md` |
+| CTA orgánico textual | ✅ **confirmado en audio** — 5 moldes de cierre contados sobre 86 reels (`voz.md`), no ya 1 CTA de ficha |
+| Catálogo de videos con URLs y views | ✅ `fuentes/catalogo-instagram.csv`, **200 filas** — verificado 1 a 1: **199** `@juradonegocios` + **1** `@victorherasemprendedor` (`ig-100`, excluido de todo conteo de voz). La columna `transcripto` está desactualizada, dice "no" en las 200 |
+| Transcripciones | ✅ **89** archivos en `fuentes/transcripciones/` — **88 útiles, 14.708 palabras** (`ig-100` es un reel de Víctor Heras sobre Bernardo: excluido). Suma de `palabras:` de frontmatter reproducida por script = 14.708 exacto. Views/likes/comments de las 89 cruzados 1 a 1 contra `catalogo-instagram.csv` por shortcode: **0 discrepancias**. `@bernardojuradofacts`: 0 |
+| Voz (`voz.md`) | ✅ **QA ago-2026, cero correcciones necesarias**: split cuerpo/cierre (11.842/2.866 palabras — coincide con el 11.838/2.870 publicado a nivel de redondeo), léxico del cuerpo (21 palabras, incl. "hombre" 61, "vida" 40, "Dios" 28…), las 7 muletillas contra el corpus de control de Gocho, "usted" (8, las 8 en el cierre), "jurado" (150, en 87/88 reels), los 5 componentes del cierre y la copla de amenaza, y la evolución mensual (n=2,21,15,37,13) — todo reproducido por grep/script de nuevo sobre los 88 archivos y coincide exacto |
+| Hooks con métrica (`biblioteca/hooks.md`) | ✅ **QA ago-2026**: agregados (suma de views 186.915.417, suma de comments 256.117, mediana views 743.016, mediana com/1k 1,15) reproducidos exactos; las 23 filas de los rankings top-15-por-com/1k y top-8-por-views cruzadas 1 a 1 contra `catalogo-instagram.csv` — views y com/1k exactos en las 23; los 88 hooks verbatim existen textuales en su transcripción |
+| Frases firma (`biblioteca/frases.md`) | ✅ **QA ago-2026**: los 5 conteos del cierre canónico, el molde "No es X, es Y" (18 en **14** reels, 16%) y "Ley de [nombre]" (**3** reels) reproducidos por grep de nuevo — 0 discrepancias |
+| Historias (`biblioteca/historias.md`) | ✅ **QA ago-2026**: las 4 historias nuevas con cita verbatim confirmada en su transcripción y ref correcta |
+| Test de trazabilidad (`scripts/verificar-citas.mjs`) | ✅ **0 errores** — 9 advertencias, todas intros de blockquote sin cita real (falsos positivos documentados, ver `correcciones`). **Cobertura: 67/89 transcripciones citadas al menos una vez (75%)** — el cerebro se apoya en 3 de cada 4 reels transcriptos; ~21 reels (sobre todo del bloque "Sígueme..." sin CTA fuerte) están transcriptos pero nunca citados |
 | La clase gratuita en sí (post opt-in) | ❌ gated tras el form de GoHighLevel |
 | Precio / nombre del programa pago | ❌ SIN DATO |
 | Ads que ya corrieron | ❌ SIN DATO |
 | Métricas propias en el dashboard | ❌ `content_account_week` tiene 6 filas jun-2026 y todas en 0 |
 
-Mientras el catálogo y las transcripciones estén vacíos, este cerebro sabe **qué
-temas** toca Bernardo (52 conceptos reales) pero no **cómo suena**. Los hooks de
-`biblioteca/hooks.md` son títulos internos de producción, no el texto hablado.
+**Para qué alcanza hoy.** Con las 88 transcripciones medidas y verificadas por
+grep de nuevo (no sólo leídas), este cerebro escribe reels y captions
+orgánicos hacia el opt-in de la clase gratuita **en su voz real y medida**:
+separa cuerpo de cierre, trae el cierre canónico con sus 5 moldes y su copla
+de amenaza (verbatim, con ref), 88 hooks con su views/com/1k real cruzado
+contra el catálogo, 5 frases firma y 4 historias/parábolas con cita
+verificada. El test de trazabilidad está en 0 errores: toda cita entre
+comillas con ref se puede abrir y leer en su transcripción.
+
+**Para qué no alcanza.** No se puede escribir nada que venda el programa
+pago — precio, nombre y formato siguen `SIN DATO`. No se puede escribir un
+VSL, una clase o cualquier pieza larga: las 88 transcripciones son reels de
+26-166s, no hay ni una pieza de formato largo. No hay nada de
+`@bernardojuradofacts` (0 transcripciones) — si es la cuenta de técnica pura,
+es exactamente el registro que falta. Y **ninguna cifra ni apellido salido
+del ASR** (Ley de Kittyn, "60 por 100", "1200 euros", "1492" de Colón, etc.)
+entra a una pieza sin verificar contra el video primero — `voz.md` y
+`biblioteca/*.md` los marcan con ⚠️, pero siguen sin confirmar.
 
 ## Estado de la data en el dashboard
 

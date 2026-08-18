@@ -13,7 +13,12 @@ Antes de escribir cualquier pieza, leé en este orden:
 1. `voz.md` — cómo habla. Es la restricción más importante.
 2. `oferta.md` — qué se vende en la pieza y con qué promesa.
 3. `audiencia.md` — a quién le habla y con qué palabras.
-4. `biblioteca/hooks.md` — hooks que ya se produjeron.
+4. `biblioteca/hooks.md` — hooks con evidencia real de views (85 reels
+   transcriptos), patrones con 3+ apariciones.
+5. `biblioteca/historias.md` — anécdotas y casos reales (Amanda, los tres
+   desgloses de casa, "compra en silencio", etc.) con su cifra exacta y ref.
+6. `biblioteca/frases.md` — tics verbales y autodesignaciones repetidas,
+   con conteo real.
 
 ### Reglas duras
 
@@ -102,15 +107,17 @@ pedido en `fase-0-pedido.md`.
 | Bio de Instagram `@lordconstruye` | ✅ leída — keyword del DM truncada (`SIN DATO`) |
 | Cola de producción ClickUp (125 conceptos) | ✅ en DB, volcada a `fuentes/catalogo.csv` |
 | Métricas semanales | ⚠️ 3 semanas de junio 2026, carga manual (ver abajo) |
-| Métricas por video (views/likes por reel) | ❌ `content_video` = 0 filas |
-| URLs de los reels | ❌ no existen en el repo ni en la DB |
-| Transcripciones | ❌ 0 — ver `INTAKE.md` |
+| Métricas por video (views/likes/comments por reel) | ✅ 85 reels, en el frontmatter de cada `fuentes/transcripciones/ig-NNN.md` + `fuentes/catalogo-instagram.csv` |
+| URLs de los reels | ✅ 85, campo `url` del frontmatter de cada transcripción (`instagram.com/p/...`) |
+| Transcripciones | ✅ **85** reels transcriptos (Deepgram nova-2) en `fuentes/transcripciones/`, ver `voz.md`, `biblioteca/hooks.md`, `biblioteca/historias.md`, `biblioteca/frases.md` |
 | VSLs / videos de la web | ❌ players ConverteAI, no transcribibles sin browser |
 | Precio, garantía, ads que corrieron | ❌ `SIN DATO` — `fase-0-pedido.md` |
 
-Mientras esta tabla tenga ❌ en transcripciones y ❌ en precio/garantía, el
-cerebro sirve para **contenido orgánico e ideas de guion**, pero **no** para ads
-de conversión ni para nada que hable de precio.
+Con las 85 transcripciones ya cargadas, el cerebro sirve para **voz, hooks,
+historias y frases con evidencia real de views/likes/comments** (ver
+`biblioteca/`). Sigue sin servir para ads de conversión ni para nada que
+hable de precio o garantía — eso sigue en `SIN DATO` hasta que Ramón lo
+confirme (`fase-0-pedido.md`).
 
 ### Métricas que sí hay (DB, tabla `content_account_week`)
 

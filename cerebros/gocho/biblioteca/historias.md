@@ -60,13 +60,13 @@ antes de imprimir un número.
 - **Qué pasa:** reventó la cuenta, tuvo que volver a juntar plata para abrir otra,
   y llegó a pedir prestado. Lo cuenta como error, no como epopeya.
 - **Para qué sirve:** **el device de honestidad más fuerte que tiene.** Rompe "sos
-  otro vendehumo" y encaja perfecto con su posicionamiento anti-vendehumo (#13,
-  #20 del catálogo de IG). Además cubre compliance: admite pérdida real.
+  otro vendehumo" y encaja perfecto con su posicionamiento anti-vendehumo
+  (`ig-013`, `ig-019`). Además cubre compliance: admite pérdida real.
 - **Verbatim:**
-  > "Boom, lo perdí todo, y otra vez volver a salir a buscar el dinero para poder
-  > abrir una cuenta. Y después inclusive hasta pedí dinero prestado. **No hagas
-  > eso.**"
-- **Fuente:** yt-014 y alrededores.
+  > "Boom, los perdí todo y otra vez volver a salir a buscar el dinero para poder
+  > abrir una cuenta y después inclusive hasta pedí dinero prestado. **No hagas
+  > eso.**" (yt-020)
+- **Fuente:** yt-020.
 - **Nota:** el "no hagas eso" al final es la parte que hay que conservar. Sin eso
   es una historia de riesgo; con eso es una advertencia.
 
@@ -123,7 +123,8 @@ antes de imprimir un número.
   > "Cosas como estas que vas a ver a continuación son las que te generan una
   > falsa expectativa. Dice que ganan 2.000 dólares la semana. No, amigo: ganas
   > 25 dólares por hora. Así es como te venden quedarte de por vida haciendo…"
-- **Fuente:** yt-s006.
+- **Fuente:** yt-s006. **Las dos cifras ($2.000/semana y $25/hora) son ASR y son
+  de un tercero, no suyas: SIN VERIFICAR — no usar en pieza.**
 
 ### 9. "¿Todos vamos a ser jefes?" — el techo del empleo
 
@@ -137,7 +138,8 @@ antes de imprimir un número.
   > pendiente de dónde se mete para ganar más. Sale un nuevo trabajo: vámonos para
   > Chicago, construcción. Tengo mucho frío, papi. A 40 dólares la hora. Y para
   > que me esté mandando a las 5 de la mañana, no."
-- **Fuente:** yt-s004.
+- **Fuente:** yt-s004. **Los "40 dólares la hora" son ASR: SIN VERIFICAR — no
+  usar como cifra en pieza.**
 
 ### 10. Uber en 3 minutos, Amazon en un día, TikTok en 5 segundos
 
@@ -160,7 +162,7 @@ antes de imprimir un número.
 - **Qué pasa:** dice que no usa ninguno de sus relojes y que se va a comprar uno
   con el primer retiro de operar en vivo con la comunidad.
 - **Para qué sirve:** aspiracional **medido**, compatible con su posicionamiento
-  anti-ostentación (#47 "Nada de nuevas Jordans", #67 "No me verás con ropa de
+  anti-ostentación (`ig-046` "Nada de nuevas Jordans!", `ig-066` "No me veras con ropa de
   gucci"). El reloj se gana con un retiro concreto y verificable, no se exhibe.
 - **Verbatim:**
   > "No estoy usando ninguno de mis relojes, así que lo voy a comprar de mi primer
@@ -177,12 +179,12 @@ antes de imprimir un número.
 - **Para qué sirve:** analogía de disciplina sin jerga de trading. Buena para
   nutrición y para el ángulo "no es magia, es práctica". Lo humaniza como padre.
 - **Verbatim:**
-  > "Voy todos los días a mi entrenamiento. Como le digo yo a mi hija: no me faltes
-  > a ningún entrenamiento."
+  > "Voy todos los días mi entrenamiento, como le digo yo a mi hija, no me faltas
+  > ningún entrenamiento." (yt-013)
 
   > "Si vas al gimnasio, en semana ves el cambio. Si estudias una carrera, ves el
-  > progreso mes tras mes."
-- **Fuente:** yt-012 y lives.
+  > progreso mes tras mes." (yt-016)
+- **Fuente:** yt-013 y yt-016.
 
 ---
 
@@ -200,7 +202,7 @@ El device que él ya usa y que conviene mantener: **los alumnos "retiran", no
 "ganan".**
 
 > "mis alumnos que están fondeados, que están logrando **retiros** de dinero a
-> través de empresas de fondeo"
+> través de empresas de fondeo" (`yt-004`)
 
 El retiro es verificable; el P&L en pantalla no. Es mejor argumento y mejor
 compliance.

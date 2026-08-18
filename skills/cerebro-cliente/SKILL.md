@@ -95,6 +95,11 @@ borra. Cuando uses algo textual, **citá de dónde salió** (`yt-016`, `#47`,
 `oferta.md`) en la línea `REFERENCIA` o entre paréntesis. No es burocracia: es lo
 que le permite al humano verificar en 10 segundos en vez de confiar.
 
+Y tomatelo literal: si te preguntan de qué video sacaste una frase o un rasgo de
+la voz, la respuesta es un `ig-NNN` / `yt-NNN` que se puede abrir, nunca "de su
+estilo general". Cuando el cliente discute una pieza, esa referencia es lo único
+que hay para contestarle.
+
 ### Los hooks se calcan, no se admiran
 
 `biblioteca/hooks.md` tiene los hooks con métricas reales. Si un hook hizo 400k
@@ -187,6 +192,9 @@ veces, y no dan información al testear.
 - ¿Citaste las fuentes de lo verbatim?
 - ¿Hay algo que quisiste escribir y no pudiste por falta de dato? Decilo al final
   de la entrega, explícito, en vez de dejarlo pasar.
+- Si guardaste la pieza en `salidas/` o `piezas/` **y estás en el clon del repo**,
+  ¿corriste `node scripts/verificar-citas.mjs <slug>`? Chequea que cada frase
+  entrecomillada esté de verdad en el video que decís. Ver `docs/PRUEBAS.md`.
 
 Ese último punto es el más valioso para el equipo: la lista de lo que falta es lo
 que le permite a la agencia ir a pedirle exactamente eso al cliente.

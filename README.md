@@ -33,6 +33,22 @@ nuevos que se hayan subido después:
 /plugin update cerebros
 ```
 
+## Instalar (Cowork)
+
+En Cowork no hay `/plugin`: el marketplace se agrega desde la interfaz, una sola
+vez.
+
+1. Pestaña **Cowork** → menú **Customize** → solapa **Plugins**.
+2. En **Personal plugins**, botón **+** → **Add marketplace**.
+3. **Add from a repository** y pegar
+   `https://github.com/Arielcito/viralidad-cerebros` (el repo es público, no hace
+   falta acceso).
+4. En el marketplace que quedó agregado, **Install** sobre `cerebros`.
+
+Después se usa igual que en Claude Code: nombrás al cliente y la skill se activa
+sola. En plan Enterprise el admin puede tener restringidos los marketplaces de
+terceros — si el botón no aparece, es eso.
+
 ## Instalar (claude.ai, sin terminal)
 
 Para el equipo de contenido. Ver **[docs/PARA-EL-EQUIPO.md](docs/PARA-EL-EQUIPO.md)**:
@@ -55,21 +71,26 @@ dentro del paquete de otro.
 
 ## Estado de los cerebros
 
+Números al 2026-08-18, medidos con `node scripts/verificar-citas.mjs` (citas =
+frases textuales del cliente con su video citado; cobertura = transcripciones
+usadas al menos una vez).
+
 | Cliente | Fuentes | Transcripciones | Cerebro |
 |---|---|---|---|
-| **Gocho** (Franklin Ovalles — El Trading Club) | 200 reels IG + 193 videos YT catalogados; oferta y embudo leídos de la web y de Hotmart | **196 (718.949 palabras)** | ✅ **usable** — voz medida, oferta textual, audiencia del survey, 14 hooks con métricas, 12 historias. Precio y garantía `SIN DATO`. VSL no descargable. Salidas en `cerebros/gocho/piezas/` |
-| **El Sensei** (Sebastián Rodríguez) | 95 reels IG + 879 links (ago–dic 2025) en `catalogo.csv` | 85 (23.388 palabras) | oferta y embudo verificados, **voz sin re-curar** con los reels nuevos. **Compliance bloquea ads** |
-| **Ramón** (Academia de Construcción) | 165 reels IG; oferta + embudo leídos de la web; 125 conceptos de ClickUp | 85 (30.142 palabras) | oferta y audiencia escritas, **voz sin re-curar** con los reels nuevos |
-| **Bernardo Jurado** | 200 reels IG + landing de opt-in leída | 89 (25.668 palabras) | oferta parcial y audiencia escritas, **voz sin re-curar** con los reels nuevos |
-| **Víctor Heras** | 240 reels IG (`@herasmedia` + `@victorherasemprendedor`) | 80 (28.326 palabras) | ⚠️ **sólo material bruto** — todavía no hay `CEREBRO.md`, `voz.md` ni `oferta.md` |
+| **Gocho** (Franklin Ovalles — El Trading Club) | 200 reels IG + 193 videos YT catalogados; oferta y embudo leídos de la web y de Hotmart | **196 (718.949 palabras)** | ✅ **usable** — voz auditada, oferta textual, audiencia del survey, 14 hooks con métricas, 12 historias. 100 citas · 42% de cobertura · 18 `SIN DATO`. Precio y garantía `SIN DATO`. Piezas en `cerebros/gocho/piezas/` |
+| **El Sensei** (Sebastián Rodríguez) | 95 reels IG + 879 links (ago–dic 2025) en `catalogo.csv` | 85 (23.388 palabras) | ✅ **usable en orgánico** — voz re-curada sobre los 85 reels, biblioteca completa. 224 citas · 100% de cobertura · 39 `SIN DATO`. **Compliance bloquea ads** |
+| **Ramón** (Academia de Construcción) | 165 reels IG; oferta + embudo leídos de la web; 125 conceptos de ClickUp | 85 (30.142 palabras) | ✅ **usable en orgánico** — voz re-curada, biblioteca reescrita sobre las transcripciones reales. 98 citas · 100% de cobertura · 44 `SIN DATO` (el precio, entre ellos) |
+| **Bernardo Jurado** | 200 reels IG + landing de opt-in leída | 89 (25.668 palabras) | ✅ **usable en orgánico** — voz fundada sobre los reels, biblioteca verificada. 98 citas · 75% de cobertura · 30 `SIN DATO`. Producto pago sin nombre ni precio confirmados |
+| **Víctor Heras** | 240 reels IG (`@herasmedia` + `@victorherasemprendedor`) | 80 (28.326 palabras) | ✅ **usable en orgánico** — cerebro completo (voz, oferta, audiencia, biblioteca). 152 citas · 100% de cobertura · 38 `SIN DATO`, el que más tiene: **alcanza para captación, no para venta** |
 
-El 2026-08-13 entró la cosecha automática de Instagram y los cuatro cerebros que
-estaban en cero pasaron a tener transcripciones. Eso es **materia prima, no
-cerebro**: los archivos curados (`voz.md`, `oferta.md`, `audiencia.md`) todavía
-no se rescribieron a partir de ellas. Sirve para preguntar qué vende el cliente o
-buscar una frase textual suya; para escribir en su voz, sólo `gocho` está
-terminado. La skill está instruida para avisarlo en vez de rellenar con oficio
-publicitario.
+Los cinco pasan el test de trazabilidad en **0 errores**: cada frase
+entrecomillada se puede abrir en la transcripción que la cita. Ver
+[docs/PRUEBAS.md](docs/PRUEBAS.md).
+
+Lo que sigue faltando en los cuatro que no son Gocho es **oferta**: precio,
+garantía, nombre del producto y CTA textual. Eso no sale de los reels — hay que
+pedírselo al cliente. Cada carpeta tiene su `fase-0-pedido.md` con la lista
+exacta.
 
 ## Estructura
 
@@ -84,14 +105,16 @@ cerebros/<cliente>/
   biblioteca/
     hooks.md          ← hooks reales, ordenados por views
     historias.md      ← anécdotas y casos reutilizables
+    frases.md         ← frases firma y tics verbales, verbatim y con conteo
   fuentes/
     catalogo.csv            ← inventario de contenido + métricas (la cola de trabajo)
     catalogo-instagram.csv  ← reels cosechados de IG, ordenados por views
     transcripciones/        ← un .md por video: frontmatter + transcript literal
   piezas/             ← lo que ya se produjo con este cerebro
+  salidas/            ← ídem; el nombre que usan los cerebros nuevos
 
 skills/cerebro-cliente/   ← la skill que lee todo esto
-scripts/                  ← cosecha de fuentes y empaquetado
+scripts/                  ← cosecha de fuentes, empaquetado y el test de citas
 docs/                     ← cómo usarlo sin terminal
 ```
 
@@ -115,6 +138,7 @@ git clone https://github.com/Arielcito/viralidad-cerebros.git
 cd viralidad-cerebros
 cp -r cerebros/bernardo cerebros/<slug-nuevo>     # esqueleto de arranque
 # ... vaciás el contenido y lo llenás con fuentes citadas ...
+node scripts/verificar-citas.mjs <slug-nuevo>    # que cada cita se pueda abrir
 node scripts/publicar.mjs "cerebro: <cliente>"
 ```
 

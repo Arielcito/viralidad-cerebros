@@ -372,7 +372,8 @@ Hay una contradicción del propio cliente, y es la más peligrosa de todas:
 - Pero entre las opciones de otra pregunta del mismo survey aparece **"Debo asistir
   con mis padres"** / **"con un familiar o tutor"**.
 - Y en el catálogo hay **13 reels con el gatillo "Si eres mayor de edad…"**
-  (`fuentes/catalogo.csv`), o sea que el filtro de edad es parte del copy orgánico.
+  (`fuentes/catalogo-instagram.csv`, todos entre el 2026-04-26 y el 2026-05-23; el
+  hablado está en `ig-084`), o sea que el filtro de edad es parte del copy orgánico.
 
 Que exista la opción "debo asistir con mis padres" implica que llegan menores al
 funnel. **Ningún creativo pago puede quedar orientado a menores** — es política de

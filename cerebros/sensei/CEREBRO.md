@@ -10,7 +10,10 @@ ni en la de un redactor publicitario genérico.
 
 Antes de escribir cualquier pieza, leé en este orden:
 
-1. `voz.md` — cómo habla. Es la restricción más importante. **Hoy está vacío.**
+1. `voz.md` — cómo habla. Es la restricción más importante. **Medido sobre 85
+   reels de IG (14.043 palabras) de `@elsensei` + `@librosdelsensei`.** Sigue
+   SIN DATO todo lo que no sea reel corto: no hay lives, YouTube ni VSL, y
+   `@senseiprofe` no tiene una sola transcripción.
 2. `oferta.md` — qué se vende en la pieza y con qué promesa. **Leé la sección de
    "Cosas que NO se pueden prometer" antes que nada: este cliente es el de mayor
    riesgo de compliance de la cartera.**
@@ -176,11 +179,20 @@ del CSV a ojo.
 
 ## Cobertura de fuentes
 
+**Última actualización: 2026-08-14** — auditoría de control de calidad sobre
+`voz.md`, `biblioteca/hooks.md`, `biblioteca/frases.md` y `biblioteca/historias.md`.
+Ver método y hallazgos en `correcciones` de la fase de QA.
+
 | Fuente | Estado |
 |---|---|
-| Catálogo de video (879 URLs únicas: 326 TikTok, 297 IG, 256 YT) | ✅ armado — `fuentes/catalogo.csv` |
-| Transcripciones | 0 — ver `INTAKE.md` |
-| Voz (léxico, muletillas, ritmo) | SIN DATO — bloqueado por transcripciones |
+| Catálogo de video, Notion (879 URLs únicas: 326 TikTok, 297 IG, 256 YT) | ✅ armado — `fuentes/catalogo.csv`, sin métrica por video |
+| Catálogo de video, Instagram | ✅ **95 posts, 5.116.947 views**, 2026-03-30 → 2026-08-13 — `fuentes/catalogo-instagram.csv`, con views/likes/comments por post desde la API. Sólo dos cuentas: `@elsensei` (35 filas) y `@librosdelsensei` (60) — verificado que ninguna fila es de otro cliente de la cartera |
+| Transcripciones | ✅ **85 reels IG (14.043 palabras)** — `@elsensei` 31, `@librosdelsensei` 54, verificado por conteo directo sobre `fuentes/transcripciones/`. 0 de TT y YT. `@habitosdelsensei`, `@senseialma` y `@frasesdelcalvito` devolvieron 0 reels en el scraper. 10 posts del catálogo de IG quedaron sin transcribir |
+| Voz (léxico, muletillas, ritmo) | ✅ **medida y auditada** en `voz.md` — ~30 cifras de `voz.md` y `hooks.md` reproducidas con `grep`/Python sobre el corpus crudo (conteos de palabras, frecuencias, fechas, ratios entre cuentas, índices ajustados por mes): todas coinciden salvo 2 errores de aritmética en `hooks.md` §4c/§5, corregidos en esta pasada (ver `correcciones`). Huecos que siguen abiertos: `@senseiprofe` sin transcribir y 0 fuentes de habla larga (lives, YouTube, VSL) |
+| Hooks con métrica de IG | ✅ **81 hooks únicos** (31 `@elsensei` + 50 `@librosdelsensei`, tras descontar 4 re-subidas de `ig-091`) en `biblioteca/hooks.md`, con views/likes/comments verificados 1:1 contra `catalogo-instagram.csv` y método de índice-por-mes declarado y reproducido |
+| Frases firma | ✅ **verificadas** en `biblioteca/frases.md` — 12 conteos de `grep` (fase anterior) + método documentado coincide con el mismo corpus que `hooks.md`. Precio y garantía: confirmado 0 apariciones de la oferta propia en 85 reels |
+| Historias y casos | ✅ **17 historias con verbatim real** en `biblioteca/historias.md`, más 3 pistas sin cita declaradas aparte. Traza 6 con 🚨 promesa económica |
+| Test de trazabilidad (`verificar-citas.mjs`) | ✅ **0 errores**, 3 advertencias (2 falsos positivos de prosa editorial en blockquote, 1 limpieza de tartamudeo de ASR dentro del umbral permitido) — **cobertura: 85/85 transcripciones citadas al menos una vez (100 %)** |
 | Oferta: embudo y CTAs | ✅ verificado en las landings |
 | Oferta: precio | SIN DATO |
 | VSL real (`go.institutodeltrading.com/4ca4eec2`) | ❌ HTTP 403 — nadie lo leyó |
@@ -188,9 +200,22 @@ del CSV a ojo.
 | Ads que ya corrieron | SIN DATO |
 | Claims aprobados / disclaimer obligatorio | SIN DATO — **bloquea la producción de ads** |
 
-Mientras esta tabla tenga `SIN DATO` en voz, precio y claims aprobados, el
-cerebro sirve para **mapear el negocio**, no para escribir. Lo que falta está en
-`fase-0-pedido.md`.
+**Para qué alcanza hoy:** escribir orgánico (reels, captions) en la voz medida y
+auditada de `@elsensei` y de `@librosdelsensei` por separado — hook, cuerpo, CTA
+de comentario y cierre — con hooks calcables por molde y ranking real de views/
+com-por-1k, frases firma verificadas por conteo, y 17 historias con verbatim
+listas para nutrición o guion. La trazabilidad está en cero errores y el 100 %
+de las 85 transcripciones tiene al menos una cita en la biblioteca: el cerebro
+no se escribió sobre una fracción no auditada del material disponible.
+
+**Para qué NO alcanza:** producir ads (compliance bloqueado, precio y claims
+aprobados en `SIN DATO`), escribir para `@senseiprofe` o para cualquiera de los
+~28 satélites restantes (0 transcripciones), armar una VSL o pieza de habla larga
+(las 85 fuentes duran 18–90 s, no hay argumentación sostenida transcripta), citar
+cualquier cifra dicha en cámara (edad, monto ganado, resultados de alumnos) sin
+que el cliente la confirme por escrito, ni usar el caso de Agustín o el reto del
+Corolla sin el respaldo documental que pide `historias.md`. Lo que falta está en
+`fase-0-pedido.md` y en la sección "Lo que falta" de `voz.md`.
 
 ## De dónde sale la data del dashboard (por si preguntan)
 
