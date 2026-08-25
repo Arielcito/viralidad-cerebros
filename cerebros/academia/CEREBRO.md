@@ -22,25 +22,45 @@ Antes de escribir cualquier pieza, leé en este orden:
 
 ### Reglas duras
 
-- **No inventes oferta.** El precio de la Academia es `SIN DATO`. La garantía es
-  `SIN DATO`. Si no está en `oferta.md`, no lo escribas: preguntá.
-- **No inventes credenciales ni resultados.** Las únicas cifras de credencial
-  autorizadas son las de su propia web: 32+ años, 1.900+ obreros, $80M en
-  proyectos (https://academiadeconstruccion.com/ sección "Tu Mentor").
-- **Las cifras de casas concretas ("pagué 276.000", "el banco me pagó 30k") NO
-  se reusan en ads sin confirmación de Ramón.** Ver `oferta.md` → "Cosas que NO
-  se pueden prometer".
-- **Reusá lenguaje verbatim.** Es preferible una frase textual de Ramón a una
-  paráfrasis mejor escrita. Su ventaja competitiva es que suena a él.
-- **Los hooks se calcan, no se admiran.** Si un formato ya se repitió 8 veces en
-  su calendario de producción, la variante nueva conserva la estructura y cambia
-  el contenido.
+<!-- comun: reglas-comunes -->
+Estas cuatro valen para los cinco clientes. Las propias de este van más abajo.
+
+- **El dato sale del cerebro o se pregunta.** Precio, cuotas, garantía, nombre
+  del programa, cifras de alumnos, credenciales y testimonios salen de
+  `oferta.md` o de una fuente citada. Lo que no está se entrega marcado
+  `SIN DATO`, con la pregunta concreta que hay que hacerle al cliente.
+- **Verbatim gana a mejor escrito.** Ante una frase textual del cliente y una
+  paráfrasis tuya más elegante, va la textual: su ventaja competitiva es que
+  suena a él, y tu prosa la borra. Citá de dónde salió (`ig-NNN`, `yt-NNN`,
+  `oferta.md`) para que se pueda abrir y escuchar en 10 segundos.
+- **Los hooks se calcan, no se admiran.** Si un hook rindió, la variante nueva
+  conserva su estructura y cambia el contenido. La estructura es lo que
+  funcionó; el tema es lo reemplazable.
+- **Las cifras y los nombres propios se verifican fuera del ASR.** Las
+  transcripciones son reconocimiento automático: los giros de lengua son
+  confiables, los dígitos y los nombres no ("Franklin o Valles",
+  "trincloud.com"). Todo número que vaya a una pieza sale de `oferta.md`, de una
+  decisión ya registrada en el cerebro, o de escuchar el video.
+<!-- /comun: reglas-comunes -->
+
+### Reglas de este cliente
+
+- **Las credenciales autorizadas son tres**, y salen de su propia web (sección
+  "Tu Mentor" de https://academiadeconstruccion.com/): 32+ años de oficio,
+  1.900+ obreros, $80M en proyectos. Cualquier otra se pregunta. En cámara dice
+  además **42 años** de trayectoria empresarial y **62/63** de edad: no se
+  contradicen con los 32 —miden cosas distintas—, pero sólo van a una pieza con
+  OK de Ramón (`oferta.md` → "Credenciales autorizadas").
+- **Las cifras de casas concretas** ("pagué 276.000", "el banco me pagó 30k")
+  se usan en orgánico y esperan confirmación de Ramón para entrar en un ad —
+  ver `oferta.md` → "Cosas que NO se pueden prometer".
 - **Español neutro/latino con vocabulario de EEUU** (dólares, estados, crédito,
-  Zillow). Ver `voz.md`. **Nunca voseo rioplatense** — hay una landing con copy
-  pegado en rioplatense y es un bug, no su voz (ver `oferta.md`).
+  Zillow), como está medido en `voz.md`. Si ves voseo rioplatense en una landing
+  suya, es copy pegado y es un bug, no su voz (ver `oferta.md`).
 
 ### Formatos de salida
 
+<!-- comun: formatos -->
 Cuando te pidan una pieza, entregá exactamente esta estructura.
 
 **Guion de reel / ad**
@@ -54,9 +74,17 @@ PLANOS:
   1. <plano> — <qué se ve> — <qué se dice encima>
   2. ...
 TEXTO EN PANTALLA: <los rótulos, uno por línea>
+DISCLAIMER: <el texto de riesgo de oferta.md, si la pieza toca resultados>
 DURACIÓN ESTIMADA: <segundos>
-REFERENCIA: <de qué fila del catálogo sale el patrón>
+REFERENCIA: <el ig-NNN / yt-NNN / fila del catálogo de donde sale el patrón>
 ```
+
+La línea `DISCLAIMER` va sólo si `oferta.md` de este cliente exige uno y la
+pieza toca resultados; si no, se omite.
+
+Los planos son para que alguien filme sin preguntarte nada: van con lo que se ve
+y lo que se dice encima, y son filmables con lo que el cliente realmente tiene y
+muestra.
 
 **Email / mensaje de nutrición**
 
@@ -65,6 +93,7 @@ ASUNTO: <línea>
 CUERPO: <en su voz, párrafos cortos>
 CTA: <textual de oferta.md>
 ```
+<!-- /comun: formatos -->
 
 ## Identidad
 
@@ -74,7 +103,7 @@ CTA: <textual de oferta.md>
 | Nombre público | Lord Ramón / @LordRamon | https://academiadeconstruccion.com/ → "RAMÓN (@LordRamon) · Empresario y Fundador"; https://academiadeconstruccion.com/ty-page → video 4 "Quién es Lord Ramón?" |
 | Cómo firmar en ads | SIN DATO — "Ramón Páez" (IG) vs "Lord Ramón" (web) no coinciden. Confirmar. | `fase-0-pedido.md` |
 | Cuenta operativa | `@lordconstruye` — Instagram, 366K seguidores | `src/lib/avatars.ts:22-28` + WebFetch https://www.instagram.com/lordconstruye/ |
-| Otras cuentas | `@lordconstruye` en YouTube y TikTok existen (HTTP 200) pero **no verificadas como del cliente** ni con métricas | ver `fase-0-pedido.md` |
+| Otras cuentas | **YouTube `@lordconstruye` verificado como suyo** (2026-08-24): 16 videos largos, 2.727.190 views, se presenta en cámara con nombre y marca — ver `voz.md` → "Ya no es SIN DATO: cómo se nombra". TikTok `@lordconstruye` existe (HTTP 200) pero sigue **sin verificar** | `fuentes/catalogo-youtube.csv` + `fuentes/transcripciones/yt-*.md` |
 | Cuenta que NO usar | `@academiadeconstruccion` (IG, 8 seguidores, 1 post) — es la etiqueta del import manual, no la cuenta real | WebFetch https://www.instagram.com/academiadeconstruccion/ + DB `content_account_week.account_handle` |
 | Marca / producto | Academia de Construcción | https://academiadeconstruccion.com/ |
 | Nicho | Construcción y venta de casas en EEUU (spec building) para hispanohablantes en EEUU | https://academiadeconstruccion.com/ |
@@ -109,15 +138,30 @@ pedido en `fase-0-pedido.md`.
 | Métricas semanales | ⚠️ 3 semanas de junio 2026, carga manual (ver abajo) |
 | Métricas por video (views/likes/comments por reel) | ✅ 85 reels, en el frontmatter de cada `fuentes/transcripciones/ig-NNN.md` + `fuentes/catalogo-instagram.csv` |
 | URLs de los reels | ✅ 85, campo `url` del frontmatter de cada transcripción (`instagram.com/p/...`) |
-| Transcripciones | ✅ **85** reels transcriptos (Deepgram nova-2) en `fuentes/transcripciones/`, ver `voz.md`, `biblioteca/hooks.md`, `biblioteca/historias.md`, `biblioteca/frases.md` |
-| VSLs / videos de la web | ❌ players ConverteAI, no transcribibles sin browser |
-| Precio, garantía, ads que corrieron | ❌ `SIN DATO` — `fase-0-pedido.md` |
+| Transcripciones de Instagram | ✅ **85** reels transcriptos (Deepgram nova-2) en `fuentes/transcripciones/ig-*.md`, ver `voz.md`, `biblioteca/hooks.md`, `biblioteca/historias.md`, `biblioteca/frases.md` |
+| Catálogo de YouTube | ✅ **16** videos largos con views, likes, fecha y duración en `fuentes/catalogo-youtube.csv` (~4,4 h, 2.727.190 views, 2026-02-03 → 2026-08-20) |
+| Transcripciones de YouTube | ✅ **16 / 16**, 42.763 palabras medidas (re-medidas el 2026-08-24: antes se leían 40.074 por un corte en la extracción que dejaba un video largo al 19 % — las historias que aparecieron ahí están en `biblioteca/historias.md` §16) en `fuentes/transcripciones/yt-*.md`. Es 2,2× el corpus de reels y el **único registro largo** que hay: él vendiendo y argumentando 8–34 minutos sin guion |
+| VSLs / videos de la web | ❌ players ConverteAI, no transcribibles sin browser. Bajaron de prioridad: lo único que tienen en exclusiva es la respuesta a "¿qué pasa si no funciona?" |
+| Método y tracción dichos en cámara | ✅ 4-60-40, regla del terreno ×7, 120 alumnos, summit de 89 asistentes, embudo de YouTube — todo en `oferta.md` → "Lo que dice en cámara y la web no dice" |
+| Precio y garantía | ❌ `SIN DATO` — **cero menciones en 60.996 palabras**, incluidas 42.763 de venta larga. Ya no es una laguna del corpus, es una pregunta para Ramón (`fase-0-pedido.md`) |
+| Ads que corrieron | ❌ `SIN DATO` — `fase-0-pedido.md` |
 
-Con las 85 transcripciones ya cargadas, el cerebro sirve para **voz, hooks,
-historias y frases con evidencia real de views/likes/comments** (ver
-`biblioteca/`). Sigue sin servir para ads de conversión ni para nada que
-hable de precio o garantía — eso sigue en `SIN DATO` hasta que Ramón lo
-confirme (`fase-0-pedido.md`).
+**Para qué alcanza hoy**
+
+- **Reels, ads y captions**: 85 reels con views/likes/comments por pieza, hooks,
+  historias y frases con evidencia real (ver `biblioteca/`).
+- **Piezas largas** —guion de YouTube, VSL, clase, email largo, carrusel de 10—:
+  42.763 palabras de registro hablado. `voz.md` → "El tercer registro" dice qué
+  cambia (el `eh`, el «amigos míos», el `nosotros` institucional) y, sobre todo,
+  **qué CTA corresponde a cada formato**: los dos embudos no se mezclan nunca.
+
+**Para qué no alcanza**
+
+- **Ads de venta que hablen de plata.** Precio y garantía siguen `SIN DATO`
+  después de escuchar 42.763 palabras de él vendiendo. No se estiman.
+- **Testimonios con resultado.** El único que hay (Amanda, `yt-014`) es una
+  promesa de ingreso dicha en su canal: sirve en orgánico citada como tal, no en
+  un ad pagado sin autorización y disclaimer (`oferta.md`).
 
 ### Métricas que sí hay (DB, tabla `content_account_week`)
 

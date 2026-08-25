@@ -4,8 +4,9 @@
    de transcripción del cerebro, con frontmatter y métricas cruzadas
    del catálogo de YouTube.
 
-   Uso:
-     node scripts/subs-a-transcripcion.mjs gocho
+   Uso (las rutas son las del dashboard; en el plugin viralidad-cerebros
+   la carpeta es `scripts/` en la raíz):
+     node cerebros/scripts/subs-a-transcripcion.mjs gocho
 
    Lee  cerebros/<cliente>/fuentes/subs-youtube/*.vtt
    Cruza cerebros/<cliente>/fuentes/catalogo-youtube.csv (por id de video)
@@ -16,11 +17,10 @@
    Para el hook literal de un reel, la transcripción a mano sigue siendo
    mejor — por eso el frontmatter marca `fuente: subtitulos-automaticos`.
    ================================================================= */
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { REPO as ROOT, SCRIPTS } from "./raiz.mjs";
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 const slugify = (s) =>
   String(s)
@@ -97,7 +97,7 @@ const vttATexto = (vtt) => {
 
 const cliente = process.argv[2];
 if (!cliente) {
-  console.error("Falta el cliente. Ej: node scripts/subs-a-transcripcion.mjs gocho");
+  console.error(`Falta el cliente. Ej: node ${SCRIPTS}/subs-a-transcripcion.mjs gocho`);
   process.exit(1);
 }
 
@@ -117,7 +117,7 @@ if (existsSync(catalogo)) {
   for (const r of rows.slice(1)) {
     const url = (r[idx("url")] || "").trim();
     const id = url.split(/[?=/]/).pop();
-    if (id) porId.set(id, { titulo: r[idx("titulo")], duracion: r[idx("duracion_seg")], formato: r[idx("formato")], views: r[idx("views")], url });
+    if (id) porId.set(id, { titulo: r[idx("titulo")], duracion: r[idx("duracion_seg")], formato: r[idx("formato")], views: r[idx("views")], fecha: r[idx("fecha")], cuenta: r[idx("cuenta")], url });
   }
 }
 
@@ -136,6 +136,7 @@ if (archivos.length === 0) {
 
 let escritos = 0;
 let vacios = 0;
+let renombrados = 0;
 for (const f of archivos) {
   // Los shorts se bajan con prefijo `s` para no colisionar con la numeración
   // de los videos largos: s001-, s002-, …
@@ -159,8 +160,8 @@ for (const f of archivos) {
 n: yt-${nn}
 url: ${meta.url || `https://www.youtube.com/watch?v=${id}`}
 plataforma: youtube
-cuenta: "@Gocholive"
-fecha: ${"SIN DATO"}
+cuenta: "${meta.cuenta || "SIN DATO"}"
+fecha: ${meta.fecha || "SIN DATO"}
 views: ${meta.views || "SIN DATO"}
 likes: SIN DATO
 comments: SIN DATO
@@ -186,8 +187,21 @@ Subtítulo automático de YouTube (ASR). Sin puntuación y sin distinguir
 muletillas. Para citar una frase textual en \`voz.md\`, verificar contra el
 video antes de darla por literal.
 `;
-  writeFileSync(join(outDir, `yt-${nn}-${slugify(titulo)}.md`), cuerpo);
+  // El nombre lleva el título, y el título cambia: YouTube devuelve el
+  // localizado según la request, y el cliente los edita. Si sólo se escribe el
+  // archivo nuevo, el viejo queda al lado con el mismo `yt-NNN` y el mismo
+  // texto, y todo lo que cuente palabras cuenta ese video dos veces. El número
+  // manda: cualquier otro archivo con este `nn` sobra.
+  const nombre = `yt-${nn}-${slugify(titulo)}.md`;
+  for (const f of readdirSync(outDir)) {
+    if (f !== nombre && f.startsWith(`yt-${nn}-`) && f.endsWith(".md")) {
+      unlinkSync(join(outDir, f));
+      renombrados += 1;
+    }
+  }
+  writeFileSync(join(outDir, nombre), cuerpo);
   escritos += 1;
 }
 
 console.log(`\nTranscripciones escritas: ${escritos} · vacías: ${vacios} · total .vtt: ${archivos.length}`);
+if (renombrados) console.log(`Duplicados por título viejo, borrados: ${renombrados}`);

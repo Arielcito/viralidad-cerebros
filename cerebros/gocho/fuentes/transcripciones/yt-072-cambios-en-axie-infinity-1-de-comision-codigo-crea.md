@@ -3,8 +3,8 @@ n: yt-072
 url: https://www.youtube.com/watch?v=Aex8OolQd60
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2022-03-02
+views: 426
 likes: SIN DATO
 comments: SIN DATO
 duracion_seg: 979

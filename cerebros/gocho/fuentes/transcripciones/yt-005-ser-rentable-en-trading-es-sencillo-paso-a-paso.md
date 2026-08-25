@@ -3,11 +3,11 @@ n: yt-005
 url: https://www.youtube.com/watch?v=7vLvgb-HYPE
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2026-06-17
+views: 444
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 876
+duracion_seg: 875
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 2878

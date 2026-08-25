@@ -1,13 +1,13 @@
 ---
 n: yt-s019
-url: https://www.youtube.com/shorts/5JWQpJOaOyw
+url: https://www.youtube.com/watch?v=5JWQpJOaOyw
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2023-04-05
+views: 830
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 60
 formato: short
 fuente: subtitulos-automaticos
 palabras: 199
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-Necesitamos un mundo 🌍 con hombres de verdad es decir proveedores, dirían en mi pueblo con 🎱 
+Necesitamos un mundo 🌍 con hombres de verdad es decir proveedores, dirían en mi pueblo con 🎱 |
 
 ## Transcript
 

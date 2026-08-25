@@ -1,12 +1,51 @@
 # Voz — Ramón (Academia de Construcción)
 
-Base: **85 reels de `@lordconstruye` transcriptos, 18.146 palabras.** Publicados
-entre **2025-05-26 y 2026-08-09**, 24.207.897 views acumuladas. Fuente:
-Deepgram sobre el audio de IG (`fuentes/transcripciones/`), inventario con
-métricas en `fuentes/catalogo-instagram.csv`.
+## Base de medición
 
-Es el primer material hablado que entra a este cerebro. Antes había sólo web y
-125 títulos de brief de ClickUp — eso sigue abajo, marcado como lo que es.
+| Fuente | Piezas | Palabras | Qué aporta |
+|---|---:|---:|---|
+| Reels de `@lordconstruye` (IG) | 85 | 18.233 | el registro corto: hook, desglose, sketch, CTA por palabra |
+| Videos largos de `@lordconstruye` (YouTube) | 16 | 42.763 | el registro hablado: cómo argumenta con 30 minutos, la oferta dicha en voz alta |
+| **Total** | **101** | **60.996** | |
+
+**Re-medido el 2026-08-24.** Antes esta tabla decía 17.956 · 40.074 · 58.030: la
+extracción cortaba el cuerpo de cada transcripción en la primera "Z" mayúscula y
+se leía el 95 % del material. Tocó **7 archivos** (`ig-015`, `ig-022`, `ig-039`,
+`ig-049`, `ig-060`, `yt-014` y sobre todo **`yt-015`, que se leía al 19 %** — 553
+palabras de 2.949). Todas las tablas de abajo se volvieron a correr: **los
+conteos por palabra no se movieron** —los reels afectados perdían frases sueltas—
+y las tasas por 10.000 bajaron entre 0,5 % y 1,5 % por el denominador más grande.
+Lo que sí cambió es el contenido de `yt-015`: ver las historias recuperadas en
+`biblioteca/historias.md`.
+
+**Reconciliación con la herramienta (2026-08-25).** `node
+cerebros/scripts/medir-voz.mjs academia` devuelve **42.539** y **60.772** donde
+esta tabla dice 42.763 y 60.996. La diferencia son **224 palabras de marcas del
+ASR** (`[Música]`, `[Aplausos]`): la herramienta las descarta, el contador con el
+que se corrieron las tablas de abajo las contaba. Los reels dan idéntico
+(18.233), que es lo que confirma el origen. Es el 0,4 % del registro largo y no
+mueve ninguna tasa de esta página a un decimal. **La herramienta es la fuente de
+verdad**; las tablas quedan con el denominador con el que se corrieron, dicho
+acá para que nadie tenga que adivinar de dónde sale la diferencia.
+
+Los reels van entre **2025-05-26 y 2026-08-09** (24.207.897 views acumuladas,
+Deepgram sobre el audio de IG). Los 16 largos van entre **2026-02-03** y
+**2026-08-20** (2.727.190 views acumuladas, subtítulos automáticos de YouTube). Inventarios con
+métricas en `fuentes/catalogo-instagram.csv` y `fuentes/catalogo-youtube.csv`;
+los conteos de este archivo se reproducen con
+`node cerebros/scripts/medir-voz.mjs academia`.
+
+Hasta el 2026-08-24 este archivo estaba escrito **sólo sobre los 85 reels**. Con
+un corpus de reels alcanza para escribir reels, y para poco más: un reel de 40
+segundos está guionado, y un guion no dice cómo habla alguien — dice qué decidió
+decir. Los 16 largos son 2,2× ese corpus y son la primera vez que se lo escucha
+improvisar.
+
+**El canal de YouTube quedó verificado como suyo** por el propio audio, no por
+el nombre: `yt-004` abre con «Hola, soy Ramón Páez, Lord Construyes. Me consigues
+en Instagram como Lord Construyes» y `yt-009` con «Hola, soy Ramón, tengo 62
+años». Eso cierra el `SIN DATO` que decía "@lordconstruye en YouTube existe pero
+no verificado como del cliente".
 
 ## Advertencia sobre la fuente — leer antes de citar
 
@@ -80,6 +119,112 @@ Lo que **no** cambia entre moldes es la frase firma: `me lo dio el banco` corre
 **Regla operativa:** un guion de sketch sin un "aló", un "ajá" o un "¿cómo que…?"
 no suena a él. Un desglose de costos con "chévere" adentro tampoco.
 
+## El tercer registro: cuando tiene media hora
+
+Sketch y a-cámara son dos formas del mismo reel. El video largo de YouTube es
+otra cosa: dura entre 8 y 34 minutos, no está guionado palabra por palabra, y es
+el único lugar del corpus donde se lo oye **pensar en voz alta**.
+
+### La prueba de que el reel es escrito y el largo es hablado
+
+Una sola palabra lo demuestra, y es la más aburrida del idioma:
+
+| Marca | Largo (42.763 pal.) | Reel (18.233 pal.) |
+|---|---:|---:|
+| **`eh`** (duda hablada) | **10,5 /10k · 8 de 16 videos** | **0 · 0 de 85 reels** |
+| **`amigos míos`** (vocativo) | **4,9 /10k · 7 de 16** | **0 · 0 de 85** |
+| `recuerda` | 3,5 /10k · 6 de 16 | 1,1 /10k · 2 de 85 |
+| `yo` | 132,8 /10k · 16 de 16 | 82,8 /10k · 63 de 85 |
+| `nosotros` / `nuestro/a/s` | 12,6 /10k · 12 de 16 | 2,7 /10k · 5 de 85 |
+
+Un reel de 40 segundos se graba hasta que sale limpio; los `eh` se editan.
+Media hora de cámara no se limpia. Por eso, **si te piden una pieza larga
+—webinar, VSL, clase, carrusel de 10 slides— dejar los `eh` y los `amigos míos`
+adentro es lo que la hace suya**, y sacarlos la vuelve un folleto. Al revés
+también: un guion de reel con `eh` adentro es un guion que él nunca grabaría.
+
+⚠️ **`o sea` va al revés que en otros cerebros y no hay que copiarlo de ahí:**
+acá corre 9,9/10k en los reels y 0,7/10k en los largos. No es una marca de habla
+en vivo suya — es una marca del **sketch**, donde hace de personaje que
+interrumpe (ver "Los dos moldes"). Medí antes de importar una regla de otro
+cliente.
+
+### El `yo` sube y aparece un `nosotros` que en los reels no existe
+
+Los dos movimientos son el mismo hecho contado dos veces: con media hora
+disponible, **cuenta su biografía y presenta a la Academia como institución**.
+
+- Biografía: «Hola, soy Ramón, tengo 62 años, soy empresario y he tenido negocios
+  de todo tipo» (`yt-009`) · «Hola, soy Ramón. Tengo 63 años» (`yt-008`) ·
+  «Yo construí en Venezuela por más de 32 años» (`yt-002`).
+- Institución: «En la Academia de Construcción, nuestro propósito es que tú ganes
+  dinero» (`yt-005`) · «esta es la información que nosotros usamos para entrenar
+  a nuestros estudiantes en la academia de construcción» (`yt-006`).
+
+⚠️ **Las tres cifras de edad y trayectoria no se contradicen, se refieren a cosas
+distintas** — y confundirlas es el error fácil: **62/63 años** es su edad
+(cambia entre videos de febrero y agosto), **32 años** es la construcción en
+Venezuela (la credencial que la web publica), **42 años** es la trayectoria
+empresarial desde su primer negocio en 1984 (`yt-008`). En una pieza va la que
+la web autoriza, 32+; las otras dos sólo si Ramón las confirma
+(`fase-0-pedido.md`).
+
+### El trato no cambia. El CTA sí, y es total
+
+Esto es lo más operativo del archivo:
+
+| CTA | Largo | Reel |
+|---|---:|---:|
+| «escribe / comenta la palabra …» | **0 · 0 de 16** | **25,2 /10k · 42 de 85** |
+| «dale click al enlace» / «primer comentario» | **2,5 /10k · 9 de 16** | **0 · 0 de 85** |
+| «suscríbete» / «activa las notificaciones» | **2,3 /10k · 10 de 16** | **0 · 0 de 85** |
+
+No se solapan en una sola pieza de 101. Son dos embudos distintos que él nunca
+mezcla: el reel captura por **DM con palabra clave**, el largo captura por
+**enlace a una llamada**. Poner un "comenta la palabra CONSTRUIR" al final de un
+video de YouTube, o un "dale click al enlace de abajo" en un reel, es el error
+más visible que se puede cometer escribiendo para él.
+
+### El molde del largo, verbatim
+
+**Apertura** — tres formas, siempre *antes* de presentarse:
+
+1. **Cifra que desafía.** «Este terreno costó $60,000. Adivina en cuánto se va a
+   vender la casa que se va a construir aquí.» (`yt-004`)
+2. **Promesa cronometrada.** «En los próximos 32 minutos te voy a explicar lo que
+   yo he aprendido en los últimos 42 años sobre el dinero.» (`yt-008`)
+3. **Creencia común negada.** «Mucha gente cree que hacerse millonario es
+   cuestión de venir de una familia con dinero o tener un talento innato. Pues
+   no.» (`yt-003`)
+
+Recién después: «Hola, soy Ramón Páez, Lord Construyes.» (`yt-004`). **La
+presentación nunca abre el video** — 8 de 16 se presentan, y ninguno en la
+primera frase.
+
+**Retención**: «Quédate hasta el final porque te voy a explicar el paso a paso de
+cómo puedes hacerlo tú también» (`yt-007`) — 5 de 16.
+
+**Cierre**, tres movimientos en este orden:
+
+1. reenvío — «Envíaselo al amigo que te gustaría que viera este video» (`yt-008`);
+2. suscripción — «suscríbete al canal y activa las notificaciones para que no te
+   pierdas el próximo video» (`yt-014`);
+3. despedida fija — «Nos vemos en el próximo» (7 de 16), a veces con un «Yeah»
+   suelto al final (`yt-007`, `yt-009`).
+
+Cuando el video vende, el enlace se mete **antes** del bloque de cierre, no
+después: «en el primer comentario está el enlace para que tengamos esta
+conversación. Dale click allí. Nos vemos en el próximo» (`yt-012`).
+
+### La marca propia, por fin bien transcripta
+
+En IG el ASR destroza "Lord Construye" en 9 variantes (ver arriba). En los 16
+largos hay **10 menciones y 8 salen bien**: `Lord Construye` ×8,
+`Lord Construyes` ×2. Para cualquier duda de nombre propio o de marca,
+**el corpus de YouTube es la fuente confiable y el de IG no**. Las cifras siguen
+sin serlo en los dos: `yt-007` dice «la voy a vender por $,600,000» y `yt-013`
+«cómo llevar $,000 a un millón de dólares».
+
 ## Tutea siempre. El "usted" no es suyo
 
 `tú` y sus formas: **181 veces en 72 de los 85 reels** (99,7/10k). `usted`: **2
@@ -89,8 +234,14 @@ suya:
 > "O sea, **¿usted tiene** que tener mucho dinero para construir una casa…?" (ig-045)
 > "**¿Y usted enseña** a hacer esto?" (ig-045)
 
+**En los 16 videos largos el trato es idéntico**, y esto sí es un hallazgo: en
+otros cerebros el registro largo agrega una capa de `usted` institucional. Acá
+no. `tú/te/tu` corre **148,9/10k en los largos y 156,0/10k en los reels** — la
+misma densidad —, y `usted` da **0,5/10k en 2 de 16 largos** contra 1,0/10k en
+1 de 85 reels, o sea ruido en los dos. Media hora de cámara y sigue tuteando.
+
 **Voseo rioplatense: 0.** `vos`, `tenés`, `podés`, `sabés` no aparecen ni una vez
-en 18.146 palabras. (Esto confirma por audio lo que ya estaba fichado: el copy
+en las 60.996 palabras del corpus completo. (Esto confirma por audio lo que ya estaba fichado: el copy
 con voseo de `lordconstruye.com/plan-personalizado` es un bug de la landing, ver
 `fase-0-pedido.md`.)
 
@@ -420,24 +571,41 @@ varias de estas líneas **quedaron confirmadas** contra los reels y se marca cu�
 
 ## Lo que falta
 
-- **El VSL y los 5 videos de `/ty-page`.** Es él vendiendo largo, y es otro
-  registro que ninguno de estos 85 reels cubre. Bloqueados por los players
-  ConverteAI/VTurb. Es la fuente más valiosa que sigue faltando.
-- **Cómo habla cuando no está actuando.** Los 85 reels son piezas producidas y
-  guionadas: no hay live, no hay podcast, no hay Q&A. Todo lo de arriba describe
-  su **voz de contenido**, y no hay material para separar un registro de
-  nutrición como sí se pudo en Gocho.
-- **Precio, garantía y nombre de la oferta:** `SIN DATO`, y en 18.146 palabras
-  **no dice ninguno de los tres**. Sigue viniendo de `oferta.md`.
-- **Verificar contra video, sin excepción:** todos los montos, los nombres de los
-  alumnos (Amanda, Rafael, Mateo, Brandon, Ricardo, Andrés, Álvaro — ig-044), el
-  puntaje de crédito (700 vs 650), el "método 4-60-40" (dicho una sola vez,
-  ig-039) y el "déficit de 4000000 de casas" (ig-012).
-- **Cómo firma / cómo quiere que lo llamen.** En cámara nunca se nombra. El único
-  "Ramón" del corpus está en boca de otros personajes (ig-018, ig-044, ig-056,
-  ig-097). "Lord Ramón" no lo dice nunca. `SIN DATO`.
+- **El VSL y los 5 videos de `/ty-page`.** Bloqueados por los players
+  ConverteAI/VTurb. Bajaron de prioridad: los 16 largos de YouTube ya cubren el
+  registro de venta extendida que faltaba. Lo único que esos 5 videos siguen
+  teniendo en exclusiva es la respuesta a qué pasa si no funciona para ti, que es
+  donde probablemente esté la garantía.
+- **Precio y garantía:** `SIN DATO` todavía. En 60.996 palabras —incluidas
+  42.763 de registro de venta largo, donde manda a agendar una llamada 9 veces—
+  **no dice el precio ni una vez, ni menciona reembolso o garantía**. Que no
+  aparezca en media hora de venta ya no es una laguna del corpus: es una decisión
+  suya de no decirlo en público, y hay que preguntárselo (`fase-0-pedido.md`).
+- **Verificar contra video, sin excepción:** todos los montos y los nombres de
+  los alumnos (Amanda, Rafael, Mateo, Brandon, Ricardo, Andrés, Álvaro — ig-044;
+  Amanda, José Faría, Rafael Cordero, Ricardo — `yt-005`) y el puntaje de crédito
+  (700 vs 650 vs 800). El ASR de YouTube parte los montos igual que el de IG.
+- **Los 5 videos de `/ty-page` y el VSL** siguen bloqueados por los players
+  ConverteAI/VTurb — ver el primer punto.
 - **Testimonios en video de `/ty-page` (17):** sirven para `audiencia.md`, no
   para voz.
+
+### Ya no es `SIN DATO`: cómo se nombra
+
+La versión anterior decía «en cámara nunca se nombra, `SIN DATO`». Los largos lo
+resuelven: se nombra en **8 de 16**, siempre después del hook, y usa las dos
+formas juntas.
+
+> «Hola, soy Ramón Páez, Lord Construyes. Me consigues en Instagram como Lord
+> Construyes» (`yt-004`)
+> «Mi nombre es Ramón, mejor conocido como lo Construye» (`yt-015`, el ASR le
+> come la "Lord")
+
+O sea: **nombre real primero, marca después, y la marca funciona como el handle**
+("me consigues en Instagram como…"). Lo que sigue sin aparecer nunca, en 101
+piezas, es **"Lord Ramón"** —la forma que usa su propia web—. Esa discrepancia
+sigue abierta en `fase-0-pedido.md`, pero ahora con una respuesta preferida
+medible: él dice *Ramón Páez* y *Lord Construye*.
 
 ### Ya no es `SIN DATO`: el CTA hablado
 

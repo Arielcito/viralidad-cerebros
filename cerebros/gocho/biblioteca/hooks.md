@@ -135,8 +135,14 @@ el funnel.
 
 ## §3 — Hooks hablados
 
-**106 transcripciones de `@Gocholive`** (80 largos + 26 shorts), vía subtítulos
-automáticos. Ya hay hooks hablados reales.
+**133 transcripciones de `@Gocholive`** (80 largos + 27 streams + 26 shorts), vía
+subtítulos automáticos. Ya hay hooks hablados reales.
+
+**Los 27 streams no aportan hooks y hay que saberlo antes de buscarlos ahí**: los
+primeros 60-90 segundos de cada transmisión son saludo repetido y prueba de
+sonido. El molde de apertura está descripto en `voz.md` §"El molde de apertura
+del stream", y sirve para *no* perder tiempo cortando clips desde el minuto
+cero.
 
 **Dos advertencias que hay que leer antes de usar §3a y §3b:**
 

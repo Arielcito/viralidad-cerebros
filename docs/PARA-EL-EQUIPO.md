@@ -113,3 +113,21 @@ Decile qué tenés (un video nuevo, una página de venta, un VSL, un audio) y te
 a decir dónde va y qué formato necesita. El procedimiento está en
 `cerebros/<cliente>/INTAKE.md`, con las prioridades de cada cliente: lo que falta
 y en qué orden conviene conseguirlo.
+
+**Lo que más rinde por lejos es YouTube**, y es gratis: los subtítulos se bajan
+sin descargar un solo video. Un canal entero entra con dos comandos.
+
+```bash
+node scripts/cosechar-youtube.mjs <cliente> https://www.youtube.com/@elcanal
+node scripts/subs-a-transcripcion.mjs <cliente>
+```
+
+Rinde tanto porque un reel de 30 segundos es un guion escrito, y lo que hace
+falta para imitar a alguien es **cómo habla cuando habla largo**: las
+muletillas, las digresiones, cómo arma un argumento, cómo contesta una objeción.
+Eso vive en los videos largos y en los lives.
+
+Después de sumar material hay que **volver a destilar la voz**: más corpus
+cambia las frecuencias, y un `voz.md` medido sobre el corpus viejo pasa a estar
+mal. Pedíselo a Claude así —"destilá de nuevo la voz de Bernardo"— y la skill
+`destilar-voz` hace el resto.

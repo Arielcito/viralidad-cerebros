@@ -1,13 +1,13 @@
 ---
 n: yt-s020
-url: https://www.youtube.com/shorts/VIoDwoPCMik
+url: https://www.youtube.com/watch?v=VIoDwoPCMik
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: 230
+fecha: 2023-04-02
+views: 231
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: SIN DATO
+duracion_seg: 57
 formato: short
 fuente: subtitulos-automaticos
 palabras: 161

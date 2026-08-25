@@ -4,9 +4,12 @@ Anécdotas que ya contó y que se pueden reusar en ads, VSLs y nutrición. Las
 historias personales son lo único que un competidor no le puede copiar: son el
 activo más reutilizable del cerebro.
 
-Base: 106 transcripciones de `@Gocholive`. **Todo lo verbatim de acá es ASR** — el
+Base: **133 transcripciones de `@Gocholive`** (ampliada 2026-08-24 con 27 streams
+de trading en vivo, `yt-083`–`yt-110`). **Todo lo verbatim de acá es ASR** — el
 giro de lengua es confiable, las cifras y los años no. Verificar contra video
-antes de imprimir un número.
+antes de imprimir un número. **Y si el verbatim sale de un stream o de un live,
+revisar groserías**: el ASR las marca `[ __ ]` y aparecen en 21 de 24 streams
+(ver `voz.md` §"🚨 Groserías").
 
 ---
 

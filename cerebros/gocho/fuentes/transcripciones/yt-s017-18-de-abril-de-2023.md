@@ -1,13 +1,13 @@
 ---
 n: yt-s017
-url: https://www.youtube.com/shorts/mivOBS208Ck
+url: https://www.youtube.com/watch?v=mivOBS208Ck
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
+fecha: 2023-04-18
 views: 479
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: SIN DATO
+duracion_seg: 51
 formato: short
 fuente: subtitulos-automaticos
 palabras: 137

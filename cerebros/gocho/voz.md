@@ -1,20 +1,53 @@
 # Voz — Gocho
 
-Base YouTube: **106 transcripciones de `@Gocholive`, 682.528 palabras** —
-31 de trading editado (76.015) + 34 lives (552.293) + 15 de la era NFT (50.441)
-+ 26 shorts (3.779). Fuente: subtítulos automáticos de YouTube
+Base YouTube, ampliada 2026-08-24: **133 transcripciones de `@Gocholive`,
+991.640 palabras** (2021-11-08 → 2026-07-24) — 31 de trading editado (73.720)
++ 34 lives de mindset de 2023 (533.916) + **27 streams de trading en vivo
+(331.290)** + 12 de la era NFT (40.481) + 26 shorts (3.680) + 3 sin clasificar
+(8.553). Fuente: subtítulos automáticos de YouTube
 (`fuentes/transcripciones/yt-*.md`).
 
-Base agregada 2026-08-13: **90 reels de `@elgocho`, 18.110 palabras**,
-transcriptos con Deepgram nova-2. Es el tercer registro y está medido aparte, en
-§"El tercer registro: el reel de IG". **Para ads, empezar por ahí.**
+**Los 27 streams son material nuevo y son un tercio del corpus de YouTube.**
+Estaban en `/streams`, que la cosecha anterior no listaba: por eso ninguna
+versión previa de este archivo los tenía. Traen el registro que faltaba —él
+operando en vivo y explicando mientras opera— y están medidos en §"El cuarto
+registro: el stream de trading".
 
-> **Conteo, re-verificado 2026-08-14.** Todas las frecuencias de este archivo se
-> volvieron a correr sobre las transcripciones. Método declarado: coincidencia
-> con **límite de palabra** sobre el cuerpo `## Transcript` (sin el frontmatter
-> ni las secciones `## Notas` / `## Cifras dichas`), con los saltos de línea
-> normalizados a un espacio para las expresiones de más de una palabra. Donde el
-> número que estaba escrito no reprodujo, está corregido al valor real.
+Base agregada 2026-08-13: **90 reels de `@elgocho`, 18.110 palabras**,
+transcriptos con Deepgram nova-2 (17.627 medidas; ver el método de conteo abajo).
+Es el registro de venta y está medido aparte, en §"El tercer registro: el reel de
+IG". **Para ads, empezar por ahí.**
+
+**Conteo, re-verificado 2026-08-24.** Todas las frecuencias se volvieron a
+correr después de arreglar dos errores que falseaban los conteos de gocho más
+que los de ningún otro cerebro: el cuerpo de la transcripción se cortaba en la
+primera "Z" mayúscula del texto —se perdía el **16,6%** del corpus, y un
+archivo perdía el 97% de lo dicho— y el tokenizador tiraba las palabras de una
+letra, entre ellas la `a`. Además se borraron **32 transcripciones duplicadas**
+(el mismo `yt-NNN` guardado con dos títulos distintos), que se estaban contando
+dos veces. Por eso hay números que **bajaron** respecto de la versión anterior
+de este archivo —"vaina" en los lives de 2023: 772 → 713—: el corpus de antes
+contaba piezas de más y leía texto de menos.
+
+Método declarado: coincidencia con **límite de palabra Unicode** (`(?<!\p{L})`,
+no `\b`, que en JavaScript no dispara después de una vocal acentuada y hacía
+dar cero a "tú") sobre el cuerpo `## Transcript` —sin el frontmatter ni las
+secciones `## Notas` / `## Cifras dichas`—, con los saltos de línea normalizados
+a un espacio. **Los dígitos sueltos quedan fuera del denominador**: el ASR los
+destroza y "0 0 0" no es vocabulario. De ahí que las palabras medidas acá sean
+~3% menos que la suma de los campos `palabras:` de los frontmatters (991.640
+contra 1.028.207 en YouTube; 17.627 contra 18.110 en IG). Cuando este archivo
+dice "cero apariciones en 18.110 palabras" el número es el del frontmatter y la
+afirmación no cambia: cero es cero con cualquier denominador.
+
+**Reconciliación con la herramienta (2026-08-25).** `node
+cerebros/scripts/medir-voz.mjs gocho` devuelve **990.716** palabras de YouTube
+(655.824 largos + 331.210 lives + 3.682 shorts) donde acá se lee 991.640. Las
+~924 de diferencia son las **marcas del ASR** (`[Música]`, `[Aplausos]`), que la
+herramienta descarta y el contador de estas tablas no. Los reels dan idéntico
+(17.627). Es el 0,1 % del corpus y no mueve ninguna tasa a un decimal. **La
+herramienta es la fuente de verdad**; las tablas quedan con el denominador con el
+que se corrieron.
 
 **Advertencia sobre la fuente.** Es ASR. Trae puntuación y es sorprendentemente
 bueno, pero se come sílabas y destroza nombres propios: dice "Franklin o Valles"
@@ -24,43 +57,70 @@ dígitos ("$,000" por "$5.000"), y "eltradingclub.com" aparece como
 archivo no se citan como literales sin verificar contra el video.** Los giros de
 lengua sí son confiables: el ASR no inventa un "vaina" que no se dijo.
 
+**Segunda advertencia, de método, y es la que más caro sale ignorar: en este
+canal conviven dos generaciones de ASR.** Los videos recientes vuelven puntuados,
+acentuados y con mayúsculas en cada oración; los viejos vuelven **sin un solo
+signo de puntuación** —tildes sí, comas y puntos no— y cortados por línea de
+subtítulo. Eso no es una diferencia de cómo habla él: es
+una diferencia de cómo lo transcribe YouTube, y arruina cualquier marcador que
+dependa de la transcripción más que de la lengua.
+
+El caso testigo es **"eh"**: 26,5 cada 10.000 palabras en los streams nuevos,
+15,3 en el editado nuevo… y **2,2 en los lives de 2023**, que son los más
+espontáneos y menos guionados de todo el corpus. Leído sin control, el dato dice
+"habla más entrecortado cuando está en vivo, salvo en 2023". Lo que pasa es que
+el ASR viejo se comía las muletillas.
+
+Regla: **antes de creer que un marcador es de registro, comprobar que los dos
+grupos que se comparan estén transcriptos por la misma generación de ASR.** Las
+tablas de este archivo que comparan editado contra stream lo hacen dentro de la
+era nueva, y lo dicen. Las que comparan contra los lives de 2023 valen para
+léxico (`vaina`, `pana`, `usted`) y **no** valen para muletillas ni para nada que
+dependa de puntuación.
+
 ---
 
-## Tres eras del canal — no las mezcles
+## Cuatro eras del canal — no las mezcles
 
-| Era | Videos | Contenido | ¿Sirve para ads? |
-|---|---|---|---|
-| **NFT / cripto** | yt-070 → yt-081 | Axie Infinity, Ronin, NFTs, play-to-earn, MetaTrader 4 | **No.** Otro posicionamiento, otra promesa. Sólo sirve como historia personal. |
-| **Lives "Lunes a las 8 con el Gocho"** | yt-032 → yt-065 | Mindset, propósito, emigrar, ser proveedor, Dios, ayahuasca, abundancia | Para **nutrición**, sí. Para ads de conversión, no. |
-| **Trading editado** | yt-001 → yt-031 | Futuros, fondeo, estrategia, psicotrading, resultados | **Sí. Es la voz de referencia.** |
+| Era | Videos | Cuándo | Contenido | ¿Sirve para ads? |
+|---|---|---|---|---|
+| **NFT / cripto** | `yt-070` → `yt-081` | 2021-11 → 2022-05 | Axie Infinity, Ronin, NFTs, play-to-earn, MetaTrader 4 | **No.** Otro posicionamiento, otra promesa. Sólo sirve como historia personal. |
+| **Lives "Lunes a las 8 con el Gocho"** | `yt-032` → `yt-065` | 2023-04 → 2023-09 | Mindset, propósito, emigrar, ser proveedor, Dios, ayahuasca, abundancia | Para **nutrición**, sí. Para ads de conversión, no. |
+| **Streams de trading en vivo** | `yt-083` → `yt-110` | 2023-06 → 2026-07 | Opera en vivo y explica mientras opera: colchón, stop, fondeo, Topstep, Apex, la sala | Para **prueba y objeciones**, sí. Para guion de ad, no: la mitad tiene groserías. |
+| **Trading editado** | `yt-001` → `yt-031` | 2024-07 → 2026-07 | Futuros, fondeo, estrategia, psicotrading, resultados | **Sí. Es la voz de referencia.** |
 
 Cuando este archivo dice "su voz" sin aclarar, es la de **trading editado**.
+
+Las dos últimas eras corren en paralelo desde 2025: sube editado y transmite en
+vivo la misma semana. No es una evolución, son dos canales de la misma persona.
+
+**Sobre la numeración.** Los números **069**, **082** y **107** no tienen archivo
+en disco: son videos del canal que no tienen subtítulos automáticos. Los huecos son normales.
+Lo que **no** es normal es que un `yt-NNN` cambie de video: el número está fijado
+por id en `fuentes/catalogo-youtube.csv` y se hereda en cada cosecha, justamente
+para que las refs de este archivo no se corran cuando el cliente sube algo nuevo.
 
 ## El dato que más importa: habla en dos registros
 
 Mismo hombre, dos formas de hablar, y confundirlas es el error más grande que se
 puede cometer.
 
-| | Trading editado (76.015 palabras) | Lives (412.420 palabras) |
-|---|---|---|
-| "vaina" | 3 veces en total | **595** |
-| "pana" | ~0 | 236 |
-| "chamo" | ~0 | 153 |
-| "papá" (vocativo) | 5 | 329 |
-| "Dios" | ~0 | 195 |
-
-*(Esta tabla se midió sobre un recorte de los lives de 412.420 palabras. La
-versión re-medida sobre los 34 lives completos —552.293 palabras— está abajo, en
-§"Las tres frecuencias, lado a lado", y **da la misma conclusión con otros
-absolutos**. Si hay que citar un número, citar el de abajo.)*
+Los números están medidos sobre las bases completas y con los **cuatro**
+registros lado a lado en §"Las cuatro frecuencias, lado a lado", acá abajo. Toda
+cifra que vaya a una pieza o a una discusión se cita de ahí. El vocativo
+"papá" es un caso aparte y está en §"Los seis formatos del reel": casi siempre
+lo dice la hija, no él.
 
 **En el contenido editado se autocensura el venezolanismo.** Es una decisión suya,
-sostenida a lo largo de 31 videos. Un ad de Gocho lleno de "chamo" y "vaina"
+sostenida a lo largo de 31 videos, y desde 2026-08-24 está confirmada **con la
+era de ASR controlada**: comparando sólo transcripciones de la generación nueva,
+"vaina" da 0,6 cada 10.000 en el editado contra 7,8 en los streams del mismo
+período. No era un artefacto de transcripción. Un ad de Gocho lleno de "chamo" y "vaina"
 suena a Gocho de live, no a Gocho vendiendo — y va a chocar con la audiencia
 pan-hispana que el propio survey busca.
 
-Regla: **ads y guiones de venta → registro editado. Nutrición y contenido de
-comunidad → registro de live.**
+Regla: **ads y guiones de venta → registro editado o reel. Nutrición y contenido
+de comunidad → registro de live. Prueba, objeciones y procedimiento → streams.**
 
 ## El tercer registro: el reel de IG
 
@@ -68,7 +128,9 @@ Base nueva: **90 reels de `@elgocho` transcriptos con Deepgram nova-2, 18.110
 palabras**, publicados entre **2025-05-23 y 2026-08-04**
 (`fuentes/transcripciones/ig-*.md`, inventario en
 `fuentes/catalogo-instagram.csv`). Las 18.110 palabras son la suma exacta de los
-campos `palabras:` de los 90 frontmatters — la extracción no perdió nada.
+campos `palabras:` de los 90 frontmatters — la extracción no perdió nada. Medidas
+con el tokenizador de `medir-voz.mjs`, que descarta los dígitos sueltos, son
+17.627; las tasas cada 10.000 de este archivo usan ese denominador.
 
 Este es el registro que importa para ads, porque **los ads se filman como
 reels**. Y no se parece a ninguno de los dos anteriores.
@@ -81,33 +143,46 @@ verificar contra el video".
 
 **Caveat de método, importante.** Los corpus no son comparables en puntuación:
 los reels de IG (Deepgram) traen 1.744 comas y 395 signos `¿` en 18.110
-palabras; los lives de YouTube traen **81 comas y cero `¿` en 552.293 palabras**
-porque son subtítulos automáticos sin puntuar. Por eso acá sólo se comparan
+palabras; los lives de 2023 traen **81 comas y cero `¿` en 533.916 palabras**
+porque son subtítulos automáticos sin puntuar (los streams de 2025-26 sí vienen
+puntuados: son de la generación nueva de ASR). Por eso acá sólo se comparan
 **palabras**, nunca patrones que dependan de puntuación, y las estadísticas de
 oración se calculan sólo sobre IG y editado.
 
-### Las tres frecuencias, lado a lado
+### Las cuatro frecuencias, lado a lado
 
-Cada 10.000 palabras. Bases: IG 18.110 · editado 76.015 · lives 552.293
-(re-medidos sobre `yt-032`–`yt-065` completos; el corpus de lives de §"dos
-registros" era de 412.420 palabras y daba **la misma tasa** — "vaina" 14,4 vs
-14,0 cada 10.000 — así que la conclusión vieja sigue valiendo, sólo cambian la
-base y los absolutos).
+Cada 10.000 palabras, con el conteo absoluto adelante. Bases medidas: reel IG
+17.627 · editado 73.720 · **stream 331.290** · lives 2023 533.916. Re-contado
+2026-08-24 sobre el corpus deduplicado y sin el corte en "Z" (ver la caja de
+conteo arriba); por eso los absolutos de los lives bajaron respecto de la versión
+anterior.
 
-| | **Reel IG** | Trading editado | Lives |
-|---|---|---|---|
-| **vaina** | **0** (0,0) | 4 (0,5) | 772 (**14,0**) |
-| **pana** | **0** (0,0) | 0 (0,0) | 256 (4,6) |
-| **chamo** | **0** (0,0) | 5 (0,7) | 165 (3,0) |
-| **Dios** | 1 (0,6) | 0 (0,0) | 247 (4,5) |
-| venezolano/Venezuela | 2 (1,1) | 27 (3,6) | 333 (6,0) |
-| plata (por dinero) | 1 (0,6) | 2 (0,3) | 256 (4,6) |
+| | **Reel IG** | Trading editado | **Stream** | Lives 2023 |
+|---|---|---|---|---|
+| **vaina** | **0** (0,0) | 4 (0,5) | 243 (**7,3**) | 713 (**13,4**) |
+| **pana** | **0** (0,0) | 0 (0,0) | 81 (2,4) | 191 (3,6) |
+| **chamo** | **0** (0,0) | 4 (0,5) | 33 (1,0) | 122 (2,3) |
+| **Dios** | 1 (0,6) | 0 (0,0) | 102 (3,1) | 247 (4,6) |
+| venezolano/Venezuela | 2 (1,1) | 27 (3,7) | 97 (2,9) | 332 (6,2) |
+| plata (por dinero) | 1 (0,6) | 2 (0,3) | 245 (**7,4**) | 256 (4,8) |
 
-Contado con límite de palabra (`\bvainas?\b`, no substring: "vainita" y
-"chamito" no cuentan). **Los 15 lives `yt-066`–`yt-081` (50.441 palabras) quedan
-fuera de los dos registros** y nadie los clasificó todavía — ahí "vaina" cae a
-1,2 cada 10.000, o sea que no son el mismo material que `yt-032`–`yt-065`. SIN
-DATO qué son.
+Contado con límite de palabra Unicode (`vainas?`, no substring: "vainita" y
+"chamito" no cuentan).
+
+**El venezolanismo cae por la mitad entre 2023 y 2026 y sigue siendo enorme
+comparado con el editado.** "Vaina" pasa de 13,4 en los lives de mindset a 7,3 en
+los streams de trading, y de ahí a 0,5 en el editado y a 0 en el reel. La escala
+es la misma en los cuatro registros: **cuanto más vendedor es el formato, menos
+venezolano habla**. El reel es el extremo.
+
+**"Plata" es la excepción y tiene sentido.** Es el único marcador donde el
+stream supera a los lives (7,4 contra 4,8): está operando, hablando de dinero
+todo el tiempo. Es tema, no dialecto.
+
+**Las eras que quedan fuera de los cuatro registros**: `yt-070`–`yt-081` (12
+piezas, 40.481 palabras) es la era NFT, con "vaina" en 1,5 — no habla como en los
+lives ni como en el editado, es otro personaje y no se usa. `yt-066`–`yt-068`
+(3 piezas, 8.553 palabras, 2022-12 → 2023-02) sigue **SIN CLASIFICAR**.
 
 Las dos apariciones sueltas de "Dios" y "plata" en IG no son uso suyo: el "Dios"
 es *"para ser nivel a Dios"* (ig-078), ASR roto, y la "plata" se la dice **la
@@ -127,10 +202,10 @@ que se va a filmar.
 
 ### El "usted" desaparece en el reel
 
-| | Reel IG | Trading editado | Lives |
-|---|---|---|---|
-| **usted** | **3** (1,7) | 544 (71,6) | 3.385 (61,3) |
-| **tú** | 145 (**80,1**) | 476 (62,6) | 3.317 (60,1) |
+| | Reel IG | Trading editado | Stream | Lives 2023 |
+|---|---|---|---|---|
+| **usted** | **3** (1,7) | 544 (73,8) | 2.558 (77,2) | 3.385 (63,4) |
+| **tú** | 145 (**82,3**) | 476 (64,6) | 1.757 (53,0) | 3.317 (62,1) |
 
 Y los 3 "usted" del corpus IG **no los dice él**: se los dicen a él.
 
@@ -141,6 +216,11 @@ Y los 3 "usted" del corpus IG **no los dice él**: se los dicen a él.
 que la sección de abajo llama "su marca registrada" es real en YouTube y **no
 existe en IG**. Si el guion es un reel, va todo en "tú". Si el guion es un video
 largo o un VSL, vale la mezcla.
+
+Y la mezcla es **estable en todo YouTube**: 73,8 / 64,6 en el editado, 77,2 /
+53,0 en el stream, 63,4 / 62,1 en los lives de 2023. Cambian el tema, el
+dialecto y las groserías; el trato no. Lo único que lo apaga es la cámara de
+reel.
 
 ### Léxico del reel, con frecuencias reales
 
@@ -193,7 +273,7 @@ el editado (0,3). Es cómo el padre le contesta a la hija.
 | Reto contrarreloj / tutorial de pasos | 4 | ig-021, ig-028, ig-051, ig-091 |
 
 **El formato dominante es un diálogo actuado con su hija**, y no aparece ni una
-sola vez en las 682.528 palabras de YouTube. Es material nuevo, no una variante.
+sola vez en las 991.640 palabras de YouTube —contando los 27 streams nuevos. Es material nuevo, no una variante.
 La hija se llama **Cami / Camila** (70 menciones, 38,7/10k, contra 0 en el
 editado). También aparecen **Kiara** (2) y una tercera voz infantil.
 
@@ -412,11 +492,170 @@ comentarios**. Alcance y comentario no son la misma métrica; ver
   "Tradingville" (TradingView), "chwain / stading / Twain" (trading) y "PAEle"
   (pádel). Verificar cualquier nombre antes de publicarlo.
 
+## El cuarto registro: el stream de trading (`yt-083`–`yt-110`)
+
+Base: **27 streams, 331.290 palabras medidas**, publicados entre **2023-06-07 y
+2026-07-24** (`fuentes/transcripciones/yt-083*` … `yt-110*`; los 24 de
+`yt-083`–`yt-106` son de 2025-09 en adelante). Es **un tercio de todo el corpus
+de YouTube** y no estaba en ninguna versión anterior de este archivo: la cosecha
+listaba `/videos` y `/shorts`, y estos viven en `/streams`.
+
+**Qué es.** Él con el gráfico en pantalla, operando en vivo y explicando lo que
+hace mientras lo hace, con la sala y el chat de YouTube al lado. **No es** el
+live de mindset de 2023 ("Lunes a las 8 con el Gocho"): ahí no había gráfico,
+había charla sobre propósito, pareja, Dios y emigrar. Los dos son "live" y
+comparten el dialecto, pero el tema, las muletillas y el vocabulario cambian.
+
+Para qué sirve: es **la única fuente donde se lo ve trabajar**. Todo lo que en el
+editado es promesa ("mi sistema", "gestión de riesgo"), acá está el
+procedimiento en voz alta. Es la mina de prueba y de objeción, no de guion de
+ad.
+
+### Las muletillas de comprobación — el tic que delata al stream
+
+Cada 10.000 palabras, **con la era de ASR controlada**: los 29 editados y los 24
+streams de acá vienen todos de la generación nueva de subtítulos (ver la
+advertencia de arriba), así que la comparación es válida. Entre corchetes, en
+cuántas piezas del grupo aparece — un marcador que está en 24 de 24 es un rasgo,
+uno que está en 3 de 29 es una casualidad.
+
+| Cada 10.000 palabras | Editado (29 · 70.375) | **Stream (24 · 311.150)** | Reel IG (90 · 17.627) |
+|---|---:|---:|---:|
+| **me entiendes** | 0,6 [3/29] | **8,5 [24/24]** | 0,0 [0/90] |
+| **entiendes** | 2,0 [7/29] | **10,0 [24/24]** | 0,0 [0/90] |
+| **ojo** | 5,4 [16/29] | **14,7 [24/24]** | 2,3 [3/90] |
+| **ya va** | 1,6 [4/29] | **3,4 [24/24]** | 2,8 [3/90] |
+| **mira** | 12,4 [20/29] | **20,5 [24/24]** | 15,9 [19/90] |
+| **vaina** | 0,6 [3/29] | **7,8 [24/24]** | 0,0 [0/90] |
+| **pana** | 0,0 [0/29] | 2,6 [21/24] | 0,0 [0/90] |
+| usted | 75,3 [25/29] | 76,2 [24/24] | 1,7 [2/90] |
+| tú | 63,9 [25/29] | 52,9 [24/24] | 82,3 [69/90] |
+| eh | 15,3 [20/29] | 26,5 [24/24] | 0,0 [0/90] |
+| **groserías `[ __ ]`** | 2,1 [2/29] | **47,6 [21/24]** | 0,0 [0/90] |
+
+Lo que dice esta tabla:
+
+- **"¿Me entiendes?" es el tic del stream.** 14× más frecuente que en el editado
+  y presente en los 24. No es una muletilla vacía: es un **chequeo de
+  comprensión** — está explicando un gráfico a gente que puede responderle por
+  chat, y frena a preguntar si lo siguen. En un ad no va: no hay nadie del otro
+  lado.
+- **"Ojo" es su marca de advertencia.** 14,7 cada 10.000, en los 24. Cuando va a
+  decir el riesgo, abre con "ojo". Ese sí es reutilizable en cualquier registro,
+  y es la forma más suya de meter un disclaimer sin sonar a legal.
+- **El "usted" no se mueve.** 75,3 en el editado y 76,2 en el stream: idéntico.
+  El "usted/tú" mezclado no es una decisión de formato, es cómo habla. Lo único
+  que lo apaga es el reel (1,7). Ver §"El 'usted' desaparece en el reel".
+- **El venezolanismo sí se mueve, y mucho.** "Vaina" 13× el editado, "pana" de
+  cero a 2,6. La autocensura del editado está confirmada con la era de ASR
+  controlada: no era un artefacto de transcripción.
+
+### 🚨 Groserías: 21 de los 24 streams. Regla dura.
+
+`[ __ ]` es como YouTube marca una palabra censurada en los subtítulos
+automáticos. En los streams aparece **47,6 cada 10.000 palabras** — y en los
+lives de mindset de 2023, **76,6**, en los 34. En el editado 2,1, en el reel 0.
+
+**Ningún verbatim de un stream o de un live sale a una pieza sin revisar el
+alrededor por `[ __ ]`.** Un corte de 20 segundos que en el texto se lee limpio
+puede tener una puteada dos palabras después del punto de corte. Esto no es
+pudor: es que el registro público de Gocho (editado y reel) **no putea**, y una
+pieza que lo haga no suena a él, suena a otro.
+
+### Léxico operativo — lo que sólo existe acá
+
+Del ranking por ratio contra el resto del corpus (`medir-voz.mjs`):
+
+| Palabra | Veces | Por 10k acá | Ratio vs el resto |
+|---|---:|---:|---:|
+| colchón | 363 | 11,0 | 13,8× |
+| entiendes | 315 | 9,51 | 8,48× |
+| 50k | 141 | 4,26 | 8,18× |
+| programa | 213 | 6,43 | 7,77× |
+| trade | 375 | 11,3 | 7,76× |
+| stop | 289 | 8,73 | 7,68× |
+| apes *(Apex)* | 114 | 3,44 | 7,09× |
+| alumno | 121 | 3,65 | 6,68× |
+| ojo | 470 | 14,2 | 6,49× |
+| tostep / toste *(Topstep)* | 264 | 7,97 | ~5,5× |
+| sala | 220 | 6,64 | 5,94× |
+| retiró / retiro / retirado | 448 | 13,5 | ~5× |
+| pum | 231 | 6,97 | 5,40× |
+| dropdown | 90 | 2,72 | 5,30× |
+
+Y los giros de tres palabras propios del registro: «en vivo en» (114), «acción
+del precio» (108), «en tiempo real» (98), «vamos a ver» (275), «clic clic clic»
+(69), «nada que hacer» (82), «una para arriba» (47).
+
+**"Colchón" es el hallazgo léxico.** 363 veces, 13,8× el resto del corpus: es su
+palabra para el margen que se deja antes de arriesgar — el concepto entero de
+gestión de riesgo dicho en una palabra de casa. No hay que traducirlo a
+"drawdown" ni a "buffer"; el término suyo es ése.
+
+**Topstep y Apex están en todos lados y el ASR los destroza** ("tostep", "toste",
+"apes"). Son las mesas de fondeo con las que trabaja. Cualquier mención de marca
+en una pieza se verifica contra el video, siempre.
+
+### El molde de apertura del stream
+
+Hay molde, y se repite en las 15 piezas más vistas. Cuatro movimientos, en este
+orden:
+
+1. **Saludo repetido, sin contenido, mientras espera que entre gente.**
+   > «buenas buenas buenas buenas cómo cómo me les va buenos días» (`yt-106`)
+   > «buenas buenos días muchachones buenos días sala cómo amanecen cómo están
+   > todos» (`yt-084`)
+   > «buenas buenas buenas buenas muy buenas noches una vez más estamos por aquí
+   > en stream cómo están todos» (`yt-098`)
+2. **Chequeo técnico en voz alta**, sin disimularlo. Es lo contrario de la
+   producción: el problema técnico se dice.
+   > «vamos a ver si hoy puedo tener web internet porque siempre últimamente no
+   > me estaba saliendo» (`yt-092`)
+   > «están escuchando, escriban en el chat ahí a ver si me escuchan por favor»
+   > (`yt-087` — el ASR escribió "críban")
+   > «será que ya está bien se puede meter en youtube si estoy en vivo yo creo
+   > que sí» (`yt-109`)
+3. **Nombra a los que van llegando.**
+   > «bueno vamos a ver se van conectando ahí no a la sala cómo están muchachos»
+   > (`yt-088`)
+4. **Ancla el día**, porque el stream es una cita fija.
+   > «comenzando comenzando comenzando como todos los jueves» (`yt-102`)
+
+Cierra con despedida corta y bendición:
+> «feliz día muchachos dios me los bendiga a todos chao muchachos» (`yt-089`)
+> «ahí nos vemos ciao» (`yt-106`) · «nos vemos en un próximo video» (`yt-109`)
+
+**Para qué sirve esto en un ad: para nada, y saberlo vale.** Los primeros 60-90
+segundos de cada stream son saludo y prueba de sonido. Cualquiera que vaya a
+cortar clips de acá tiene que arrancar después del minuto dos.
+
+### Lo que el stream aporta a la oferta
+
+Está desarrollado en `oferta.md`; acá va lo que es de voz.
+
+- **Nombra el programa de tres formas distintas**: «el programa del Gocho»
+  (`yt-084`, `yt-087`), «el de 6 meses» (`yt-087`) y una sola vez «el programa de
+  CER Trader» (`yt-106`) — que el ASR probablemente esté escribiendo mal y
+  **queda SIN CONFIRMAR** hasta verlo en el video.
+- **Contesta la objeción de la estafa pasándole el micrófono a los alumnos.** No
+  se defiende: convoca testigos en vivo.
+  > «aquí están mis alumnos. Sí, mis alumnos están aquí en vivo. Les puedes
+  > preguntar a ellos lo que tú quieras por chat. ¿Esto es una estafa, es un
+  > estafador o qué, si funciona, no funciona, si hacen dinero, no hacen
+  > dinero?» (`yt-089` — recortado: en el medio el ASR mete un nombre del chat)
+- **Pone la objeción en la boca del cliente antes de contestarla**, con la
+  puteada incluida: «el trading es una estafa» aparece así, en primera persona
+  del que perdió, en `yt-084`, `yt-087`, `yt-089` y `yt-090`. Es el mejor
+  material de voz-del-cliente del cerebro.
+- **Avisa que lo suplantan.** Alguien roba los números de teléfono de los
+  interesados y escribe haciéndose pasar por él (`yt-084`). Es un ángulo de
+  contenido y un riesgo operativo a la vez.
+
 ## Mezcla "usted" y "tú" en la misma frase
 
 No es un error del ASR: es su marca registrada. Cada 10.000 palabras del
-contenido editado usa **78 veces "usted"** y **59 veces "tú"**, y salta de uno al
-otro sin transición.
+contenido editado usa **73,8 veces "usted"** y **64,6 veces "tú"** (544 y 476 en
+73.720 palabras, re-contado 2026-08-24), y salta de uno al otro sin transición.
 
 > "Así que si **usted** quiere saber cómo funciona mi sistema de trade, cuál es
 > mi pérdida consecutiva, aquí abajo sí hay un link. Dale click y ahí está toda
@@ -431,28 +670,41 @@ alguien mayor o desconocido, mezclada con la confianza del "tú". Ese roce es é
 
 ## Léxico propio, con frecuencias reales
 
-Del contenido editado (31 videos, 76.015 palabras). Re-contado 2026-08-14; la
-columna dice con qué forma se contó, porque el criterio cambia el número (p. ej.
-`fondeo` 124 contando "fondeo/fondeos", 102 contando sólo "fondeo"):
+Del contenido editado (31 videos, **73.720 palabras medidas**). Re-contado
+2026-08-24 sobre el corpus deduplicado. Tres columnas de número: **veces**, la
+tasa **cada 10.000** y **en cuántos de los 31 videos aparece** — esta última es la
+que separa un rasgo de voz de un tema del mes. La forma contada va aparte porque
+el criterio cambia el número (`fondeo` 124 contando "fondeo/fondeos", 102
+contando sólo "fondeo").
 
-| Expresión | Veces | Forma contada | Para qué la usa |
-|---|---|---|---|
-| bueno | 189 | palabra exacta | arranque de frase, respiro |
-| okay / ok | 156 | palabra exacta | cierre de idea + apertura de la siguiente |
-| **fondeo** | 124 | fondeo + fondeos | el mecanismo central |
-| realmente | 104 | palabra exacta | énfasis de veracidad ("realmente no necesitas un indicador") |
-| **mira** | 99 | mira + mirá/miras | te trae la atención antes de mostrar pantalla |
-| o sea | 64 | expresión | reformula lo que acaba de decir |
-| **vamos a ver** | 61 | expresión | promesa de demostración, casi siempre en los primeros 10 segundos |
-| riesgo | 58 | riesgo + riesgos | |
-| **copiadora** | 56 | copiadora/-s | copiar operaciones a varias cuentas fondeadas |
-| evaluación | 56 | evaluación + evaluaciones (28 en singular) | la prueba de la empresa de fondeo |
-| fácil / sencillo | 47 / 23 | palabra exacta | desactiva la objeción de dificultad |
-| **mis alumnos** | 40 | expresión | su prueba social principal |
-| consistencia | 37 | palabra exacta | el deseo del avatar, con su palabra |
-| la mayoría | 34 | expresión | siempre para contrastarse con ella |
-| **fíjate** | 31 | palabra exacta | señala algo en pantalla |
-| señores | 14 | palabra exacta | vocativo de apertura |
+| Expresión | Veces | /10k | En n de 31 | Forma contada | Para qué la usa |
+|---|---:|---:|---:|---|---|
+| bueno | 189 | 25,6 | **27** | palabra exacta | arranque de frase, respiro |
+| okay / ok | 158 | 21,4 | **25** | palabra exacta | cierre de idea + apertura de la siguiente |
+| **fondeo** | 124 | 16,8 | 22 | fondeo + fondeos | el mecanismo central |
+| realmente | 104 | 14,1 | **25** | palabra exacta | énfasis de veracidad ("realmente no necesitas un indicador") |
+| **mira** | 99 | 13,4 | 21 | mira + mirá/miras | te trae la atención antes de mostrar pantalla |
+| riesgo | 57 | 7,7 | 18 | riesgo + riesgos | |
+| evaluación | 56 | 7,6 | 14 | evaluación + evaluaciones | la prueba de la empresa de fondeo |
+| **copiadora** | 55 | 7,5 | 13 | copiadora/-s | copiar operaciones a varias cuentas fondeadas |
+| **vamos a ver** | 51 | 6,9 | 17 | expresión | promesa de demostración, casi siempre en los primeros 10 segundos |
+| fácil / sencillo | 47 / 23 | 6,4 / 3,1 | 18 / 13 | palabra exacta | desactiva la objeción de dificultad |
+| o sea | 43 | 5,8 | 16 | expresión | reformula lo que acaba de decir |
+| **mis alumnos** | 40 | 5,4 | 17 | expresión | su prueba social principal |
+| consistencia | 37 | 5,0 | **8** | palabra exacta | el deseo del avatar, con su palabra |
+| la mayoría | 34 | 4,6 | 15 | expresión | siempre para contrastarse con ella |
+| **fíjate** | 31 | 4,2 | 14 | palabra exacta | señala algo en pantalla |
+| señores | 14 | 1,9 | 10 | palabra exacta | vocativo de apertura |
+
+**Leer la columna de la derecha antes que la del medio.** "Consistencia" aparece
+37 veces pero **sólo en 8 de los 31 videos**: es un tema que le da por hablar,
+no una palabra que le sale sola. "Bueno", "okay" y "realmente" están en 25-27 de
+31: ésas sí son la voz. Un guion que use "consistencia" está copiando un video;
+uno que use "bueno / okay / realmente / mira" está copiando la voz.
+
+Dos cifras bajaron respecto del conteo de 2026-08-14 —"o sea" 64 → 43 y "vamos a
+ver" 61 → 51—: se recontaron sobre el corpus sin las 32 transcripciones
+duplicadas. Las demás reprodujeron.
 
 Vocabulario técnico que sí usa y la audiencia entiende: **fondeo, cuenta
 fondeada, evaluación, copiadora, drawdown, contratos, volatilidad, intradía,
@@ -537,8 +789,12 @@ Lo que más delata una imitación mal hecha.
 La mitad del trabajo de una voz es la lista de prohibiciones.
 
 - **Nunca habla como LinkedIn.** Cero "sinergia", "mindset ganador", "escalar tu
-  negocio", "desbloquear tu potencial", "hackear". Nada de eso aparece en las
-  682.528 palabras de YouTube ni en las 18.110 de IG.
+  negocio", "desbloquear tu potencial" en las 991.640 palabras de YouTube ni en
+  las 18.110 de IG. **Corrección 2026-08-24**: "hackear" sí aparece, 5 veces, y
+  **todas en los lives de mindset de 2023** — "tienes que hackear la mente"
+  (`yt-032`, `yt-035`) es suyo y lo dice en serio, y en `yt-038` se lo devuelve
+  irónicamente a los gurús. Cero en editado, en stream y en reel. O sea: la
+  prohibición vale para venta, no para el registro de comunidad.
 - **Nunca se pone en vendedor de códigos de afiliado.** Es explícito:
   > "Así que no es que te la estoy diciendo, que aquí abajo está mi código, no,
   > nada de eso." (yt-022)
@@ -549,8 +805,14 @@ La mitad del trabajo de una voz es la lista de prohibiciones.
   todo pasa de la misma manera". Esto además es lo que lo mantiene del lado
   correcto del compliance — ver `oferta.md`.
 - **No usa "vaina", "chamo", "pana" en contenido de venta.** Ver registros arriba.
-- **No dice "curso".** Dice "programa", "mi academia", "mi sistema", "que yo sea
-  tu mentor".
+- **Prefiere "programa" a "curso", pero "curso" no está prohibido.** Corregido
+  2026-08-24 contra el corpus ampliado: en el editado dice "programa" 30 veces
+  (4,1 cada 10.000) contra "curso" 6 (0,8) — cinco a uno—, y en los streams 221
+  contra 113. Donde sí dice "curso" sin problema es **defendiéndose**: «vendo y
+  vendo en promedio unos 2.5 millones de dólares al año, amigo. Gracias. **Me va
+  muy bien vendiendo curso**» (`yt-084`, contestándole a un hater). La regla real
+  es: **cuando ofrece, dice "programa", "mi sistema", "que yo sea tu mentor";
+  "curso" es la palabra del otro, y la usa cuando repite lo que le dicen.**
 - **No dice "invertir" cuando habla de trading.** Lo separa: "te estoy hablando de
   porcentajes reales que se pueden hacer **especulando**, pues no estamos
   invirtiendo en bolsa" (yt-003). Distinción legal y de voz a la vez.
@@ -577,6 +839,11 @@ Para nutrición en registro de comunidad, cualquiera de los lives de
   `biblioteca/hooks.md` §3c. El catálogo de IG tiene hoy **199 posts de
   `@elgocho`** (2025-05-23 → 2026-08-12), así que **quedan 109 sin transcribir**;
   los 90 hechos son los de más views y cubren 2025-05-23 → 2026-08-04.
+- ~~Los lives de trading en vivo~~ — **hecho** (2026-08-24): 27 streams,
+  331.290 palabras, medidos en §"El cuarto registro". Con eso el corpus de
+  YouTube pasó de 106 a 133 transcripciones.
 - **El hook visual de los primeros 3 segundos.** De los reels sólo hay audio.
 - **El VSL.** 40 minutos de él vendiendo seguido. La mejor fuente que falta.
+- **Clasificar `yt-066`–`yt-068`** (3 piezas, 8.553 palabras): no son lives de
+  mindset ni era NFT, y hoy no entran en ningún registro.
 - Verificar contra video: los años de oficio (8 vs 9) y todas las cifras.

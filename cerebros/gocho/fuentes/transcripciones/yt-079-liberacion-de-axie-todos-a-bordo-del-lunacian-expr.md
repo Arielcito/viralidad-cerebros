@@ -3,11 +3,11 @@ n: yt-079
 url: https://www.youtube.com/watch?v=7_Oc9YDErp0
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2022-01-21
+views: 493
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 1432
+duracion_seg: 1431
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 2954

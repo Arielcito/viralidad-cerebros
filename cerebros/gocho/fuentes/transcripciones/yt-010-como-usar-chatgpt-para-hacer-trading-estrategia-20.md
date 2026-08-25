@@ -3,11 +3,11 @@ n: yt-010
 url: https://www.youtube.com/watch?v=hgp6c5ghuig
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2026-04-19
+views: 857
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 664
+duracion_seg: 663
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 2017

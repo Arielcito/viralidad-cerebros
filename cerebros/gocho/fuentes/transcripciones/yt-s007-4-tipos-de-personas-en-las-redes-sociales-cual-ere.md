@@ -1,13 +1,13 @@
 ---
 n: yt-s007
-url: https://www.youtube.com/shorts/EP2bgJcsU8M
+url: https://www.youtube.com/watch?v=EP2bgJcsU8M
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2023-05-22
+views: 472
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 55
 formato: short
 fuente: subtitulos-automaticos
 palabras: 142
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-4 tipos de personas en las redes sociales ¿cual eres tú? 
+4 tipos de personas en las redes sociales ¿cual eres tú? | Sigueme en @gocholive #motivacion
 
 ## Transcript
 

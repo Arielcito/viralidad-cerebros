@@ -3,11 +3,11 @@ n: yt-050
 url: https://www.youtube.com/watch?v=pPpfc_Kllms
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views:  Gocholive
+fecha: 2023-08-14
+views: 447
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 7175
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 17665
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-El hombre es proveedor - la mujer es la que impulsa al hombre 
+El hombre es proveedor - la mujer es la que impulsa al hombre | Mis Pensamientos 💭 #16 | Gocholive
 
 ## Transcript
 

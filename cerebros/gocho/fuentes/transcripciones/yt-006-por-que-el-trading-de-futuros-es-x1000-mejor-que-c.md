@@ -3,8 +3,8 @@ n: yt-006
 url: https://www.youtube.com/watch?v=_UacdgYC10s
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2026-06-11
+views: 388
 likes: SIN DATO
 comments: SIN DATO
 duracion_seg: 720

@@ -3,11 +3,11 @@ n: yt-004
 url: https://www.youtube.com/watch?v=zu3nhZCJGrk
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2026-06-22
+views: 1457
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 1345
+duracion_seg: 1344
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 3954

@@ -1,9 +1,24 @@
 # Voz — Víctor Heras
 
-Base: **80 reels de Instagram transcriptos, 17.705 palabras.** Fuente: audio de IG
-pasado por Deepgram nova-2 (`fuentes/transcripciones/`). El catálogo tiene 240
-reels cosechados (`fuentes/catalogo-instagram.csv`, 2022-09-08 → 2026-08-12); los
-80 transcriptos son los de más views.
+Base: **259 piezas transcriptas, 1.010.499 palabras medidas** (re-medido el
+2026-08-24, ver §"Cómo se contó esto"), en dos fuentes que se leen por separado
+porque son dos cosas distintas.
+
+| Fuente | Piezas | Palabras | Qué es |
+|---|---:|---:|---|
+| YouTube `@victorherasmedia` | 179 | 993.395 | **Cómo habla.** Clases de 20-60 min, subtítulos automáticos de YouTube. Cosechado el 2026-08-24. |
+| Instagram — 4 cuentas | 80 | 17.104 | **Cómo escribe para cámara.** Reels de ≤110 s, audio por Deepgram nova-2. El catálogo tiene 240 cosechados (`fuentes/catalogo-instagram.csv`, 2022-09-08 → 2026-08-12); los 80 transcriptos son los de más views. |
+
+De esas 993.395 palabras de YouTube, **39.241 son de la serie `De 0 a 100.000`
+(`yt-021`–`yt-029`), donde hablan también los cuatro participantes.** Están
+marcadas `formato: serie-reto` y quedan fuera de todo conteo de voz: sirven para
+ver cómo pregunta y cómo escucha, no para medir sus muletillas.
+
+Hasta el 2026-08-24 este archivo estaba escrito **sólo sobre los 80 reels** — el
+1,7 % de lo que hay hoy. Un reel de 30 segundos es un guion escrito y memorizado:
+no dice cómo habla alguien, dice qué decidió decir. Todo lo marcado **registro
+largo** salió de la cosecha de YouTube y es nuevo; el resto es la medición vieja
+sobre reels, que sigue valiendo exactamente para lo que valía: escribir reels.
 
 **Advertencia sobre la fuente.** Es ASR. Los giros de lengua son confiables — el
 ASR no inventa un "vete por la sombra" que no se dijo. **Las cifras y los nombres
@@ -29,8 +44,26 @@ views, likes y comments se usan como dato duro.
 
 ## Cómo se contó esto (leer antes de discutir un número)
 
-Tres decisiones de método, porque cambian los resultados y ya hicieron equivocarse
-a una versión anterior de este archivo:
+**Todas las frecuencias del registro largo se volvieron a correr el 2026-08-24**,
+después de arreglar un error que cortaba el cuerpo de cada transcripción en la
+primera "Z" mayúscula del texto. El corpus de YouTube pasó de 898.655 palabras
+leídas a **993.395**: se estaba midiendo sobre el 90 % del material, y la pérdida
+no era pareja —había archivos enteros casi vacíos—, así que no alcanzaba con
+reescalar los números viejos. Cualquier cifra de este archivo anterior a esa
+fecha está superada por la de acá.
+
+**Reconciliación con la herramienta (2026-08-25).** `node
+cerebros/scripts/medir-voz.mjs victor` devuelve **992.450** palabras de YouTube
+(953.342 de una voz + 39.108 de la serie con invitados) y **1.009.554** de total,
+donde acá se lee 993.395 y 1.010.499. Las ~945 palabras de diferencia son las
+**marcas del ASR** (`[Música]`, `[Aplausos]`), que la herramienta descarta y el
+contador de estas tablas no. Los reels dan idéntico (17.104), que es lo que
+confirma el origen. Es el 0,1 % del corpus y no mueve ninguna tasa por 10.000 a
+un decimal. **La herramienta es la fuente de verdad**; las tablas quedan con el
+denominador con el que se corrieron.
+
+Cuatro decisiones de método, porque cambian los resultados y ya hicieron
+equivocarse a una versión anterior de este archivo:
 
 1. **Todos los conteos son sobre el bloque `## Transcript` solamente.** Grepear el
    `.md` entero **duplica el hook**, porque `## Hook (0-3s)` es una copia literal
@@ -42,16 +75,241 @@ a una versión anterior de este archivo:
    entre cuentas es comparar tamaños de muestra.
 3. **Se cuentan tokens, no reels, salvo que se diga.** El formato de las tablas es
    `total / en cuántos reels aparece (por 10.000)`.
+4. **Antes de contar, los saltos de línea se aplastan a un espacio y se usa
+   límite de palabra Unicode** (`(?<!\p{L})…(?!\p{L})`, no `\b`, que en
+   JavaScript no dispara después de vocal acentuada). Las dos cosas importan: las
+   transcripciones están plegadas a 80 columnas, así que un `grep "por ejemplo"`
+   crudo **se pierde una de cada cuatro apariciones** —las que quedaron partidas
+   en dos renglones— y por eso las tablas del registro largo subieron tanto
+   respecto de la versión anterior. Los dígitos sueltos quedan fuera del
+   denominador: el ASR los destroza y "0 0 0" no es vocabulario.
 
-El script está en el scratchpad de la sesión; se reproduce con
-`node cerebros/scripts/…` o con greps sobre el bloque de transcript. Las bases
-verificadas: mi tokenizador da 17.719 palabras y la suma de los campos
-`palabras:` de los 80 frontmatters da 17.705 — 0,08 % de diferencia, así que la
-extracción no perdió nada.
+Las bases verificadas: las palabras **medidas** son 954.154 en los 170 videos
+largos, 39.241 en los 9 de la serie y 17.104 en los 80 reels; la suma de los
+campos `palabras:` de los frontmatters da 1.029.861 contra 1.010.499 medidas
+—1,9 % de diferencia, que son los dígitos sueltos que el tokenizador tira—, así
+que la extracción no perdió nada.
+
+⚠️ **Las tablas por cuenta de Instagram (HM · VHE-A · VHE-B) están contadas con
+el tokenizador viejo**, que sí incluye dígitos: 17.719 palabras en total contra
+las 17.104 de acá. Es un 3,6 % de diferencia y no cambia ninguna lectura, pero no
+se mezclan las dos escalas en una misma tabla.
 
 ---
 
-## Cuatro corpus — no los mezcles
+## El registro largo: cómo habla cuando tiene 40 minutos
+
+Es el 94 % del corpus y hasta ayer no existía en este archivo. Es el registro que
+hace falta para **VSL, webinar, email de nutrición, guion de clase y cualquier
+pieza de más de dos minutos**; el reel no sirve de modelo para eso porque es un
+texto escrito, no habla.
+
+### Lo primero que se ve: en el reel no hay ni una muletilla
+
+La comparación más útil del corpus. Frecuencia cada 10.000 palabras, y al lado
+**en cuántas piezas aparece** — que es la columna que separa un rasgo de voz de un
+tema del mes: un marcador que corre alto pero vive en 8 piezas es una racha; uno
+que está en 157 de 170 es cómo habla.
+
+| Marcador | Largo · 954.154 pal. | En n de 170 | Reel · 17.104 pal. | En n de 80 |
+|---|---:|---:|---:|---:|
+| «por ejemplo» | **26,7** | 157 | 14,0 | 17 |
+| «o sea» | **14,5** | 150 | 5,3 | 9 |
+| «a ver» | 9,1 | 145 | 7,6 | 7 |
+| «escucha / escúchame» | 6,8 | 109 | **10,5** | 13 |
+| «vale» | 6,1 | 107 | 6,4 | 9 |
+| «obviamente» | **4,0** | 117 | 0,6 | 1 |
+| «fíjate» | 3,8 | 93 | 7,0 | 10 |
+| «básicamente» | **3,5** | 88 | **0,0** | **0** |
+| «ok / okay» | 3,5 | 73 | **15,8** | 18 |
+| «eh» | 3,3 | 54 | **0,0** | **0** |
+| «mira» | 2,5 | 93 | 7,0 | 10 |
+| «literalmente» | 2,2 | 89 | 0,6 | 1 |
+
+Las filas en negrita son la regla:
+
+- **«básicamente» y «eh» aparecen 0 veces en 17.104 palabras de reel** y 3,5 y 3,3
+  cada 10.000 en el registro largo. No es que hable distinto: es que el reel está
+  escrito y editado, y ahí se cae todo lo que suena a duda. **Un ad con «eh» o
+  «básicamente» suena a toma sin editar**, aunque sean palabras suyas.
+- **Al revés: «ok» corre 15,8 en el reel y 3,5 en el largo**, y está en 18 de 80
+  reels contra 73 de 170 videos. En el reel es el clic que separa una idea de la
+  siguiente, no un titubeo. Un email de nutrición lleno de «ok» suena a reel
+  transcripto.
+- **«o sea» casi al triple en el largo** (14,5 contra 5,3) y en 150 de los 170
+  videos: cuando no puede editar, reformula en voz alta. Eso es lo que hay que
+  imitar en una VSL — decir la cosa, y decirla otra vez más simple.
+- **«escucha / escúchame» es la única muletilla que el reel usa más** (10,5 contra
+  6,8). En el reel es un manotazo de atención en el segundo 2; en una clase de 40
+  minutos no hace falta pedir atención, ya la tiene.
+
+⚠️ **Antes de creer una muletilla, mirar de qué generación de ASR viene.** En este
+canal conviven dos: los 130 videos de `yt-001`–`yt-139` vienen puntuados (71
+signos cada 1.000 palabras) y los 40 viejos de `yt-140`–`yt-179` vienen **sin un
+solo signo** (2,2). El caso testigo es «eh»: 3,5 cada 10.000 en la era actual
+contra 1,0 en la vieja. Eso **no** es que antes hablara más limpio — es que el
+reconocedor viejo no escribía las dudas. La comparación honesta se hace siempre
+entre grupos transcriptos por la misma generación.
+
+### Argumenta con ejemplos, no con razones
+
+**«por ejemplo» aparece 2.549 veces en 157 de los 170 videos largos** (26,7 cada
+10.000; es su marcador más extendido del corpus).
+Es su movimiento argumentativo dominante y hay que reproducirlo: no defiende una
+afirmación explicándola, la defiende poniendo un caso con nombre y cifra al lado.
+
+> «…como por ejemplo Julieta, que creció 200,000 seguidores y hace más de $,000 al
+> mes como entrenadora, o por ejemplo Ana Ma…» (`yt-020`)
+
+> «…como por ejemplo Julita Tejería del sector Findnesses más de $25,000 al mes,
+> como por ejemplo Ramón 64 años, más de $150,000 al mes, miles de casos más de
+> todos los sectores.» (`yt-006`)
+
+Las citas están copiadas del ASR tal cual, con la basura incluida: «Julita
+Tejería» por *Julieta Tejería*, «del sector Findnesses» por *del sector fitness*,
+«$,000» por una cifra que el reconocedor directamente se comió. **Se copia el
+molde —nombre + nicho + cifra, dos o tres encadenados—, nunca el dato.** El dato
+sale de `oferta.md` o se pregunta.
+
+Un párrafo largo suyo sin un «por ejemplo» con nombre propio adentro está mal
+escrito.
+
+### Cómo abre — seis moldes sobre 139 videos
+
+Los 40 videos más viejos (`yt-140`–`yt-179`, era 2023) son otro creador y no
+entran en esta clasificación. Sobre los 139 de la era actual:
+
+| Molde | Videos | Ejemplo |
+|---|---:|---|
+| **Credencial propia con cifra** | 21 | «He publicado más de 23,000 vídeos en redes sociales en los últimos 4 años y la verdad que he aprendido demasiado.» (`yt-061`) · «Tengo más de 55 empleados en mi empresa. Subo más de 850 vídeos al mes…» (`yt-009`) |
+| **«En este vídeo voy a explicarte…»** | 17 | «En este vídeo voy a desnudarme. Voy a contarte cuál es la metodología que estoy usando actualmente con mis clientes…» (`yt-033`) |
+| **Prueba ajena** | 11 | «Este es Bernardo y hace unos días tenía 20.000 seguidores y hoy, 100 días más tarde…» (`yt-005`) · «Hace exactamente 60 días esta cuenta tenía cero seguidores y hoy…» (`yt-046`) |
+| **Condicional al espectador** | 7 | «Si llevas tiempo publicando contenido pero tu cuenta aún no despega…» (`yt-017`) |
+| **Cambio de época** | 5 | «El algoritmo de Instagram ha vuelto a cambiar a mitad del 2026.» (`yt-001`) · «La marca personal tal y como se conoce a día de hoy está a punto de morir.» (`yt-015`) |
+| **Niega la creencia** | 5 | «Te han mentido. Te han contado que para hacer contenido viral tienes que tener una vida de película.» (`yt-054`) |
+
+Los 73 restantes no caen en ningún molde: abre con una analogía histórica
+(`yt-014`, la milla en cuatro minutos), con un personaje (`yt-044`, el lobo de
+Wall Street) o con una pregunta doble (`yt-040`). **Ninguno abre saludando.** No
+hay «hola», no hay «bienvenidos a un nuevo vídeo», no hay presentación: la
+primera oración ya es el argumento.
+
+### Cómo cierra — la firma, medida
+
+**128 de los 130 videos largos de la era actual (`yt-001`–`yt-139`) cierran con la
+misma frase. De los 40 de la era vieja (`yt-140`–`yt-179`), uno.** Es el activo de
+voz más fuerte que tiene y hasta el 2026-08-24 no estaba en este archivo.
+
+Ese 128 sobre 130 es un recuento del 2026-08-24 y corrige el «110 de 139» que
+decía antes esta línea. Dos cosas lo falseaban: el corpus estaba cortado, y sobre
+todo **el ASR deja la firma a medias en la mayoría de los videos**, así que buscar
+el remate literal «o todo o nada» no la encuentra. Sale escrita de todas estas
+formas —«y es todo o», «hacerlas o todo», «es hacerlas o todo», «todo por nada»,
+«hacerlas todo por nada»— y hay que contar el molde entero, no el remate.
+
+> «Y recuerda que nada en esta vida te va a funcionar si no lo haces de una forma
+> y es hacerlo o todo o nada. Ciao.» (`yt-061` — la única versión del corpus que
+> el ASR no cortó)
+
+> «Y recuerda que sea lo que sea que hagas en tu vida, hazlo de una única forma.
+> deshacerlo con todo o con nada.» (`yt-033`)
+
+> «Porque la única forma de que esto funcione, esto y todo en tu vida, es una y es
+> hacerlo o todo o» (`yt-015`)
+
+> «Y recuerda que la única forma de hacer las cosas de que funcionen es una, y es
+> hacerlo o todo o» (`yt-016`)
+
+La variación es real y hay que respetarla: **el remate «o todo o nada» es fijo y
+lo de adelante se adapta a la pieza** («hacer las cosas», «lo que hagas en tu
+vida», «que esto funcione», «nada en esta vida»). Va precedido siempre de «Y
+recuerda que…».
+
+⚠️ **El ASR corta el final de casi todos los videos.** Las tres últimas citas
+terminan en «o todo o» porque el último bloque de subtítulos no se generó. No es
+que él lo diga a medias: es el mismo problema del primer segundo, en el otro
+extremo. Para locutar la firma se usa la versión completa de `yt-061`.
+
+Se puede violar, y prácticamente no la viola: **los únicos dos videos de la era
+actual sin firma son `yt-117` y `yt-130`.** No es un cierre frecuente, es *el*
+cierre. Si una pieza larga suya no termina en una llamada a la acción explícita,
+la firma es lo que va — y si termina en CTA, la firma va igual, después.
+
+### La CTA larga no es la CTA del reel
+
+| CTA | Registro largo (170 videos) | Reel (80) |
+|---|---|---|
+| **Consultoría / llamada 1-a-1** | 135 menciones en 50 videos | 3 menciones en 2 reels |
+| **«comenta» como imperativo → DM** | 44 en 26 videos | es *la* CTA: 56 en 39 de 80 reels (`comenta*` 101/10k en `@herasmedia`) |
+| **«debajo de este vídeo»** | 107 menciones en 63 videos | 0 |
+| **«suscríbete»** | 18 en 18 videos | 0 |
+
+Dos lecturas que cambian cómo se escribe una pieza:
+
+1. **En YouTube vende alto, en Instagram captura.** El reel pide un comentario y
+   pasa a ManyChat; el vídeo largo manda a una **«consultoría uno a uno conmigo y
+   con mi equipo»** (32 menciones textuales de esa frase exacta, en 23 videos).
+   Escribir una VSL con la CTA del reel es bajarle el ticket a la pieza.
+2. **Casi no pide la suscripción**: 18 veces en 18 de los 170 videos largos. No es un youtuber
+   pidiendo comunidad, es un vendedor usando YouTube como sala de ventas. Una
+   pieza larga suya no lleva «dale like y suscríbete».
+
+El cierre completo, con las tres partes en orden — prueba, CTA, firma:
+
+> «…miles de casos más de todos los sectores. Ahí puedes preguntar en mi cuenta de
+> las media y si quieres una consultoría uno a uno para verlo directamente, puedes
+> agendarla justamente debajo de este vídeo o en el primer comentario. Y recuerda
+> que en la vida solamente hay una forma de hace…» (`yt-006`; «las media» es el
+> ASR comiéndose *Heras Media*)
+
+### Qué palabras son del registro largo y no del reel
+
+Las 10 más distintivas, por ratio contra el reel. **La columna que decide es «en n
+de 170»**: las de arriba están repartidas por todo el corpus y son vocabulario; las
+de abajo se concentran en pocas piezas y son el tema de esas piezas.
+
+| Palabra | Veces | Por 10k acá | En n de 170 | Por 10k en el reel |
+|---|---:|---:|---:|---:|
+| «punto» | 915 | 9,6 | 143 | 1,2 |
+| «millones» | 1.206 | 12,6 | 130 | 0,0 |
+| «nivel» | 824 | 8,6 | 117 | 0,0 |
+| «significa» | 409 | 4,3 | 114 | 0,0 |
+| «correcta» | 262 | 2,7 | 96 | 0,0 |
+| «extremadamente» | 308 | 3,2 | 76 | 0,0 |
+| «conciencia» | 511 | 5,4 | 68 | 0,0 |
+| «bloque» | 265 | 2,8 | 56 | 0,0 |
+| «habilidad» | 204 | 2,1 | 43 | 0,0 |
+| «estímulo» | 243 | 2,5 | **28** | 0,0 |
+
+**«Nivel de conciencia» aparece 408 veces, en 60 de los 170 videos** (más «niveles
+de conciencia», 71 en 21). Es su marco conceptual, no una muletilla: es como llama
+a en qué momento está el espectador respecto del problema. Junto con «bloque» y
+«habilidad» forma el vocabulario técnico con el que enseña, y **no aparece nunca
+en un reel**: cero apariciones en 17.104 palabras. Un reel que hable de «niveles
+de conciencia» está escrito en el registro equivocado; una clase o una VSL que no
+los use está escrita por otra persona.
+
+⚠️ **«Estímulo» es la excepción y sirve de ejemplo de cómo leer esta tabla**: 243
+apariciones parecen mucho, pero están en 28 de los 170 videos. Eso no es su
+vocabulario, es una serie de clases sobre el mismo tema. No se mete en una pieza
+porque «lo dice mucho» — se mete si la pieza va de eso.
+
+### Qué pieza va en qué registro
+
+| Pieza | Registro | Por qué |
+|---|---|---|
+| Ad, reel, hook | **Reel** (HM) | Escrito y editado: sin «eh», sin «básicamente», con «ok» de puntuación y con «nicho» |
+| Caption | Texto tipeado | Ver la sección de captions más abajo — es la única fuente sin ASR |
+| Email de nutrición, secuencia | **Largo** | Reformula en voz alta («o sea»), argumenta con casos con nombre |
+| VSL, webinar, guion de clase | **Largo** | Y con la CTA de consultoría, no la de comentario |
+| Cierre de cualquier pieza larga | **Largo** | La firma «o todo o nada» |
+
+---
+
+## Los cuatro corpus de Instagram — no los mezcles
+
+Todo lo de esta sección y de las siguientes es **el registro corto**, salvo que
+diga otra cosa. El registro largo está arriba, en su propia sección.
 
 No son "dos cuentas, dos registros". Dentro de `@victorherasemprendedor` hay un
 corte duro en 2024 que separa dos personajes distintos, y el archivo lo trata como
@@ -587,7 +845,8 @@ Lo que sigue `SIN DATO` es el precio y qué se vende en esa llamada.
 
 ### La excepción de registro: ig-010
 
-La única pieza místico-motivacional del corpus (`@victorherasreels`, 590.140 views,
+La única pieza místico-motivacional del corpus (`ig-010`, `@victorherasreels`,
+590.140 views,
 24,2 com/1k, y **160 likes/1k contra una mediana de 34** — el pico de engagement
 por like de todo el corpus):
 
@@ -955,10 +1214,13 @@ Todo esto es `SIN DATO` y hay que pedírselo a la agencia o al cliente.
 
 **Del material (limitaciones de este corpus):**
 
-8. **No hay registro de venta larga.** Todo son reels de ≤110 s. No hay VSL, ni
-   webinar, ni live, ni email. **No sabemos cómo habla cuando tiene 20 minutos** —
-   y el registro largo es justo el que se necesita para nutrición y para VSL. Con
-   esto sólo se pueden escribir hooks, reels y captions.
+8. ~~**No hay registro de venta larga.**~~ **Resuelto el 2026-08-24** con los 179
+   videos de `@victorherasmedia` (993.395 palabras de habla larga, 954.154 de él
+   solo). Sigue faltando
+   **VSL, webinar y email**: el registro largo que hay es *clase*, no *venta*. Un
+   vídeo de YouTube vende al final, en 40 segundos de CTA; una VSL vende durante
+   los 20 minutos. Para escribir una VSL, la voz de este corpus sirve y la
+   **estructura** hay que pedirla.
 9. **Los primeros 1-3 segundos del audio son la parte menos confiable del ASR**
    (9 de 26 preguntas de apertura perdieron la palabra interrogativa; varios
    arranques perdieron el artículo). Ningún hook se locuta palabra por palabra sin
@@ -977,3 +1239,26 @@ Todo esto es `SIN DATO` y hay que pedírselo a la agencia o al cliente.
     permitirían distinguir "esto es su voz" de "esto es lo que le funcionó".
 13. **Nada distingue reel orgánico de ad pago**, y sin eso las views no son
     estrictamente comparables entre sí.
+
+---
+
+## Cómo se midió
+
+Los números de este archivo se reproducen con:
+
+```bash
+node cerebros/scripts/medir-voz.mjs victor
+```
+
+Tres decisiones que cambian el resultado y por eso se declaran:
+
+1. **Sólo se cuenta el bloque `## Transcript`.** Grepear el `.md` entero duplica
+   el hook en los reels y mete títulos y notas en el conteo del registro largo.
+2. **Todo va por cada 10.000 palabras**, porque las bases son 954.154 contra
+   17.104: comparar totales crudos es comparar tamaños de muestra.
+3. **`yt-021`–`yt-029` no cuentan.** Están marcados `formato: serie-reto` y el
+   script los aparta: hablan cuatro participantes además de él.
+
+Si se cosecha material nuevo (`cerebros/scripts/cosechar-youtube.mjs`), estas
+cifras dejan de ser ciertas y hay que volver a destilar. El procedimiento está en
+la skill `destilar-voz`.

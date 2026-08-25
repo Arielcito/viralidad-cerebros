@@ -1,13 +1,13 @@
 ---
 n: yt-s001
-url: https://www.youtube.com/shorts/HbtatC9fzRE
+url: https://www.youtube.com/watch?v=HbtatC9fzRE
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: 1800
+fecha: 2025-04-17
+views: 1890
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: SIN DATO
+duracion_seg: 54
 formato: short
 fuente: subtitulos-automaticos
 palabras: 175

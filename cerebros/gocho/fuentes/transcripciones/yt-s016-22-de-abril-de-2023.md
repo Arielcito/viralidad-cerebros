@@ -1,13 +1,13 @@
 ---
 n: yt-s016
-url: https://www.youtube.com/shorts/z0jUEaPniis
+url: https://www.youtube.com/watch?v=z0jUEaPniis
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
+fecha: 2023-04-22
 views: 201
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: SIN DATO
+duracion_seg: 54
 formato: short
 fuente: subtitulos-automaticos
 palabras: 142

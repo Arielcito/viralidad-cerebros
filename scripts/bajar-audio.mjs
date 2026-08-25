@@ -3,10 +3,11 @@
    Baja el audio de un rango de la cola de un cerebro, numerado, para
    arrastrarlo al chat y transcribir a mano.
 
-   Uso:
-     node scripts/bajar-audio.mjs gocho --desde 1 --hasta 10
-     node scripts/bajar-audio.mjs gocho --n 7          # uno solo
-     node scripts/bajar-audio.mjs gocho                # toda la cola
+   Uso (las rutas son las del dashboard; en el plugin viralidad-cerebros
+   la carpeta es `scripts/` en la raíz):
+     node cerebros/scripts/bajar-audio.mjs gocho --desde 1 --hasta 10
+     node cerebros/scripts/bajar-audio.mjs gocho --n 7          # uno solo
+     node cerebros/scripts/bajar-audio.mjs gocho                # toda la cola
 
    Lee cerebros/<cliente>/fuentes/catalogo.csv y escribe .m4a en
    cerebros/<cliente>/fuentes/audio/NNN-slug.m4a.
@@ -17,10 +18,9 @@
    ================================================================= */
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { join } from "node:path";
+import { REPO as ROOT, SCRIPTS } from "./raiz.mjs";
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 /** Parseo mínimo de CSV con soporte de comillas dobles y comas internas. */
 const parseCsv = (text) => {
@@ -71,7 +71,7 @@ const slugify = (s) =>
 const args = process.argv.slice(2);
 const cliente = args.find((a) => !a.startsWith("--"));
 if (!cliente) {
-  console.error("Falta el cliente. Ej: node scripts/bajar-audio.mjs gocho");
+  console.error(`Falta el cliente. Ej: node ${SCRIPTS}/bajar-audio.mjs gocho`);
   process.exit(1);
 }
 const flag = (name) => {

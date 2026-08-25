@@ -1,8 +1,14 @@
 # Oferta — Ramón / Academia de Construcción
 
-> Todo lo de este archivo sale de páginas que se leyeron de verdad (WebFetch). Lo
-> que no aparece en ninguna página dice `SIN DATO` y está pedido en
+> Todo lo de este archivo sale de páginas que se leyeron de verdad (WebFetch) o
+> de él diciéndolo en cámara (`yt-NNN`, 16 videos largos de YouTube). Lo que no
+> aparece en ninguna de las dos dice `SIN DATO` y está pedido en
 > `fase-0-pedido.md`. **El precio es `SIN DATO`: no lo estimes.**
+>
+> Regla de precedencia: **la web gana para cifras y credenciales** (es texto, no
+> ASR); **el audio gana para cómo lo dice** (la web es copy de un redactor, el
+> video es él). Cuando las dos hablan del mismo dato y no coinciden, está
+> marcado abajo.
 
 ## Productos
 
@@ -47,6 +53,124 @@ Obreros dirigidos · $80M En proyectos".
 **No autorizadas** (aparecen sólo en snippets de buscador, ninguna página
 legible las confirma): "programa #1 en EEUU", "co-fundador de USACredito",
 "+2.900 familias impactadas". **No usar** hasta confirmarlas — `fase-0-pedido.md`.
+
+**Las otras cifras que él dice en cámara y no se contradicen con esta** (miden
+cosas distintas; confundirlas es fácil y caro):
+
+| Cifra | Qué mide | Ref |
+|---|---|---|
+| **32+ años** | construcción, y son en Venezuela: «Yo construí en Venezuela por más de 32 años» | web + `yt-002` |
+| **42 años** | trayectoria empresarial total, desde su primer negocio en 1984 (programación, a los 21) | `yt-008` |
+| **62 / 63 años** | su edad — 62 en un video de febrero, 63 en otro | `yt-009`, `yt-008` |
+| **«más de un millón de dólares en ganancias» el año pasado** | resultado propio 2025 | `yt-015` |
+
+**En una pieza va la que autoriza la web: 32+.** Las otras tres sólo con OK
+explícito de Ramón, y la última además es promesa de ingreso (ver más abajo).
+
+## Lo que dice en cámara y la web no dice
+
+Los 16 videos largos (`fuentes/transcripciones/yt-*.md`, 40.074 palabras) son la
+primera vez que se lo escucha vender largo. Esto es lo que agregan sobre lo de
+arriba. Todo con ref abrible; las cifras siguen necesitando verificación fuera
+del ASR.
+
+### El método tiene nombre y números: 4-60-40
+
+Es la columna vertebral de la venta y **no está en ninguna página del embudo**.
+
+> «En el método que yo aplico y que explico además en la academia de
+> construcción utilizamos el 46040, 4 meses para construir, 60 días para
+> venderla, buscando una ganancia de un 40% sobre el precio de la venta»
+> (`yt-004` — el "46040" es el ASR comiéndose los guiones de 4-60-40)
+
+No es un dicho suelto: `4 meses` aparece en **10 de 16** videos, `60 días` en
+**9 de 16** y `40%` en **10 de 16**. En la web sólo asoma de refilón, en el
+módulo 05 ("garantiza márgenes del 40%").
+
+Va con su matiz, que él mismo pone y conviene no perder: «Y a lo mejor eso se
+equilibra porque no tiene que estar firmado en piedra. Puede ser menos» (`yt-004`).
+
+### La regla de compra de terreno: multiplicar por siete
+
+> «si el terreno cuesta $10,000, yo quiero saber si las casas alrededor se han
+> vendido en $70,000 al menos» (`yt-013`)
+
+En **4 de 16** videos. Es el criterio de entrada del negocio dicho en una línea
+—el activo de contenido más reusable que hay acá— y tampoco está en la web.
+
+### Áreas de conocimiento que dice enseñar
+
+Concreto, y más específico que los 6 módulos de la landing:
+
+| Área | Verbatim | Ref |
+|---|---|---|
+| Crédito personal | «Una de las áreas de conocimiento es crédito para que tú mismo sepas aumentar tu crédito personal» · «lo enseñamos en la academia, cómo puedes llevar tu crédito a tiempo record» | `yt-002`, `yt-006` |
+| Financiamiento (hard money) | «Te enseño al detalle cómo pedirlo, cómo preparar ese construction budget que vaya con de la mano de la…» | `yt-005` |
+| Selección de terreno | la regla ×7, arriba | `yt-013` |
+
+### Cifras de tracción — ⚠️ dichas por él, sin verificar
+
+| Cifra | Verbatim | Ref |
+|---|---|---|
+| Alumnos | «más de 120 estudiantes de construcción en la academia lo están haciendo, más de 49 ya han avanzado» | `yt-002` |
+| Qué lograron los 49 | «ya 49 tienen terrenos, han asegurado créditos, han iniciado obras y han iniciado el proceso de construcción» | `yt-002` |
+| Evento | «Recientemente tuvimos el primer summit presencial. Más de 89 asistentes aquí en South Carolina» | `yt-004` |
+| Antigüedad | «Recuerda que la academia es muy nueva» | `yt-002` |
+
+Estas cuatro **no están en ninguna página** y son ASR. Antes de que entren a un
+ad hay que confirmarlas con Ramón — sobre todo "120" y "49", que son la clase de
+número que envejece en un mes. Ojo también con la tensión: la web vende
+"+1,200 constructores ya tienen su plan" (eso es el quiz, no alumnos) y él dice
+120 alumnos. **No son lo mismo y no se suman.**
+
+### Alumnos nombrados en su voz
+
+> «nuestro propósito es que tú ganes dinero, como están ganando Amanda, José
+> Faría, Rafael Cordero, Ricardo» (`yt-005`)
+> «un estudiante de la academia que es Amanda a 10 cuadras de aquí está
+> construyendo una casa sin dinero propio, con dinero del banco» (`yt-014`)
+
+Amanda aparece en **8 de 16** videos: es su caso insignia. **Los apellidos salen
+de ASR** y hay que confirmarlos antes de escribirlos.
+
+**Tres alumnos más aparecieron el 2026-08-24**, cuando se recuperó el cuerpo de
+`yt-015` (se leía al 19 % por un corte en la extracción). Son los únicos casos
+del corpus que **no están en ningún reel**, y cada uno cubre una objeción
+distinta — el detalle completo, con sus verbatim, en
+`biblioteca/historias.md` §16:
+
+| Alumno | Para qué sirve | Cifras citables |
+|---|---|---|
+| **Brandon** — contratista, ya construyó 20 casas | la objeción "yo ya sé de construcción" | ⚠️ ninguna: el ASR dice «más de $10,000 por casa» y no cierra con nada del corpus |
+| **Frank y Mayumi** — pareja, «sin saber absolutamente nada» | la objeción "no tengo experiencia" | terreno $45.000 → casa de $890.000 → 40 % → ~$360.000 (la cuenta cierra) |
+| **«Mi amigo Víctor»** — no es alumno, es amigo | que el método no tiene techo | terreno $1.300.000 → costo $2.800.000 → valor 5-6M en Miami |
+
+Frank y Mayumi es el **único caso del corpus con las cuatro cifras
+consistentes entre sí**. Vale la misma regla que con Amanda: en orgánico se
+citan como lo que son —lo que él dijo en su canal—, en un ad pagado no van sin
+autorización escrita y disclaimer.
+
+🚨 **`yt-014` le atribuye a Amanda una ganancia concreta** («se va a ganar más de
+$10,000 poniendo menos de $[…]000 en su bolsillo»). Eso es un testimonio con
+promesa de ingreso: cae de lleno en "Cosas que NO se pueden prometer", más abajo.
+En orgánico se puede citar como lo que es —lo que él dijo en su canal—; **en un
+ad pagado, no, hasta que haya autorización escrita y disclaimer.**
+
+### El embudo de YouTube es otro embudo
+
+El reel captura por DM con palabra clave. El video largo **nunca** hace eso
+(0 de 16 dice "escribe la palabra"). Captura así:
+
+| Paso | Verbatim | Ref |
+|---|---|---|
+| Enlace | «dale click al enlace que está en el video» · «en el primer comentario está el enlace» | `yt-004`, `yt-012` |
+| Qué es la cita | «una entrevista conmigo y con mi equipo a ver si calificas con tu compromiso, disciplina…» | `yt-004` |
+| Quién atiende | «hablando con nuestro director de admisiones» · «Yo mismo te voy a atender y vamos a tener una consultoría uno a uno» | `yt-010`, `yt-016` |
+| Salida a IG | «búscame en Instagram Lord Construye. Escríbeme en privado» | `yt-013` |
+
+La calificación por "compromiso y disciplina" es la objeción de precio manejada
+sin nombrar el precio: **no dice cuánto sale, dice que hay que calificar.**
+Consistente con que en 42.763 palabras no diga el precio ni una vez.
 
 ## Escalera de valor
 
@@ -104,6 +228,37 @@ reescritos.
 | Venta directa | "AGENDAR MI REUNIÓN DE ADMISIÓN" | https://academiadeconstruccion.com/ |
 | Post-agendamiento | "Agregar mi llamada al calendario" · "¿Preguntas antes de tu llamada?" (→ wa.me/18647230392) | https://academiadeconstruccion.com/ty-page |
 
+Falta uno en esa tabla, y es el que más se usa mal: el del video largo de
+YouTube. No sale de ninguna página del embudo, sale de él diciéndolo en cámara,
+y por eso va aparte.
+
+> «Dale click al enlace que está aquí abajo» (`yt-016`)
+> «en el primer comentario está el enlace para que tengamos esta conversación»
+> (`yt-012`)
+> «suscríbete al canal y activa las notificaciones para que no te pierdas el
+> próximo video» (`yt-014`)
+
+La versión más completa de ese CTA está en `yt-015`, y **no va al final: va a
+mitad de video, pegada al caso de Brandon**:
+
+> «Y recuerda que puedes hacer lo que hizo Brandon o Amanda o muchos de los
+> estudiantes. Agenda una llamada para que tengas una consultoría uno a uno
+> conmigo dándole clic al enlace que está en los comentarios de este video. Ahí
+> te voy a explicar paso a paso de la A a la Z cómo poder ser exitoso en el
+> negocio de la construcción de casa en los Estados Unidos usando el dinero del
+> banco y nunca el tuyo.» (`yt-015`)
+
+La estructura son cuatro movimientos y conviene copiarla entera: **prueba**
+(un alumno con nombre) → **permiso** ("puedes hacer lo que hizo X") → **la
+llamada** → **qué pasa en la llamada** ("paso a paso de la A a la Z"). El
+enlace va *en los comentarios*, no en la descripción.
+
+**No se mezclan con los de arriba.** En 101 piezas medidas, el CTA por palabra
+clave aparece en 42 reels y en **0** videos largos; el CTA de enlace +
+suscripción aparece en 9 y 10 de los 16 largos y en **0** reels (`voz.md` → "El
+trato no cambia. El CTA sí"). Elegí el CTA por el formato de la pieza, no por
+gusto.
+
 La tabla `content_cta` de la DB tiene **0 filas** para esta cuenta: el dashboard
 no sabe qué imanes se usan ni cuánto convierten. Pedido en `fase-0-pedido.md`.
 
@@ -116,15 +271,43 @@ no sabe qué imanes se usan ni cuánto convierten. Pedido en `fase-0-pedido.md`.
 - Headline verbatim: "Lo que dicen los que ya trabajan con nosotros — Resultados
   reales de personas como tú."
 - Quiz: "+1,200 constructores ya tienen su plan" / "+1,200 constructores ya
-  descargaron el suyo" (https://lordconstruye.com/plan-personalizado).
+  descargaron el suyo" (https://lordconstruye.com/plan-personalizado). **Son
+  descargas del lead magnet, no alumnos** — no los mezcles con los "120
+  estudiantes" que él dice en `yt-002`.
+- **Alumnos nombrados por él en cámara**, con cifras de tracción: ver "Lo que
+  dice en cámara y la web no dice" arriba. Ahí está el único material que
+  atribuye un resultado a un alumno con nombre (Amanda), y ahí está también por
+  qué ese material **no puede ir a un ad** sin autorización.
 
 ## Objeciones y respuestas
 
 Las objeciones reales de sus leads y cómo las responde él (no cómo las
 responderías vos).
 
-**SIN DATO.** Lo único que se sabe es *qué* objeciones el propio embudo considera
-prioritarias, por los títulos de los videos de `/ty-page`:
+**Parcialmente resuelto.** Los 16 videos largos tienen las respuestas en su voz
+—es el registro donde se toma diez minutos para desarmar una objeción— y están
+transcriptas. Lo que sigue faltando es cómo responde **precio** y **garantía**,
+que no toca ni una vez.
+
+### Cómo las responde él, verbatim
+
+| Objeción | Cómo la responde | Ref |
+|---|---|---|
+| "No tengo capital" | La nombra antes de que la piense el lead: «Y sé lo que estás pensando, no tengo capital, ni sé cómo construirla, pero aquí tienes la explicación completa para que tú logres ese capital del banco especializado» | `yt-002` |
+| "Ningún banco me presta" | «aunque ningún banco te haya prestado un dó[lar] en tu vida, vas a lograr que estos bancos especializados […]» | `yt-002` |
+| "No soy constructor" | «no necesitas tener experiencia previa en bienes raíces, no tienes por qué ser constructor, no tienes por qué saber de cuántas toneladas en un aire acondicionado» · «no necesitas saber construir» | `yt-013`, `yt-016` |
+| "No soy ciudadano" | «no necesitas ser ciudadano americano, ni siquiera ser un técnico de construcción» — pero con el requisito real dicho aparte: «con tal de que tengas social security number, tengas una permanencia legal en este país, incluso con IT[IN], te van a dar las mejores condiciones» | `yt-016`, `yt-010` |
+| "Es muy complicado" | «ya que has visto que este negocio no es tan complicado como te lo habían hecho ver» + prueba social de los 120 alumnos | `yt-002` |
+| "¿Cuánto sale?" | **No la responde.** La reemplaza por calificación: «a ver si calificas con tu compromiso, disciplina…» | `yt-004` |
+
+⚠️ El patrón de la fila 4 es el que hay que copiar con más cuidado: **la promesa
+amplia y el requisito duro van en el mismo video pero no en la misma frase.** Si
+una pieza corta usa sólo la primera mitad ("no necesitas ser ciudadano
+americano") sin el requisito de estatus legal, la promesa queda falseada.
+
+### Qué objeciones considera prioritarias el embudo
+
+Por los títulos de los videos de `/ty-page`:
 
 | Objeción implícita | Evidencia |
 |---|---|
@@ -135,15 +318,27 @@ prioritarias, por los títulos de los videos de `/ty-page`:
 | "No tengo capital" | promesa "Sin Gran Capital" + módulo 02 "financiamiento sin depender de bancos tradicionales" + brief ClickUp "09. es cierto que puedo construir casas sin dinero" |
 | "No tengo empresa / no soy constructor" | promesa "Sin Empresa" + brief "23. Es posible construir sin ser constructor" |
 
-Las **respuestas** en su voz están bloqueadas hasta tener las transcripciones de
-esos 5 videos.
+Las respuestas a las cinco primeras están arriba, sacadas de los largos de
+YouTube. Los 5 videos de `/ty-page` siguen sin transcribir, y ahora sólo hacen
+falta para una cosa: el video 5 ("Qué pasa si no funciona para ti?"), que es
+donde debería estar la **garantía** — lo único de esta lista que no dice nunca.
 
 ## Garantía
 
-**SIN DATO.** No hay política de reembolso ni garantía en ninguna página leída.
-El video 5 de `/ty-page` ("Qué pasa si no funciona para ti?") es donde
-probablemente esté, y no se puede transcribir sin browser. Pedido en
-`fase-0-pedido.md`.
+**SIN DATO, y ahora con más peso.** No hay política de reembolso ni garantía en
+ninguna página leída **ni en las 40.074 palabras de venta hablada de YouTube**,
+donde manda a agendar una llamada nueve veces y nunca menciona reembolso,
+devolución ni "si no funciona". Que no aparezca en media hora de venta deja de
+ser una laguna del corpus: es una decisión de no decirlo en público.
+
+Lo mismo con el **precio**: cero menciones en 58.030 palabras. Su reemplazo
+declarado es la calificación («a ver si calificas con tu compromiso, disciplina»,
+`yt-004`).
+
+El video 5 de `/ty-page` —el de qué pasa si no funciona para ti— sigue siendo el
+único lugar donde podría estar la garantía, y no se puede transcribir sin
+browser. Las dos preguntas siguen pedidas en `fase-0-pedido.md` — son las dos que
+más bloquean escribir un ad de venta.
 
 ## Cosas que NO se pueden prometer
 

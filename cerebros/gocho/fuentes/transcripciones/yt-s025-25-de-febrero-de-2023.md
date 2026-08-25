@@ -1,13 +1,13 @@
 ---
 n: yt-s025
-url: https://www.youtube.com/shorts/9vJka0iRKws
+url: https://www.youtube.com/watch?v=9vJka0iRKws
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
+fecha: 2023-02-25
 views: 107
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: SIN DATO
+duracion_seg: 58
 formato: short
 fuente: subtitulos-automaticos
 palabras: 167

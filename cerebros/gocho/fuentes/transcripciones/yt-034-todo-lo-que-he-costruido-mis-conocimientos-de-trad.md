@@ -3,11 +3,11 @@ n: yt-034
 url: https://www.youtube.com/watch?v=5boJGH3Vcnk
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views:  Gocholive
+fecha: 2023-09-11
+views: 880
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 7397
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 17539
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-Todo lo que he costruido mis conocimientos de Trading de 5 años 
+Todo lo que he costruido mis conocimientos de Trading de 5 años | Mis Pensamientos 💭 #32 | Gocholive
 
 ## Transcript
 

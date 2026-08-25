@@ -1,7 +1,8 @@
 # Historias — Ramón (Academia de Construcción)
 
-> Anécdotas y casos reales sacados de las **85 transcripciones** de
-> `@lordconstruye` en `fuentes/transcripciones/`. Reemplaza la versión
+> Anécdotas y casos reales sacados de las transcripciones de `@lordconstruye`
+> en `fuentes/transcripciones/`: las **85 de reels** (§1–§15) y las **16 de
+> YouTube** (§16, agregado el 2026-08-24). Reemplaza la versión
 > anterior de este archivo, escrita antes de que existieran las
 > transcripciones — esa versión listaba "leads" de brief de ClickUp sin
 > confirmar contra ningún video; acá cada historia cita su `(ig-NNN)` real, y
@@ -212,7 +213,8 @@ nuevo de bolsillo.
 
 Cifras del caso: terreno 100.000 (40.000 propios) → casa construida → vende
 en 800.000, gana el 50%. Menciona a un alumno, "Brandon está haciendo 2
-casas" — única mención de Brandon en el corpus, sin más detalle de su caso.
+casas" — la única mención de Brandon **en los reels**. Quién es Brandon está
+en `yt-015`: ver §16.1.
 
 **Casi-patrón (n=2, no llega a 3):** `ig-033` ("Esto te paga con esto") es
 la misma estructura de hook con una redacción casi idéntica — a una
@@ -299,6 +301,96 @@ casas más grandes con el ciclo siguiente.
 
 ---
 
+## 16. Los casos del registro largo (`yt-015`)
+
+Los tres casos de abajo estaban **fuera del cerebro hasta el 2026-08-24**: la
+extracción cortaba `yt-015` en la primera "Z" mayúscula del texto y se leían
+553 de sus 2.949 palabras. Son casos que Ramón **no cuenta en ningún reel**, y
+tienen una función distinta a la de los reels: en el largo los usa como prueba
+escalonada —el contratista, los principiantes, el que juega en grande— antes de
+pedir la llamada.
+
+### 16.1. Brandon — el contratista que ya construyó 20 casas
+
+Resuelve la pregunta abierta de §9. Aparece como prueba **antes** del CTA, no
+después:
+
+> "Como por ejemplo está haciendo Brandon, que está construyendo dos casas y se
+> va a ganar en cada una más de $10,000. Y tú me preguntarás, ¿quién es
+> Brandon? Brandon es un estudiante de la Academia de Construcción que es
+> contratista y ha construido más de 20 casas. Y recuerda que puedes hacer lo
+> que hizo Brandon o Amanda o muchos de los estudiantes." (`yt-015`)
+
+⚠️ **La cifra no se usa en pieza.** "Más de $10,000" por casa es ASR y no cierra
+con ninguna otra cifra del corpus —todos los demás casos ganan entre 145.000 y
+360.000—; lo más probable es que sea $100.000. **Brandon como caso sí se puede
+contar; el monto se pregunta.**
+
+Lo aprovechable es el perfil: es el único alumno del corpus que **ya era del
+oficio** (contratista, 20 casas construidas) y aun así entró a la academia. Es
+la respuesta a la objeción "yo ya sé de construcción, ¿qué me vas a enseñar?".
+
+### 16.2. Frank y Mayumi — los que no sabían nada
+
+El contrapunto exacto de Brandon, y el caso mejor cerrado del corpus:
+
+> "Por ejemplo, Frank y Mayumi compraron un terreno en $45,000 sin saber
+> absolutamente nada del negocio de la construcción y ya comenzaron a construir
+> una casa de $890,000 de precio de venta. Esa casa le van a ganar 40% sobre la
+> venta. Casi $360,000 le van a ganar ellos. Y esto lo hicieron porque
+> rompieron con esa mentira de que los bancos no prestan." (`yt-015`)
+
+Único caso del corpus con **pareja** como protagonista y con las cuatro cifras
+consistentes entre sí (45.000 → 890.000 → 40% → ~360.000: la cuenta cierra).
+Sigue con el remate identitario: *"Los latinos no vinimos a este país para ser
+Uber o para trabajar en Walmart"* — ver `voz.md`.
+
+### 16.3. "Mi amigo Víctor" — el mismo método a escala Miami
+
+> "O el caso de mi amigo Víctor. Mi amigo Víctor está comprando un terreno en
+> este instante en Miami […] Lo que decidió él fue comprar el terreno
+> $1,300,000 y construir una casa […] A él le va a costar esa casa $2,800,000
+> cuando va a tener un valor de 5 o 6 millones de dólares esa casa en Miami."
+> (`yt-015`)
+
+Es el único caso donde el protagonista **no es alumno sino amigo**, y sirve
+para mostrar que el método no tiene techo. ⚠️ El ASR destroza los montos
+intermedios del pasaje ("4,illon 5,illon y med", "illón y dó adicionales"): de
+este caso sólo son citables 1.300.000 / 2.800.000 / 5-6 millones, y aun así
+conviene verificarlos escuchando el video.
+
+### 16.4. El argumento Grand Cardone (apertura de `yt-015`)
+
+No es una historia sino la palanca de autoridad ajena que abre el video, y es
+el único uso de un tercero famoso en todo el corpus:
+
+> "Incluso multimillonarios y famosos en el real estate como Grand Cardon
+> dicen, 'No compres casa que no es el momento.' Pero, ¿cómo es posible que una
+> persona que se dedica al real estate recomiende no comprar una casa?"
+> (`yt-015`)
+
+El nombre real es **Grant Cardone** — el ASR lo escribe "Grand Cardon". La
+estructura es: cita al famoso → pregunta retórica que la vuelve paradoja →
+promesa de resolverla al final. Inmediatamente después va su propia casa como
+prueba: terreno $8.500 + $300.000 de construcción → venta en $650.000.
+
+### 16.5. El CTA del registro largo
+
+Distinto del CTA de reel ("comenta la palabra…"): en YouTube pide llamada,
+nombra la consultoría y la ubica en los comentarios.
+
+> "Agenda una llamada para que tengas una consultoría uno a uno conmigo dándole
+> clic al enlace que está en los comentarios de este video. Ahí te voy a
+> explicar paso a paso de la A a la Z cómo poder ser exitoso en el negocio de
+> la construcción de casa en los Estados Unidos usando el dinero del banco y
+> nunca el tuyo." (`yt-015`)
+
+Va **a mitad de video, pegado al caso de Brandon**, no al final. La estructura
+completa: prueba (Brandon) → permiso ("puedes hacer lo que hizo Brandon o
+Amanda") → llamada → qué pasa en la llamada. Ver `oferta.md`.
+
+---
+
 ## Leads del brief viejo — NO encontrados en las 85 transcripciones
 
 Esta versión anterior de `historias.md` (y varios títulos del catálogo de
@@ -332,5 +424,6 @@ existan como historia real hasta que se confirme contra un video:
   apariencia, el mismo caso (§2.1).
 - El período de la cifra "720.000" en la entrevista de obra (¿anual? ¿por
   proyecto?) (§6).
-- Quién es "Brandon" y el detalle de sus 2 casas — sólo se lo nombra una vez,
-  sin transcripción propia (§9).
+- ~~Quién es "Brandon" y el detalle de sus 2 casas~~ — **resuelto el
+  2026-08-24**: está contado en `yt-015`, ver §16.1. Lo que queda abierto es
+  la cifra de ganancia, que el ASR deja en "más de $10,000 por casa" (§16.1).

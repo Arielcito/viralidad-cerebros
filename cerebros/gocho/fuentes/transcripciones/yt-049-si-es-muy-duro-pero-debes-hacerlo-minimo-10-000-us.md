@@ -3,11 +3,11 @@ n: yt-049
 url: https://www.youtube.com/watch?v=hT5Cz5YjUeU
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views:  Gocholive
+fecha: 2023-08-15
+views: 180
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 3955
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 9700
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-Si es muy duro pero debes hacerlo, 🚀 mínimo $10.000 USD al Mes 
+Si es muy duro pero debes hacerlo, 🚀 mínimo $10.000 USD al Mes | Mis Pensamientos 💭 #17 | Gocholive
 
 ## Transcript
 

@@ -3,11 +3,11 @@ n: yt-071
 url: https://www.youtube.com/watch?v=Y4D0kbLfH4E
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2022-03-08
+views: 2081
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 2100
+duracion_seg: 2099
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 5186

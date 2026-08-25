@@ -3,11 +3,11 @@ n: yt-081
 url: https://www.youtube.com/watch?v=1zfpEUusew4
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2021-11-08
+views: 2263
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 8148
+duracion_seg: 8147
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 18370

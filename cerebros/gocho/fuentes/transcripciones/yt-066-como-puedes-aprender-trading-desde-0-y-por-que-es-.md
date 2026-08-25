@@ -3,11 +3,11 @@ n: yt-066
 url: https://www.youtube.com/watch?v=fZrJUDImQR8
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2023-02-23
+views: 965
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 1881
+duracion_seg: 1880
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 4702

@@ -57,6 +57,56 @@ Entre 55% y 80% no es error: es la advertencia `retocada`, con el porcentaje.
   Los montos, años y nombres propios salen de `oferta.md` o se preguntan.
 - **Que la pieza sea buena.** Es un test de trazabilidad, no de criterio.
 
+## El segundo chequeo: que los cinco digan lo mismo
+
+Hay texto que vale para los cinco clientes —las cuatro reglas duras comunes y el
+formato de salida— y vive en **un solo lugar**, `cerebros/COMUN.md`. De ahí se
+inyecta adentro de cada `CEREBRO.md`, entre marcadores:
+
+```bash
+node scripts/sincronizar-comun.mjs           # propaga COMUN.md a los cinco
+node scripts/sincronizar-comun.mjs --check    # exit 1 si alguno quedó viejo
+```
+
+Se **inyecta** en vez de referenciarse porque un `CEREBRO.md` tiene que valerse
+solo: en un Proyecto de claude.ai se sube una sola carpeta de cliente, y un
+puntero a un archivo hermano de la raíz no resuelve.
+
+El `--check` va junto al validador de citas. Lo que atrapa es lo que pasó en
+agosto de 2026: siete copias a mano del mismo bloque de formato, tres de ellas ya
+distintas entre sí, y nadie sabía cuál era la buena.
+
+Dos cosas para quien edite estos archivos:
+
+- Lo que cambia para todos va en `COMUN.md` y se propaga con el script. Lo propio
+  de un cliente va en la sección **"Reglas de este cliente"** de su `CEREBRO.md`,
+  que el script no toca. Editar adentro de los marcadores se pierde en la próxima
+  corrida.
+- En `skills/cerebro-cliente/SKILL.md`, evitá escribir un signo de peso
+  seguido de un dígito: al cargar la skill se sustituye por argumentos
+  posicionales y el texto se rompe. Escribí el monto en palabras.
+
+## El tercer chequeo: que las cifras de voz.md sigan siendo ciertas
+
+`voz.md` está lleno de números —"772 veces en las 552.293 palabras de los
+lives"— y esos números tienen fecha de vencimiento: cada vez que entra material
+nuevo, las frecuencias cambian y el archivo empieza a mentir sin que nadie lo
+note.
+
+```bash
+node scripts/medir-voz.mjs <slug>            # los conteos, sobre el corpus de hoy
+node scripts/medir-voz.mjs <slug> --top 40
+```
+
+Saca volumen por registro, léxico distintivo de cada registro contra los otros,
+muletillas, trato (tú/usted/vos) y las aperturas y cierres de las piezas más
+vistas. **Toda cifra de `voz.md` tiene que poder reproducirse acá.** Las que no,
+se corrigen.
+
+Es también el primer paso de la skill `destilar-voz`, que es la que interpreta
+esos conteos y los convierte en reglas aplicables. Medir es barato; interpretar
+sin medir es cómo se escriben las impresiones que después no se pueden defender.
+
 ## La prueba de aceptación, antes de entregarle un cerebro a alguien
 
 Cinco minutos, y es la que contesta "¿esto realmente sabe hablar como él?":

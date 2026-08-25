@@ -1,13 +1,13 @@
 ---
 n: yt-s015
-url: https://www.youtube.com/shorts/Wtf3Ya79kuY
+url: https://www.youtube.com/watch?v=Wtf3Ya79kuY
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
+fecha: 2023-04-25
 views: 521
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: SIN DATO
+duracion_seg: 40
 formato: short
 fuente: subtitulos-automaticos
 palabras: 144

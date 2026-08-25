@@ -18,22 +18,22 @@
    transcriptor con --top. Cualquier ranking de views que salga de acá es
    "top dentro de los últimos N", y así hay que citarlo en el cerebro.
 
-   Uso:
-     node scripts/cosechar-instagram.mjs <slug> <handle...> [--limit N]
+   Uso (las rutas son las del dashboard; en el plugin viralidad-cerebros
+   la carpeta es `scripts/` en la raíz):
+     node cerebros/scripts/cosechar-instagram.mjs <slug> <handle...> [--limit N]
 
    Ejemplo:
-     node scripts/cosechar-instagram.mjs academia lordconstruye
-     node scripts/cosechar-instagram.mjs victor herasmedia victorherasemprendedor
+     node cerebros/scripts/cosechar-instagram.mjs academia lordconstruye
+     node cerebros/scripts/cosechar-instagram.mjs victor herasmedia victorherasemprendedor
 
    Requiere APIFY_TOKEN en el entorno (o en .env / .env.local del repo).
    ================================================================= */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
-import { dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { join } from "node:path";
+import { REPO, SCRIPTS } from "./raiz.mjs";
 
 const REEL_ACTOR_ID = "xMc5Ga1oCONPmWJIa"; // apify/instagram-reel-scraper
-const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 /** Lee una clave de los .env del repo sin depender de dotenv. */
 function fromEnvFiles(key) {
@@ -59,7 +59,7 @@ const [slug, ...handles] = positional;
 
 if (!slug || handles.length === 0) {
   console.error(
-    "Uso: node scripts/cosechar-instagram.mjs <slug> <handle...> [--limit N]"
+    `Uso: node ${SCRIPTS}/cosechar-instagram.mjs <slug> <handle...> [--limit N]`
   );
   process.exit(1);
 }

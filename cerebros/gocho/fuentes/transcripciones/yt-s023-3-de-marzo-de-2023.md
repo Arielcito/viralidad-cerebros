@@ -1,13 +1,13 @@
 ---
 n: yt-s023
-url: https://www.youtube.com/shorts/uvS1Lak77mU
+url: https://www.youtube.com/watch?v=uvS1Lak77mU
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
+fecha: 2023-03-03
 views: 281
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: SIN DATO
+duracion_seg: 40
 formato: short
 fuente: subtitulos-automaticos
 palabras: 107

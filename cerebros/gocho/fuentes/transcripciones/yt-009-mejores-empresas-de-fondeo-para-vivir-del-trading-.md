@@ -3,8 +3,8 @@ n: yt-009
 url: https://www.youtube.com/watch?v=cKoZldmcJ84
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2026-04-24
+views: 1774
 likes: SIN DATO
 comments: SIN DATO
 duracion_seg: 1018

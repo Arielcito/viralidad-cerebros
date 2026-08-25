@@ -3,11 +3,11 @@ n: yt-053
 url: https://www.youtube.com/watch?v=W99c5O1DGDo
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views:  Gocholive
+fecha: 2023-08-11
+views: 87
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 8142
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 20461
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-💥Humanizar las redes sociales ❌ No juzgar Ni criticar 
+💥Humanizar las redes sociales ❌ No juzgar Ni criticar | Mis Pensamientos 💭 #13  | Gocholive
 
 ## Transcript
 

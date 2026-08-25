@@ -3,11 +3,11 @@ n: yt-042
 url: https://www.youtube.com/watch?v=j1fSpDeSUO8
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views:  Gocholive
+fecha: 2023-08-22
+views: 210
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 5234
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 12987
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-¿Cuánto vale mi libertad y mi paz? ¿Que papel quieres jugar...? 
+¿Cuánto vale mi libertad y mi paz? ¿Que papel quieres jugar...? | Mis Pensamientos 💭 #24 | Gocholive
 
 ## Transcript
 

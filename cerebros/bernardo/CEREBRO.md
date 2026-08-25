@@ -20,27 +20,43 @@ Antes de escribir cualquier pieza, leé en este orden:
 
 ### Reglas duras
 
-- **No inventes oferta.** El producto pago existe pero su nombre, formato y
-  precio son SIN DATO. Si no está en `oferta.md`, no lo escribas. Preguntá.
-- **No inventes credenciales ni resultados.** Sus credenciales son fuertes y
-  están todas verbatim en `oferta.md`; usá esas y ninguna más. Los testimonios
-  con cifras ($80.000 en una llamada, $1.000.000) están sin substanciar —
-  ver `oferta.md`.
-- **Reusá lenguaje verbatim.** Es preferible una frase textual de Bernardo a una
-  paráfrasis mejor escrita. Su ventaja competitiva es que suena a él.
-- **Los hooks se calcan, no se admiran.** Si un hook funcionó, la variante nueva
-  conserva su estructura y cambia el contenido.
-- **Español neutro.** Su ficha de cliente dice textual "Tono directo, español
-  neutro" (`reel-to-guion/clients.json`). De ahí sale la restricción operativa:
-  ni rioplatense ni venezolano marcado. (Lo que la ficha dice es "neutro"; el
-  resto es cómo lo aplicamos.)
-- **La filosofía no es adorno, es la voz.** Nietzsche, Maquiavelo, Sócrates,
-  Diógenes, Taleb aparecen en sus propios títulos de video. Un guion de Bernardo
-  que no puede citar a nadie está mal calibrado
-  (`clients.json` + `content_edit_task`, 52 filas jul-2026).
+<!-- comun: reglas-comunes -->
+Estas cuatro valen para los cinco clientes. Las propias de este van más abajo.
+
+- **El dato sale del cerebro o se pregunta.** Precio, cuotas, garantía, nombre
+  del programa, cifras de alumnos, credenciales y testimonios salen de
+  `oferta.md` o de una fuente citada. Lo que no está se entrega marcado
+  `SIN DATO`, con la pregunta concreta que hay que hacerle al cliente.
+- **Verbatim gana a mejor escrito.** Ante una frase textual del cliente y una
+  paráfrasis tuya más elegante, va la textual: su ventaja competitiva es que
+  suena a él, y tu prosa la borra. Citá de dónde salió (`ig-NNN`, `yt-NNN`,
+  `oferta.md`) para que se pueda abrir y escuchar en 10 segundos.
+- **Los hooks se calcan, no se admiran.** Si un hook rindió, la variante nueva
+  conserva su estructura y cambia el contenido. La estructura es lo que
+  funcionó; el tema es lo reemplazable.
+- **Las cifras y los nombres propios se verifican fuera del ASR.** Las
+  transcripciones son reconocimiento automático: los giros de lengua son
+  confiables, los dígitos y los nombres no ("Franklin o Valles",
+  "trincloud.com"). Todo número que vaya a una pieza sale de `oferta.md`, de una
+  decisión ya registrada en el cerebro, o de escuchar el video.
+<!-- /comun: reglas-comunes -->
+
+### Reglas de este cliente
+
+- **Las credenciales verbatim de `oferta.md` son el set completo.** Son fuertes
+  y alcanzan solas. Los testimonios con cifras ($80.000 en una llamada,
+  $1.000.000) están sin substanciar y esperan respaldo — ver `oferta.md`.
+- **Español neutro.** Su ficha de cliente lo dice textual: "Tono directo,
+  español neutro" (`reel-to-guion/clients.json`). De ahí sale la restricción
+  operativa: ni rioplatense ni venezolano marcado.
+- **La filosofía es la voz, no el adorno.** Nietzsche, Maquiavelo, Sócrates,
+  Diógenes y Taleb aparecen en sus propios títulos de video. Un guion suyo cita
+  a alguien; si no puede citar a nadie, está mal calibrado (`clients.json` +
+  `content_edit_task`, 52 filas jul-2026).
 
 ### Formatos de salida
 
+<!-- comun: formatos -->
 Cuando te pidan una pieza, entregá exactamente esta estructura.
 
 **Guion de reel / ad**
@@ -54,9 +70,17 @@ PLANOS:
   1. <plano> — <qué se ve> — <qué se dice encima>
   2. ...
 TEXTO EN PANTALLA: <los rótulos, uno por línea>
+DISCLAIMER: <el texto de riesgo de oferta.md, si la pieza toca resultados>
 DURACIÓN ESTIMADA: <segundos>
-REFERENCIA: <de qué video del catálogo sale el patrón>
+REFERENCIA: <el ig-NNN / yt-NNN / fila del catálogo de donde sale el patrón>
 ```
+
+La línea `DISCLAIMER` va sólo si `oferta.md` de este cliente exige uno y la
+pieza toca resultados; si no, se omite.
+
+Los planos son para que alguien filme sin preguntarte nada: van con lo que se ve
+y lo que se dice encima, y son filmables con lo que el cliente realmente tiene y
+muestra.
 
 **Email / mensaje de nutrición**
 
@@ -65,6 +89,7 @@ ASUNTO: <línea>
 CUERPO: <en su voz, párrafos cortos>
 CTA: <textual de oferta.md>
 ```
+<!-- /comun: formatos -->
 
 ## Identidad
 
@@ -97,8 +122,9 @@ de la clase gratuita**. No se puede escribir nada que venda el programa pago.
 
 ## Cobertura de fuentes
 
-_Última actualización: 2026-08-14 — control de calidad sobre `voz.md` y
-`biblioteca/*.md`, ver método abajo._
+_Última actualización: 2026-08-24 — cosecha de YouTube y destilación del
+registro largo. El control de calidad de `voz.md` y `biblioteca/*.md` es de
+2026-08-14, ver método abajo._
 
 | Fuente | Estado |
 |---|---|
@@ -114,8 +140,11 @@ _Última actualización: 2026-08-14 — control de calidad sobre `voz.md` y
 | Frases firma (`biblioteca/frases.md`) | ✅ **QA ago-2026**: los 5 conteos del cierre canónico, el molde "No es X, es Y" (18 en **14** reels, 16%) y "Ley de [nombre]" (**3** reels) reproducidos por grep de nuevo — 0 discrepancias |
 | Historias (`biblioteca/historias.md`) | ✅ **QA ago-2026**: las 4 historias nuevas con cita verbatim confirmada en su transcripción y ref correcta |
 | Test de trazabilidad (`scripts/verificar-citas.mjs`) | ✅ **0 errores** — 9 advertencias, todas intros de blockquote sin cita real (falsos positivos documentados, ver `correcciones`). **Cobertura: 67/89 transcripciones citadas al menos una vez (75%)** — el cerebro se apoya en 3 de cada 4 reels transcriptos; ~21 reels (sobre todo del bloque "Sígueme..." sin CTA fuerte) están transcriptos pero nunca citados |
+| Catálogo de YouTube | ✅ `fuentes/catalogo-youtube.csv`, **383 videos**, ~42 h. Sin views ni fecha: el listado del canal no las devuelve — se recuperan con `cosechar-youtube.mjs bernardo <url> --solo-metadata` |
+| Transcripciones de YouTube | ✅ **376** archivos `yt-*` — **324.363 palabras medidas** (re-medidas el 2026-08-24; el corte de extracción que se arregló afectó 5 archivos de la editorial, ninguno de oratoria), cosechadas el 2026-08-24. **El canal es de Jurado Grupo Editorial, no de `@juradonegocios`**: sólo **22 videos (40.362 palabras) son de oratoria/comunicación**, o sea de esta marca. 240 son presentaciones de libros de otros autores, 35 son política venezolana, y **36 son entrevistas con más de una persona hablando** (marcadas `formato: entrevista` en el CSV y en el frontmatter, excluidas de todo conteo de voz). El desglose está en `voz.md` |
+| Programa pago | ⚠️ **parcial desde 2026-08-24** — el registro largo lo nombra: «asesorías en oratoria para individuos y para grupos», unidad de Liderazgo/Entrenamiento/Oratoria de la editorial, 25 años de experiencia, temario textual (miedo escénico, 7 géneros oratorios, 4 tipos de discurso, 3 tipos de introito) y el Manual de Oratoria en Amazon como producto de entrada. **Precio sigue SIN DATO** — 40.362 palabras de registro de venta sin un solo número |
 | La clase gratuita en sí (post opt-in) | ❌ gated tras el form de GoHighLevel |
-| Precio / nombre del programa pago | ❌ SIN DATO |
+| Precio del programa pago | ❌ SIN DATO — ver fila anterior: el nombre y el temario ya están, el precio no |
 | Ads que ya corrieron | ❌ SIN DATO |
 | Métricas propias en el dashboard | ❌ `content_account_week` tiene 6 filas jun-2026 y todas en 0 |
 

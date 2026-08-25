@@ -1,13 +1,13 @@
 ---
 n: yt-s027
-url: https://www.youtube.com/shorts/t7J7P6ye0mQ
+url: https://www.youtube.com/watch?v=t7J7P6ye0mQ
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
+fecha: 2023-02-11
 views: 181
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: SIN DATO
+duracion_seg: 60
 formato: short
 fuente: subtitulos-automaticos
 palabras: 183

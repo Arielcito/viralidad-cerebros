@@ -21,26 +21,52 @@ Antes de escribir cualquier pieza, leé en este orden:
 
 ### Reglas duras
 
-- **No inventes oferta.** Si `oferta.md` no dice el precio, la garantía o el
-  nombre del programa, no lo escribas. Preguntá.
-- **No inventes credenciales ni resultados.** Cifras de alumnos, rentabilidades
-  o testimonios sólo si están en las fuentes.
-- **Reusá lenguaje verbatim.** Es preferible una frase textual de Gocho a una
-  paráfrasis mejor escrita. Su ventaja competitiva es que suena a él.
-- **Los hooks se calcan, no se admiran.** Si un hook hizo 400k views, la
-  variante nueva debe conservar su estructura y cambiar el contenido.
-- **Español de Venezuela/neutro según el registro.** Ver `voz.md`. En piezas de
-  venta se autocensura el venezolanismo: "vaina" aparece **0 veces en las 18.110
-  palabras de los 90 reels de IG**, 4 veces en las 76.015 del contenido editado y
-  **772 veces en las 552.293 de los lives**. El reel —que es el formato en el que
-  se filma un ad— es el registro **más** despojado de venezolanismo de los tres.
-- **Las transcripciones de YouTube son ASR.** Los giros de lengua son confiables;
-  **las cifras y los nombres propios no**. El ASR se come dígitos y destroza
-  nombres ("Franklin o Valles", "trincloud.com"). Cualquier número que vaya a una
-  pieza se verifica contra el video o se pregunta.
+<!-- comun: reglas-comunes -->
+Estas cuatro valen para los cinco clientes. Las propias de este van más abajo.
+
+- **El dato sale del cerebro o se pregunta.** Precio, cuotas, garantía, nombre
+  del programa, cifras de alumnos, credenciales y testimonios salen de
+  `oferta.md` o de una fuente citada. Lo que no está se entrega marcado
+  `SIN DATO`, con la pregunta concreta que hay que hacerle al cliente.
+- **Verbatim gana a mejor escrito.** Ante una frase textual del cliente y una
+  paráfrasis tuya más elegante, va la textual: su ventaja competitiva es que
+  suena a él, y tu prosa la borra. Citá de dónde salió (`ig-NNN`, `yt-NNN`,
+  `oferta.md`) para que se pueda abrir y escuchar en 10 segundos.
+- **Los hooks se calcan, no se admiran.** Si un hook rindió, la variante nueva
+  conserva su estructura y cambia el contenido. La estructura es lo que
+  funcionó; el tema es lo reemplazable.
+- **Las cifras y los nombres propios se verifican fuera del ASR.** Las
+  transcripciones son reconocimiento automático: los giros de lengua son
+  confiables, los dígitos y los nombres no ("Franklin o Valles",
+  "trincloud.com"). Todo número que vaya a una pieza sale de `oferta.md`, de una
+  decisión ya registrada en el cerebro, o de escuchar el video.
+<!-- /comun: reglas-comunes -->
+
+### Reglas de este cliente
+
+- **Cada pieza va en su registro, y están medidos — son cuatro.** El reel de IG
+  es el registro de venta y el más despojado de venezolanismo: "vaina" aparece
+  **0 veces en las 18.110 palabras de los 90 reels**, 4 en las 73.720 del
+  contenido editado, 243 en las 331.290 de los streams de trading y 713 en las
+  533.916 de los lives de mindset de 2023. La escala es limpia: **cuanto más
+  vendedor es el formato, menos venezolano habla.** Un ad no lleva "vaina",
+  "chamo", "pana" ni "plata". Nutrición y comunidad → registro de live. Prueba,
+  objeciones y procedimiento → streams. Las cuatro frecuencias lado a lado en
+  `voz.md`.
+- **🚨 Ningún verbatim de stream o de live sale sin revisar groserías.** `[ __ ]`
+  (la marca de censura del ASR de YouTube) aparece 47,6 cada 10.000 palabras en
+  los streams —en 21 de 24— y 76,6 en los lives de 2023. En el editado 2,1, en el
+  reel 0. El Gocho público no putea; el Gocho en vivo sí.
+- **Antes de creer un marcador de voz, controlar la era del ASR.** El canal tiene
+  dos generaciones de subtítulos automáticos y la vieja se come las muletillas.
+  El caso testigo ("eh") está en `voz.md`, en la advertencia de fuente.
+- **Las referencias se escriben `ig-NNN` / `yt-NNN`.** La numeración `#N` de
+  `fuentes/catalogo.csv` es una foto vieja del catálogo y hoy resuelve a otro
+  reel — ver "Cobertura de fuentes".
 
 ### Formatos de salida
 
+<!-- comun: formatos -->
 Cuando te pidan una pieza, entregá exactamente esta estructura.
 
 **Guion de reel / ad**
@@ -54,9 +80,17 @@ PLANOS:
   1. <plano> — <qué se ve> — <qué se dice encima>
   2. ...
 TEXTO EN PANTALLA: <los rótulos, uno por línea>
+DISCLAIMER: <el texto de riesgo de oferta.md, si la pieza toca resultados>
 DURACIÓN ESTIMADA: <segundos>
-REFERENCIA: <de qué video del catálogo sale el patrón>
+REFERENCIA: <el ig-NNN / yt-NNN / fila del catálogo de donde sale el patrón>
 ```
+
+La línea `DISCLAIMER` va sólo si `oferta.md` de este cliente exige uno y la
+pieza toca resultados; si no, se omite.
+
+Los planos son para que alguien filme sin preguntarte nada: van con lo que se ve
+y lo que se dice encima, y son filmables con lo que el cliente realmente tiene y
+muestra.
 
 **Email / mensaje de nutrición**
 
@@ -65,6 +99,7 @@ ASUNTO: <línea>
 CUERPO: <en su voz, párrafos cortos>
 CTA: <textual de oferta.md>
 ```
+<!-- /comun: formatos -->
 
 ## Identidad
 
@@ -98,9 +133,9 @@ archivo que lo afirmaba.
 |---|---|
 | Catálogo `@elgocho` (IG) | ✅ **199 posts** con views/likes/comments/captions/duración, del 2025-05-23 al 2026-08-12 — `fuentes/catalogo-instagram.csv` (200 filas: la restante es de `@nayoescobar`, no es de él) |
 | ⚠️ `fuentes/catalogo.csv` | **Foto vieja del mismo catálogo de IG** (193 filas, otra numeración, views desactualizadas). Toda referencia `#N` escrita contra este archivo apunta hoy a otro reel. **No citar. Usar `catalogo-instagram.csv`.** |
-| Catálogo `@Gocholive` (YouTube) | ✅ 138 ítems (81 videos, 28 lives, 29 shorts) — `fuentes/catalogo-youtube.csv`. Sin views ni fecha para videos y lives; el short más visto tiene 1.800 views. |
+| Catálogo `@Gocholive` (YouTube) | ✅ **138 ítems con views, likes y fecha** — `fuentes/catalogo-youtube.csv`. La columna `transcripto` dice "no" en todas las filas: **está desactualizada, no la creas** — el estado real es la fila de abajo. |
 | Transcripciones de IG | ✅ **90 reels, 18.110 palabras** (Deepgram nova-2, puntuado) — `fuentes/transcripciones/ig-*.md`. Quedan **109 de los 199 sin transcribir**. |
-| Transcripciones de YouTube | ✅ **106 archivos, 682.528 palabras** — `fuentes/transcripciones/yt-*.md`: 31 editado (76.015) + 34 lives `yt-032`–`yt-065` (552.293) + 26 shorts (3.779) + **15 lives `yt-066`–`yt-081` (50.441) todavía sin clasificar en ningún registro**. Subtítulos automáticos, sin puntuar. |
+| Transcripciones de YouTube | ✅ **133 archivos, 991.640 palabras medidas** (2026-08-24) — `fuentes/transcripciones/yt-*.md`: 31 editado (73.720) + 34 lives de mindset `yt-032`–`yt-065` (533.916) + **27 streams de trading `yt-083`–`yt-110` (331.290, nuevos)** + 12 de la era NFT `yt-070`–`yt-081` (40.481) + 26 shorts (3.680) + **3 sin clasificar `yt-066`–`yt-068` (8.553)**. Faltan los números **069**, **082** y **107**: son videos del canal sin subtítulos automáticos. |
 | Oferta y promesa | ✅ cosechada del funnel — `oferta.md` |
 | Páginas de venta / funnel | ✅ 9 pasos mapeados + survey de 11 preguntas textual |
 | Audiencia | ✅ mapeada desde el survey — `audiencia.md`, con las refs re-ancladas a `ig-NNN`. Falta el dolor en palabras de la audiencia (comentarios). |

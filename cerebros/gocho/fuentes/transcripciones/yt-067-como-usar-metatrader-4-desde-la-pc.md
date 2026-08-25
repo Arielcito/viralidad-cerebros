@@ -3,8 +3,8 @@ n: yt-067
 url: https://www.youtube.com/watch?v=7aY8GAKpuDA
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2023-02-21
+views: 12011
 likes: SIN DATO
 comments: SIN DATO
 duracion_seg: 1554

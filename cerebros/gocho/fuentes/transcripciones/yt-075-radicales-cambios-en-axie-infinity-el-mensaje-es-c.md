@@ -3,11 +3,11 @@ n: yt-075
 url: https://www.youtube.com/watch?v=TLiJ3_rqR5Q
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2022-02-03
+views: 1561
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 547
+duracion_seg: 546
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 1324

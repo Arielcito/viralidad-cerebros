@@ -6,16 +6,40 @@
 
 ## Base de medición
 
-| | |
-|---|---|
-| Reels transcriptos y leídos | **88** de `@juradonegocios` |
-| Palabras | **14.708** |
-| Ventana | 2026-04-07 (`ig-018`) → 2026-08-12 (`ig-026`) |
-| Excluido | `ig-100` — es un reel de **Víctor Heras** (`@victorherasemprendedor`) hablando *sobre* Bernardo. No es su voz y contaminaba todos los conteos. No lo uses nunca como referencia de habla. |
-| Sin transcribir | `@bernardojuradofacts`: **0 videos**. Todo lo de acá es la cuenta madre. |
+| Fuente | Piezas | Palabras | Qué es |
+|---|---:|---:|---|
+| Instagram `@juradonegocios` | **88** | **14.708** | **Cómo escribe para cámara.** Reels de 2026-04-07 (`ig-018`) → 2026-08-12 (`ig-026`). Guion escrito y memorizado. |
+| YouTube — oratoria y comunicación | **22** | **40.362** | **Cómo habla de lo que vende.** El único sub-corpus de YouTube que es de esta marca. Cosechado el 2026-08-24. |
+| YouTube — editorial, política y avisos | **317** | **187.281** | Corpus, no marca. Ver abajo: **el canal de YouTube es de la editorial, no de `@juradonegocios`.** |
+| YouTube — entrevistas | **36** | **94.924** | ⚠️ **Voz mixta.** Marcadas `formato: entrevista`. No entran en ningún conteo. |
+| Excluido de todo | `ig-100` | — | Es un reel de **Víctor Heras** (`@victorherasemprendedor`) hablando *sobre* Bernardo. No es su voz y contaminaba todos los conteos. No lo uses nunca como referencia de habla. |
+| Sin transcribir | `@bernardojuradofacts` | 0 videos | Todo lo de Instagram es la cuenta madre. |
+
+Hasta el 2026-08-24 este archivo estaba escrito **sólo sobre los 88 reels**.
+Servía para escribir reels y no servía para nada más: un reel de 40 segundos es
+un guion, y un guion no dice cómo habla alguien — dice qué decidió decir.
 
 Toda frecuencia va normalizada **cada 10.000 palabras** para que sea comparable
 con los otros cerebros.
+
+**Re-medición del 2026-08-24.** Se arregló un error de extracción que cortaba el
+cuerpo de la transcripción en la primera "Z" mayúscula. En este cerebro tocó
+**5 archivos y 8.782 palabras (2,6 % del corpus)**, y —esto es lo que importa—
+**los cinco son de la editorial y de noticias** (`yt-008`, `yt-034`, `yt-037`,
+`yt-129`, `yt-179`): ni uno de los 22 de oratoria, ni uno de los 88 reels. Las
+cifras de esta página, que salen de esos dos sub-corpus, **no cambian**. Lo que
+cambia es el total del canal: 376 archivos `yt-*` y **324.363 palabras medidas**
+(340 de una voz, 230.166 palabras · 36 entrevistas, 94.197).
+
+**Reconciliación con la herramienta (2026-08-25).** `node
+cerebros/scripts/medir-voz.mjs bernardo` devuelve **323.872** palabras de YouTube
+y **89 reels / 14.523 palabras**. Dos diferencias, las dos explicadas: las ~490
+palabras de YouTube son **marcas del ASR** (`[Música]`, `[Aplausos]`), que la
+herramienta descarta y el contador de estas tablas no; y **la herramienta no
+conoce la exclusión de `ig-100`**, así que cuenta los 89 archivos en vez de los
+88 útiles, y mide el cuerpo en vez de sumar el campo `palabras:` del frontmatter
+(14.708). En los reels la cifra buena es la de esta página; en YouTube, la de la
+herramienta. Ninguna de las dos mueve una tasa por 10.000 a un decimal.
 
 ⚠️ **Es ASR (Deepgram).** Los giros de lengua son confiables. **Las cifras y los
 nombres propios NO.** Ver la sección "Ruido de transcripción" antes de copiar
@@ -60,6 +84,174 @@ Una pieza nueva que hable de oratoria en el cuerpo **no suena a él**.
 
 **Regla operativa:** cuerpo y cierre se escriben con reglas distintas. Todo lo
 que sigue está separado por registro.
+
+---
+
+---
+
+## El tercer registro: cuando tiene veinte minutos
+
+Se cosecharon los **383 videos** del canal de YouTube el 2026-08-24. La primera
+conclusión es incómoda y hay que decirla antes que cualquier cifra: **ese canal
+no es el de `@juradonegocios`.** Es el de **Jurado Grupo Editorial**, la casa
+editorial. De los 340 videos de una sola voz, **240 son presentaciones de libros
+de otros autores**, y «un mundo de sueños» aparece en **153 de 340** piezas
+(160 usos, 7,0/10k) — es el eslogan de la editorial, no un rasgo de habla suyo.
+
+| Sub-corpus | Videos | Palabras | Qué hacer con él |
+|---|---:|---:|---|
+| **Oratoria / comunicación** | 22 | 40.362 | **Usalo.** Es el registro largo de esta marca, y es 2,7× el corpus de reels |
+| Política venezolana | 35 | 76.428 | No. Es otro personaje público — analista, ex militar — y ese vocabulario en un ad de comunicación no cierra |
+| Editorial (libros de otros) | 240 | 91.500 | Sólo como archivo. Presenta obra ajena, y el eslogan de la casa se le pega a todo |
+| Avisos, obituarios, cortos | 42 | 19.353 | No |
+| Entrevistas | 36 | 94.924 | ⚠️ Hay más de una persona hablando |
+
+**La lección, para la próxima cosecha:** más material no es más material usable.
+Cosechar un canal entero y contar palabras sobre todo junto habría dado un
+`voz.md` que dice que Bernardo Jurado habla de novelas y de Venezuela. Habla de
+eso — pero no como `@juradonegocios`, que es la marca para la que escribimos.
+
+### El registro largo agrega una capa institucional que el reel no tiene
+
+Es el rasgo más fuerte del corpus entero y no estaba medido hasta ahora.
+
+| Forma | Oratoria largo (40.362 pal) | Reel (14.708 pal) |
+|---|---:|---:|
+| `usted` | **37,4** /10k · 8 de 22 piezas | 5,4 /10k · 8 de 88 |
+| `ustedes` | **10,7** /10k · 7 de 22 | **0** |
+| `nuestro/a/s` | **25,3** /10k · 14 de 22 | 1,4 /10k · 2 de 88 |
+| `te` | 66,9 /10k · 16 de 22 | **197,9** /10k · 74 de 88 |
+| `tu` | 47,1 /10k · 13 de 22 | **175,4** /10k · 81 de 88 |
+
+Ojo con la lectura fácil. **No es que el trato se dé vuelta:** el tuteo está en
+los dos registros, y en el largo aparece en 16 de las 22 piezas. Lo que cambia
+es que el registro largo **suma** algo que el reel no tiene nunca — `usted`,
+`ustedes` y sobre todo `nuestro`, que en el reel aparece 2 veces en 88 piezas y
+acá en 14 de 22.
+
+Leído: **el reel lo dice un hombre, el video largo lo dice un hombre que además
+representa a una empresa.** El reel es «yo soy Bernardo Jurado y quiero
+ayudarte» — singular, tuteo, un solo destinatario. El video largo alterna eso
+con «le enseñaremos» y «nosotros somos Jurado Grupo Editorial»: se dirige a un
+auditorio y firma a nombre de la casa.
+
+Las 8 apariciones de `usted` en los 88 reels ya estaban ubicadas: las 8 caen en
+el cierre, ninguna en el cuerpo. Es el mismo mecanismo, en chico — **el `usted`
+aparece cuando pasa a modo institucional**, y el registro largo está en modo
+institucional buena parte del tiempo.
+
+**Regla:** una pieza orgánica de Instagram va en `tú` y no dice `nuestro` nunca.
+Una propuesta a una empresa, un folleto de taller o cualquier cosa que firme la
+editorial va en `usted` + `nosotros`. Una clase o un email pueden tutear y aun
+así cerrar en institucional — eso él lo hace, el reel no.
+
+⚠️ **Un límite del dato:** el ASR de los videos viejos viene sin tildes, así que
+`tu` (posesivo) y `tú` (pronombre) caen en el mismo conteo. La densidad de tuteo
+del registro largo es confiable como orden de magnitud, no al decimal. El
+conteo de `usted` / `ustedes` / `nuestro` no tiene ese problema.
+
+### La definición que repite palabra por palabra
+
+Aparece **6 veces en el corpus de oratoria** y es idéntica cada vez. Es material
+de copiar entero, no de parafrasear:
+
+> «la oratoria es la ciencia arte de hablar en público con corrección con
+> belleza con la única intención de convencer y de persuadir» (`yt-234`)
+
+En `yt-104` la misma definición aparece con el orden invertido —«con la firme
+intención de persuadir y convencer»— y el resto igual. Los cuatro componentes
+son siempre los mismos: **ciencia-arte · corrección · belleza · convencer y
+persuadir.**
+
+El otro bloque doctrinario, sobre el miedo, abre con una definición del mismo
+molde:
+
+> «el miedo es la conmoción del espíritu ante un riesgo un peligro inminente
+> radica en el instinto de conservación» (`yt-185`)
+
+Ese molde —**«X es <definición abstracta> + de dónde viene»**— es cómo entra a
+un tema en el registro largo, y no lo usa nunca en un reel: el reel entra por la
+acusación («condenado a ser ignorado»), no por la definición.
+
+### La oferta que los 88 reels nunca nombran
+
+Esto es lo que más cambia el cerebro. `oferta.md` tenía el programa pago en
+`SIN DATO`; el registro largo lo nombra y lo describe.
+
+- **Qué es:** «hemos abierto formalmente un nuevo servicio asesorías en oratoria
+  para individuos y para grupos» (`yt-234`). Se llaman también «talleres de
+  oratoria» y «asesorías personales en materia de oratoria» (`yt-104`).
+- **Quién lo da:** «nosotros somos Jurado grupo editorial y su unidad de
+  Liderazgo entrenamiento y oratoria» (`yt-104`).
+- **Credencial:** «con más de 25 años de experiencia» (`yt-234`).
+- **Currículum textual:** «le enseñaremos con nuestro infalible método a dominar
+  el miedo escénico», «le enseñaremos también los siete géneros oratorios los
+  cuatro tipos de discurso los tres tipos de introito» (`yt-234`). El mismo
+  temario reaparece en `yt-104`.
+- **Producto de entrada:** el **Manual de Oratoria**, «ahora mismo se encuentra
+  en revisión para su edición número vigésimo tercera», que se vende en «la
+  librería más grande de la humanidad amazon.com» (`yt-185`).
+- **Canal de contacto:** un correo dictado al final de `yt-234`. **No lo copies
+  del ASR** — es un dato de contacto salido de reconocimiento automático, que es
+  exactamente lo que el ASR peor transcribe. Verificalo en el video antes de
+  ponerlo en una pieza.
+- **Precio:** sigue `SIN DATO`. En 40.362 palabras de registro de venta no dice
+  un número. Es la pregunta concreta para el cliente.
+
+🚨 **Compliance.** El gancho con el que abre `yt-234` es una promesa de resultado
+económico:
+
+> «si usted quiere ganar 50% más dinero del que ya gana aprenda a hablar en
+> público» (`yt-234`)
+
+Se atribuye a Warren Buffett y en el video va sin disclaimer. En orgánico pasa;
+en un ad de Meta el cierre hay que reescribirlo. El cuerpo del argumento sirve
+—hablar bien paga— sin la cifra.
+
+### Cómo cierra el registro largo
+
+Tres firmas distintas, y hay que elegir la que corresponde a la marca:
+
+| Cierre | Dónde | Peso |
+|---|---|---|
+| «nosotros jurado grupo editorial somos un mundo de sueños y un mundo de letras» (`yt-015`) | Editorial | **153 de 340** videos |
+| «hasta la próxima» (`yt-003`) | Oratoria / comunicación | 9 videos |
+| «suscríbete este canal» (`yt-002`) | Oratoria / comunicación | 17 videos |
+
+El primero es el más frecuente del canal y **es el que no se usa** para
+`@juradonegocios`: cierra a nombre de la editorial. Para una pieza de la marca
+personal, el cierre largo que corresponde es el corto y seco — «hasta la
+próxima» — o la CTA de suscripción.
+
+Y ese es el contraste con Instagram, donde el cierre es una máquina: «comenta
+aquí la palabra» aparece en **50 de los 88 reels** (28,1/10k) y **cero veces**
+en las 40.362 palabras del registro largo de oratoria. **La CTA no se traduce entre registros.**
+
+### La marca de habla en vivo que el reel no tiene
+
+Igual que en el cerebro de Víctor, y por la misma razón: el reel está escrito y
+editado, el video largo se dice.
+
+| | Oratoria largo | Reel |
+|---|---:|---:|
+| `o sea` | 4,0 /10k · 16 usos en 4 de 22 piezas | **0** en las 14.708 palabras de los 88 reels |
+
+⚠️ El conteo de `eh` no es utilizable acá: aparece 117 veces pero concentrado en
+**20 de 340** videos. Eso no es un rasgo de habla, es que el ASR de los videos
+viejos —sin puntuar, en minúscula— transcribe las muletillas y el de los nuevos
+las limpia. Los subtítulos no están generados igual en todo el canal, así que
+cualquier conteo de muletilla contra este corpus hay que leerlo con esa
+sospecha.
+
+### Qué pieza va en qué registro
+
+| Pieza | Registro | Trato | Cierre |
+|---|---|---|---|
+| Reel orgánico, caption | Cuerpo + cierre de Instagram | `tú` | «comenta aquí la palabra…» |
+| Ad de Meta | Cuerpo de Instagram, sin la promesa de cifra | `tú` | CTA de comentario, con disclaimer |
+| Email de nutrición, guion de clase | Oratoria largo | `tú` en el cuerpo, `usted` si la pieza es institucional | «hasta la próxima» |
+| Propuesta a empresa, folleto del taller | Oratoria largo | `usted` + `nosotros` | Firma institucional |
+| Cualquier cosa sobre libros de otros autores | — | — | No es esta marca |
 
 ---
 

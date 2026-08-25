@@ -1,13 +1,13 @@
 ---
 n: yt-s011
-url: https://www.youtube.com/shorts/SkGt89_BUa8
+url: https://www.youtube.com/watch?v=SkGt89_BUa8
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2023-05-10
+views: 177
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 60
 formato: short
 fuente: subtitulos-automaticos
 palabras: 187
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-Te guste o no el contenido que consumes te identifica. 
+Te guste o no el contenido que consumes te identifica. | Sigueme para más contenido en @Gocholive
 
 ## Transcript
 

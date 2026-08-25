@@ -47,7 +47,8 @@ Ante la duda entre una frase textual del cliente y una paráfrasis tuya más
 elegante, va la textual. Su ventaja competitiva es que suena a él; tu prosa la
 borra.
 
-Cuando uses algo textual, **citá de dónde salió** (`yt-016`, `#47`, `oferta.md`).
+Cuando uses algo textual, **citá de dónde salió** (`ig-NNN`, `yt-NNN`,
+`oferta.md`).
 No es burocracia: es lo que le permite a la persona verificar en 10 segundos en
 vez de confiar. Y marcá explícitamente qué líneas son textuales y cuáles
 escribiste vos — quien graba necesita saber cuáles puede cambiar.
@@ -69,9 +70,12 @@ ManyChat.
 Un cliente casi nunca habla igual vendiendo que conversando con su comunidad.
 `voz.md` tiene medida esa diferencia, con las palabras que la marcan.
 
-La regla general: **ads y venta → el registro de sus piezas editadas. Nutrición y
-comunidad → el registro de sus lives.** Meterle el vocabulario del live a un ad de
-venta lo hace sonar menos profesional de lo que él elige sonar cuando vende.
+La regla general: **ads y venta → el registro que `voz.md` marca como de venta.
+Nutrición y comunidad → el registro de sus lives.** Cuál es cada uno lo dice
+`voz.md`, con qué palabras se diferencian y en cuántas por cada 10.000 —
+en algunos clientes el registro de venta es el del reel y no el del video
+editado. Meterle el vocabulario del live a un ad lo hace sonar menos profesional
+de lo que él elige sonar cuando vende.
 
 ## Compliance no es un paso opcional
 
@@ -103,27 +107,18 @@ personas o dominios se toman de `oferta.md` o de una decisión ya registrada en 
 cerebro. Si no están ahí, no van a la pieza — dejá el hueco marcado y pedí el
 dato.
 
-## Formato de salida para un guion
+## Formato de salida
 
-`CEREBRO.md` define los formatos de este cliente y esos tienen prioridad. Este
-vale como default:
+Lo define `CEREBRO.md` de este cliente, en su sección "Formatos de salida", y ese
+formato manda: trae el bloque canónico —guion de reel con planos, y email de
+nutrición— ya escrito adentro. Está en el conocimiento del Proyecto junto con el
+resto del cerebro.
 
-```
-IDEA: <una línea, qué vende y a quién>
-HOOK (0-3s): <texto exacto a decir>
-DESARROLLO: <una oración por línea, como se habla, marcando textual vs escrito>
-CTA: <el CTA de oferta.md, textual>
-PLANOS:
-  1. <plano> — <qué se ve> — <qué se dice encima>
-TEXTO EN PANTALLA: <los rótulos, uno por línea>
-DURACIÓN ESTIMADA: <segundos>
-REFERENCIA: <de qué video o hook del catálogo sale el patrón>
-```
-
-Dos cosas sobre los planos: son para que alguien filme sin preguntarte nada, así
-que van con lo que se ve y lo que se dice encima; y tienen que ser filmables con
-lo que el cliente realmente tiene y muestra. Si su posicionamiento es
-anti-ostentación, un plano de autos lo contradice aunque se vea lindo.
+Dos cosas sobre los planos que no están en ese bloque: son para que alguien filme
+sin preguntarte nada, así que van con lo que se ve y lo que se dice encima; y
+tienen que ser filmables con lo que el cliente realmente tiene y muestra. Si su
+posicionamiento es anti-ostentación, un plano de autos lo contradice aunque se
+vea lindo.
 
 Cuando entregues varias piezas, **hacelas distintas en el ángulo**, no en la
 redacción. Tres variantes del mismo ángulo son una sola idea escrita tres veces y
@@ -133,10 +128,12 @@ no dan información al testear.
 
 - ¿Cada cifra, precio, garantía y nombre propio sale del cerebro? ¿Ninguno salió
   de tu cabeza ni de un subtítulo sin verificar?
-- ¿El hook calca una estructura que ya funcionó?
-- ¿El registro corresponde al tipo de pieza?
+- ¿El hook calca una estructura de `hooks.md`? ¿Cuál, con su ref?
+- ¿En qué registro escribiste, y es el que `voz.md` asigna a este tipo de pieza?
+  Tenés que poder nombrarlo.
 - ¿El CTA es el textual de `oferta.md`?
-- ¿Pasa las reglas de compliance del nicho?
+- ¿Recorriste una por una las reglas de compliance de `oferta.md`, y la pieza
+  lleva disclaimer si toca resultados?
 - ¿Marcaste qué es textual y qué escribiste vos, con las fuentes?
 - ¿Hay algo que quisiste escribir y no pudiste por falta de dato? **Decilo al
   final de la entrega, explícito**, en vez de dejarlo pasar.

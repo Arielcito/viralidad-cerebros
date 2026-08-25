@@ -3,11 +3,11 @@ n: yt-033
 url: https://www.youtube.com/watch?v=dYf1U4mKKvA
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views:  Gocholive
+fecha: 2023-09-13
+views: 340
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 4729
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 11212
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-¿Visualizar? ¿Tomar Acción? ¿Seguirás viviendo e imaginando...  
+¿Visualizar? ¿Tomar Acción? ¿Seguirás viviendo e imaginando...  | Mis Pensamientos 💭 #33 | Gocholive
 
 ## Transcript
 

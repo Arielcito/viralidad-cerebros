@@ -3,11 +3,11 @@ n: yt-043
 url: https://www.youtube.com/watch?v=_hi0uK0aMAQ
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views:  Gocholive
+fecha: 2023-08-21
+views: 134
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 5179
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 12434
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-¿Todos podemos ser emprendedores? ❌ No emigres sin un plan 
+¿Todos podemos ser emprendedores? ❌ No emigres sin un plan | Mis Pensamientos 💭 #23 | Gocholive
 
 ## Transcript
 

@@ -32,6 +32,14 @@ frontmatters — la extracción no perdió nada. **63,1 minutos de audio en tota
 (3.788 s), o sea que todo lo que sabemos de cómo habla este cliente cabe en una
 hora de reels.
 
+**Reconciliación con la herramienta (2026-08-25).** `node
+cerebros/scripts/medir-voz.mjs sensei` devuelve **13.603** tokens donde esta
+tabla dice 13.520 — 83 palabras, las **marcas del ASR** (`[Música]`,
+`[Aplausos]`) y un puñado de palabras con apóstrofo o guion que la herramienta
+mantiene enteras. Las piezas coinciden (85). Es el 0,6 % y no mueve ninguna tasa
+de esta página a un decimal. **La herramienta es la fuente de verdad**; las
+tablas quedan con el denominador con el que se corrieron.
+
 Ventana temporal: **2026-03-30 → 2026-08-13**
 (✅ CORREGIDO: la versión anterior decía 2026-08-07). Inventario con métricas en
 `fuentes/catalogo-instagram.csv`. Las frecuencias se dan **por 10.000 palabras**

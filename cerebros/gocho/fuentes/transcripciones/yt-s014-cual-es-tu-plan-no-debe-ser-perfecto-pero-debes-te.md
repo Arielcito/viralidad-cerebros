@@ -1,13 +1,13 @@
 ---
 n: yt-s014
-url: https://www.youtube.com/shorts/Y0CET5u_2QE
+url: https://www.youtube.com/watch?v=Y0CET5u_2QE
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2023-04-27
+views: 342
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 22
 formato: short
 fuente: subtitulos-automaticos
 palabras: 84
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-¿Cual es tu plan? No debe ser perfecto pero debes tener uno 
+¿Cual es tu plan? No debe ser perfecto pero debes tener uno | Sigueme en @gocholive #motivacion
 
 ## Transcript
 

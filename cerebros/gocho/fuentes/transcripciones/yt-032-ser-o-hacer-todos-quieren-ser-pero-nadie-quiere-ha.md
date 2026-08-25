@@ -3,11 +3,11 @@ n: yt-032
 url: https://www.youtube.com/watch?v=_ybLTaSYOGE
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views:  Gocholive
+fecha: 2023-09-20
+views: 688
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 6439
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 17124
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-¿Ser o Hacer? Todos quieren ser pero nadie quiere hacer... 
+¿Ser o Hacer? Todos quieren ser pero nadie quiere hacer... | Mis Pensamientos 💭 #34 | Gocholive
 
 ## Transcript
 

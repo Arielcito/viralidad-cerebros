@@ -3,11 +3,11 @@ n: yt-055
 url: https://www.youtube.com/watch?v=HJWSJga6TOc
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views:  Gocholive
+fecha: 2023-08-09
+views: 183
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 9630
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 22283
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-DEBES SER EL PROVEEDOR eso de 50/50 es para perdedores 
+DEBES SER EL PROVEEDOR eso de 50/50 es para perdedores | Mis Pensamientos 💭 #11 | Gocholive
 
 ## Transcript
 

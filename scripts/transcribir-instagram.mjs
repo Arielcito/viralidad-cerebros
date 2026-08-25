@@ -13,8 +13,9 @@
    Es reanudable: un reel cuyo .md ya existe se saltea. Si un videoUrl caducó
    (el CDN los firma por horas), se reporta y hay que recosechar.
 
-   Uso:
-     node scripts/transcribir-instagram.mjs <slug> [--top 100] [--concurrency 5]
+   Uso (las rutas son las del dashboard; en el plugin viralidad-cerebros
+   la carpeta es `scripts/` en la raíz):
+     node cerebros/scripts/transcribir-instagram.mjs <slug> [--top 100] [--concurrency 5]
 
    Requiere ffmpeg y curl en PATH, y DEEPGRAM_API_KEY en el entorno (con
    fallback al .env de la skill reel-to-guion, que ya lo tiene).
@@ -23,12 +24,11 @@
 import { execFile } from "node:child_process";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from "node:fs";
 import { homedir, tmpdir } from "node:os";
-import { dirname, join, resolve } from "node:path";
+import { join } from "node:path";
 import { promisify } from "node:util";
-import { fileURLToPath } from "node:url";
+import { REPO, SCRIPTS } from "./raiz.mjs";
 
 const run = promisify(execFile);
-const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DEEPGRAM =
   "https://api.deepgram.com/v1/listen?model=nova-2&language=es&smart_format=true&punctuate=true&paragraphs=true";
 
@@ -57,7 +57,7 @@ const top = flag("top", 100);
 const concurrency = flag("concurrency", 5);
 
 if (!slug) {
-  console.error("Uso: node scripts/transcribir-instagram.mjs <slug> [--top N] [--concurrency N]");
+  console.error(`Uso: node ${SCRIPTS}/transcribir-instagram.mjs <slug> [--top N] [--concurrency N]`);
   process.exit(1);
 }
 

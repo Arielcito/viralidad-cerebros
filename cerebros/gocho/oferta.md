@@ -16,10 +16,54 @@ fuente dice `SIN DATO` — no se completa a ojo.
 | IG | `@elgocho` — 156.100 seguidores, 193 posts | API de IG, 2026-07-29 |
 | YouTube | `@gocholive` | link en bio de `@elgocho` |
 | Bio IG textual | "Mi sistema de trading generó +5M Profit 💰 para mi y mis Alumnos ( en directo ) Somos la comunidad de trading con mas casos de éxito🏆👇🏻" | perfil `@elgocho` |
+| **IG secundario** | `@drtradingclub` — lo manda él al aire y pide like, follow y comentario | `yt-095` |
+
+### ⚠️ Él no habla como dueño del producto — habla como operador contratado
+
+Esto sale de los streams y **no está en ninguna página**. Es lo primero que hay
+que aclarar con el cliente, porque cambia quién promete qué:
+
+> "Solo hago exactamente lo mismo que las personas que entraron y pagaron el
+> programa de Trading Club. **Soy el operador de la empresa.** Estoy todos los
+> días tal cual como lo estoy haciendo hoy aquí." (`yt-091`)
+
+> "yo me voy a enfocar todo este año y los otros años que me quedan todavía,
+> **contrato firmado con la empresa que compró el Trading Club**" (`yt-095`)
+
+> "este es nuestro programa, programa que tengo o que tenemos trading **con la
+> empresa de Trading Club**" (`yt-103`)
+
+Preguntas abiertas, ninguna respondida por el corpus:
+
+- ¿Quién es la empresa que compró El Trading Club, y qué relación tiene con
+  "The Trading Club LLC" y con "Wealthy Trades Academy LLC" del aviso de SMS?
+- ¿Franklin Ovalles sigue siendo el titular del producto o es hoy la cara
+  contratada? El disclaimer de `/vsl` dice una cosa, `yt-091` dice otra.
+- ¿A quién le pertenece la lista y quién responde legalmente por las promesas de
+  un ad?
+
+**Mientras esto no esté claro, ningún ad dice "mi programa" en primera persona de
+propiedad** sin que el cliente lo confirme. Él mismo dice las dos cosas: "mi
+programa tiene un costo" (`yt-099`) y "soy el operador de la empresa"
+(`yt-091`).
 
 ## Producto
 
-**Un solo producto identificado.** No hay evidencia de escalera de valor ni de upsells.
+**Un solo producto identificado.** No hay evidencia de escalera de valor ni de
+upsells **en las páginas** — pero los streams abren dos dudas sobre eso, las dos
+sin resolver:
+
+1. **Él lo llama "el de 6 meses" y la ficha dice 120 días** (4 meses). En
+   `yt-087`: *"pagamos el mismo. Vamos a llamar el de 6 meses."* El "vamos a
+   llamar" sugiere que hay más de una duración y que le está poniendo nombre a
+   una de ellas. `SIN DATO` si son tiers, si la ficha está desactualizada o si es
+   una forma de hablar.
+2. **El nombre oficial casi no le sale hablando.** "Trading Club" / "de cero a
+   trader" aparecen **11 veces en 331.290 palabras, en 6 de los 27 streams**, y
+   varias de esas son para hablar de *la empresa*, no del producto. Lo que dice
+   cuando se refiere a lo que vende es **"el programa del Gocho"**. Un ad que
+   lidere con el nombre de marca está usando un nombre que el propio cliente casi
+   no pronuncia.
 
 | Campo | Valor | Fuente |
 |---|---|---|
@@ -27,6 +71,7 @@ fuente dice `SIN DATO` — no se completa a ojo.
 | Nombre en el survey | "el Programa de 0 a Trader" | `/calendar-survey` |
 | Nombre en la página | "el Programa" | `/vsl`, `/homepage` |
 | Nombre en el checkout | "Programa de 0 a Trader VIP" (slug del producto: `el-trading-club-vip`) | `pay.hotmart.com/A94306320W` |
+| **Cómo lo nombra él, hablando** | **"el programa del Gocho"** (`yt-084`, `yt-087`) · **"el de 6 meses"** (`yt-087`) · "el programa de CER Trader" una sola vez y probablemente mal transcripto, `SIN CONFIRMAR` (`yt-106`) | streams `/streams` |
 | Duración | 120 días — 30 de formación + 90 de práctica en vivo | Hotmart |
 | Precio | `SIN DATO` en las landings — ninguna de las 6 páginas lo publica. **Pero el checkout de Hotmart sí tiene un precio, y no coincide con el ticket real de los webinars.** Ver "El conflicto de precio" abajo. | `pay.hotmart.com/A94306320W` + tabla `webinar_event` |
 | Garantía | `SIN DATO` — la ficha de Hotmart muestra el bloque genérico de la plataforma, no una garantía declarada por el producto. **Preguntar antes de mencionar garantía en un ad.** | Hotmart |
@@ -172,8 +217,39 @@ tarjetas, Mercado Pago, PayPal, Google Pay.
 
 **Regla mientras esto no se resuelva: ningún ad, guion ni email dice precio.**
 
+**Y él tampoco lo dice — eso ahora está medido.** En los **27 streams en vivo
+(331.290 palabras, `yt-083`–`yt-110`)** no hay un solo precio del programa. Habla
+de plata todo el tiempo (7,4 menciones de "plata" cada 10.000 palabras, la tasa
+más alta de todos sus registros), muestra retiros, discute costos de mesas de
+fondeo, y **nunca dice cuánto cuesta entrar**. Cuando la objeción de precio le
+llega en vivo, la contesta sin número:
+
+> "Ah, bueno, sí, todo tiene un costo. Sí, todo tiene un costo. **Mi programa
+> tiene un costo. Estar conmigo tiene un costo.** Usted hágalo tranquilo, ¿me
+> entiende? Hágale usted a su ritmo, con la estrategia suya…" (`yt-099`)
+
+O sea: el silencio de precio **no es un hueco del corpus, es la política del
+cliente**. Un ad que ponga cifra no está completando información que falta —
+está rompiendo un patrón que él sostiene en 331.290 palabras de transmisión
+pública. Antes de escribir precio en cualquier lado, preguntar; no deducir.
+
+**La única cifra de precio que sí dice en vivo, y complica más el cuadro.**
+Contestándole a un hater, tira la cuenta de su facturación:
+
+> "vendo y vendo en promedio unos **2.5 millones de dólares al año**, amigo.
+> Gracias. Me va muy bien vendiendo curso. […] Y puedes multiplicar tú aquí.
+> Mira, **426 alumnos por un promedio de $3,000**." (`yt-084`)
+
+Tres problemas con eso, y por eso no se usa: (1) 426 × 3.000 = **1,28M**, no
+2,5M — las dos cifras que dice con segundos de diferencia no cierran entre sí;
+(2) el "promedio de $3.000" es un **tercer** precio, distinto de los USD 5.000
+del checkout y de los ~USD 1.440 por venta del webinar; (3) es ASR, y el ASR de
+este canal destroza dígitos. **Verificar contra el video antes de tomar
+cualquiera de los dos números como dato.**
+
 **La pregunta 4 explica un hook del catálogo.** Desde mayo 2026 los captions
-arrancan con "Si eres mayor de edad y quieres empezar desde 0 comenta…" — está
+arrancan con "Si eres mayor de edad y quieres empezar desde 0 comenta…" (`ig-084`,
+caption) — está
 calcando el primer filtro del survey en el hook. Es un patrón a reusar, no una
 casualidad.
 
@@ -184,7 +260,7 @@ casualidad.
 | Botón de la página | **VER MÉTODO** | `/vsl`, `/video`, `/homepage` |
 | Orgánico IG (dominante) | "Comenta PUEDO👇🏽 si quieres empezar en trading desde 0 sin experiencia" | caption del reel de 8,6M views |
 | Orgánico IG (actual, jul-2026) | "Comenta la palabra CLASE y te mando toda la información" | captions de julio 2026 |
-| Orgánico IG (filtro de edad) | "Si eres mayor de edad y quieres empezar desde 0 comenta…" | captions may-2026 |
+| Orgánico IG (filtro de edad) | "Si eres mayor de edad y quieres empezar desde 0 comenta…" | captions may-2026 (ver arriba) |
 | Post-agenda | "Escríbenos al Whatsapp para confirmar la cita." | `/gracias-por-agendar` |
 | Descalificado | "Nos pondremos en contacto contigo próximamente si encontramos que hay una oportunidad para ti." | `/thank-you` |
 
@@ -251,10 +327,17 @@ una frase de alumno citable en todo el cerebro.
 | "+$5,000,000" | meta description de la landing |
 | **"+$8M con empresas de fondeo"** | bio del perfil de Skool `@elgocho` |
 | "+1000 alumnos" y "+ de 8 años" | ficha de Hotmart |
+| **"426 alumnos" y "2.5 millones de dólares al año"** | dicho por él en vivo, `yt-084` (2026-07-24), contestándole a un hater |
 
 **No usar ninguna hasta que el cliente fije una con respaldo.** Poner "+5M" en un
 ad cuando su propio perfil de Skool dice "+8M" es un problema de credibilidad
 antes que de compliance.
+
+La quinta es la peor de todas y es la más reciente: **"426 alumnos" contradice
+"+1000 alumnos" de Hotmart**, y "2.5 millones al año" no se deduce de sus propios
+426 × $3.000. Además está dicha en el peor contexto posible —una pelea con un
+hater, en un video público, con groserías alrededor—. Sirve como señal de que
+**nadie fijó una cifra oficial**, y no como fuente.
 
 ## Comunidades de Skool (posible entrega, no lead magnet)
 
@@ -321,6 +404,51 @@ Deducidas del propio survey y del filtrado del funnel — no de conjetura:
 | "Ya compré formaciones y no funcionaron" | opción "he invertido en formación... sin resultados sólidos" | sala en vivo 90 días, no curso suelto |
 | "Pierdo dinero cuando opero en real" | opción "Conseguir consistencia y no perder dinero en real" | validás el sistema antes de ir a real |
 | "Tengo que hablarlo con mi pareja/padres" | pregunta 9 | `SIN DATO` — no hay respuesta armada en las páginas |
+
+### Cómo las contesta él, en vivo — textual
+
+Lo de arriba es lo que contesta *la oferta*. Esto es lo que contesta *él*, sacado
+de los 27 streams (`yt-083`–`yt-110`). Vale como material de guion, con la
+advertencia de groserías de `voz.md` §"🚨 Groserías": **21 de 24 streams tienen
+`[ __ ]`, y ninguno de estos cortes sale a una pieza sin revisar el alrededor.**
+
+**"¿Esto es una estafa?" → les pasa el micrófono a los alumnos.** No se defiende
+él; convoca testigos en vivo:
+
+> "aquí están mis alumnos. Sí, mis alumnos están aquí en vivo. **Les puedes
+> preguntar a ellos lo que tú quieras por chat.** ¿Esto es una estafa, es un
+> estafador o qué, si funciona, no funciona, si hacen dinero, no hacen dinero?"
+> (`yt-089`)
+
+**"El trading es una estafa" la dice él primero, en primera persona del que
+perdió.** Aparece así en `yt-084`, `yt-087`, `yt-089` y `yt-090`: pone la
+objeción en boca del cliente, con la bronca incluida, antes de contestarla. Es el
+mejor material de voz-del-cliente que hay en todo el cerebro.
+
+> "si hubieses empezado en febrero, estabas en negativo. Estabas diciendo el
+> Gocho es una estafa, aquí me odias, pero ya aquí me vuelven a amar otra vez,
+> ¿me entiendes?" (`yt-089`)
+
+**"No tengo dinero" → no lo empuja a endeudarse.** Es un patrón de compliance a
+favor:
+
+> "aguanta tu pela si no tienes dinero para abrir tu propia cuenta, **que no te
+> estoy diciendo que lo hagas**" (`yt-098`)
+
+**"Es caro" → ver el bloque de precio de arriba.** Reconoce el costo y no lo
+nombra.
+
+### ⚠️ Riesgo operativo: lo suplantan para estafar a los interesados
+
+Dicho por él en `yt-084`. Alguien consigue los teléfonos de la gente que
+pregunta por el programa y les escribe haciéndose pasar por su equipo:
+
+> "Yo mismo llamé, 'Hola, ¿cómo estás?' Sí, mira, para entrar en el programa del
+> Gocho. […] **se roban los números y les escribe y se hacen pasar**" (`yt-084`)
+
+Dos consecuencias prácticas: (1) cualquier campaña que capte teléfonos tiene que
+decirle al lead **por dónde lo va a contactar el equipo real**; (2) es un ángulo
+de contenido legítimo —el aviso de seguridad— y no hay ninguna pieza que lo use.
 
 ## Compliance — leer antes de escribir un ad
 

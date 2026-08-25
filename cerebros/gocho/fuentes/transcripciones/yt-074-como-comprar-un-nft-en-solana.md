@@ -3,8 +3,8 @@ n: yt-074
 url: https://www.youtube.com/watch?v=enQ3Sticekc
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2022-02-09
+views: 467
 likes: SIN DATO
 comments: SIN DATO
 duracion_seg: 756

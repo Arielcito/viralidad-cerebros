@@ -3,11 +3,11 @@ n: yt-054
 url: https://www.youtube.com/watch?v=sLy4Fgb6UW4
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views:  Gocholive
+fecha: 2023-08-11
+views: 137
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 8566
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 23940
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-CUIDADO nos tienen “entretenidos” , y lo más importante eres TÚ 
+CUIDADO nos tienen “entretenidos” , y lo más importante eres TÚ | Mis Pensamientos 💭 #12 | Gocholive
 
 ## Transcript
 

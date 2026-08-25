@@ -71,26 +71,29 @@ dentro del paquete de otro.
 
 ## Estado de los cerebros
 
-Números al 2026-08-18, medidos con `node scripts/verificar-citas.mjs` (citas =
+Números al **2026-08-25**, medidos con `node scripts/verificar-citas.mjs` (citas =
 frases textuales del cliente con su video citado; cobertura = transcripciones
-usadas al menos una vez).
+usadas al menos una vez) y `node scripts/medir-voz.mjs` (palabras).
 
-| Cliente | Fuentes | Transcripciones | Cerebro |
-|---|---|---|---|
-| **Gocho** (Franklin Ovalles — El Trading Club) | 200 reels IG + 193 videos YT catalogados; oferta y embudo leídos de la web y de Hotmart | **196 (718.949 palabras)** | ✅ **usable** — voz auditada, oferta textual, audiencia del survey, 14 hooks con métricas, 12 historias. 100 citas · 42% de cobertura · 18 `SIN DATO`. Precio y garantía `SIN DATO`. Piezas en `cerebros/gocho/piezas/` |
-| **El Sensei** (Sebastián Rodríguez) | 95 reels IG + 879 links (ago–dic 2025) en `catalogo.csv` | 85 (23.388 palabras) | ✅ **usable en orgánico** — voz re-curada sobre los 85 reels, biblioteca completa. 224 citas · 100% de cobertura · 39 `SIN DATO`. **Compliance bloquea ads** |
-| **Ramón** (Academia de Construcción) | 165 reels IG; oferta + embudo leídos de la web; 125 conceptos de ClickUp | 85 (30.142 palabras) | ✅ **usable en orgánico** — voz re-curada, biblioteca reescrita sobre las transcripciones reales. 98 citas · 100% de cobertura · 44 `SIN DATO` (el precio, entre ellos) |
-| **Bernardo Jurado** | 200 reels IG + landing de opt-in leída | 89 (25.668 palabras) | ✅ **usable en orgánico** — voz fundada sobre los reels, biblioteca verificada. 98 citas · 75% de cobertura · 30 `SIN DATO`. Producto pago sin nombre ni precio confirmados |
-| **Víctor Heras** | 240 reels IG (`@herasmedia` + `@victorherasemprendedor`) | 80 (28.326 palabras) | ✅ **usable en orgánico** — cerebro completo (voz, oferta, audiencia, biblioteca). 152 citas · 100% de cobertura · 38 `SIN DATO`, el que más tiene: **alcanza para captación, no para venta** |
+| Cliente | Transcripciones | Palabras | Cerebro |
+|---|---:|---:|---|
+| **Gocho** (Franklin Ovalles — El Trading Club) | **223** | **1.008.343** | ✅ **usable** — 80 videos largos + 27 lives + 90 reels + 26 shorts. Voz medida por registro, oferta textual, audiencia del survey, hooks con métricas. 119 citas · 46 % de cobertura · 20 `SIN DATO` |
+| **Víctor Heras** | **259** | **1.009.554** | ✅ **usable en orgánico** — 170 videos largos + 80 reels + 9 de una serie con invitados (voz mixta, excluida de los conteos). 168 citas · 39 % · 36 `SIN DATO` |
+| **Bernardo Jurado** | **465** | **338.395** | ✅ **usable en orgánico** — ⚠️ el canal de YouTube es de la **editorial**, no de la marca personal: sólo 22 videos son de oratoria. 101 citas · 17 % · 33 `SIN DATO` |
+| **Ramón** (Academia de Construcción — `@lordconstruye`) | **101** | **60.772** | ✅ **usable en orgánico** — 16 videos largos + 85 reels. Es el único donde la oferta está dicha en voz alta. 115 citas · 98 % · 46 `SIN DATO` |
+| **El Sensei** (Sebastián Rodríguez) | **85** | **13.603** | ⚠️ **sólo reels** — un único registro, sin material largo en ninguno de sus handles. Alcanza para orgánico; **compliance bloquea ads**. 225 citas · 100 % · 41 `SIN DATO` |
 
 Los cinco pasan el test de trazabilidad en **0 errores**: cada frase
 entrecomillada se puede abrir en la transcripción que la cita. Ver
 [docs/PRUEBAS.md](docs/PRUEBAS.md).
 
-Lo que sigue faltando en los cuatro que no son Gocho es **oferta**: precio,
-garantía, nombre del producto y CTA textual. Eso no sale de los reels — hay que
-pedírselo al cliente. Cada carpeta tiene su `fase-0-pedido.md` con la lista
-exacta.
+Dos cosas que conviene saber antes de pedir una pieza:
+
+- **Lo que falta en los cuatro que no son Gocho es oferta**: precio, garantía,
+  nombre del producto y CTA textual. Eso no sale de los videos — hay que pedírselo
+  al cliente. Cada carpeta tiene su `fase-0-pedido.md` con la lista exacta.
+- **Las transcripciones son ASR.** Los giros de lengua son confiables; las cifras
+  y los nombres propios **no**. Ningún número llega a una pieza sin verificar.
 
 ## Estructura
 
@@ -113,8 +116,11 @@ cerebros/<cliente>/
   piezas/             ← lo que ya se produjo con este cerebro
   salidas/            ← ídem; el nombre que usan los cerebros nuevos
 
-skills/cerebro-cliente/   ← la skill que lee todo esto
-scripts/                  ← cosecha de fuentes, empaquetado y el test de citas
+cerebros/COMUN.md         ← las reglas y el formato que valen para los cinco;
+                            se inyectan en cada CEREBRO.md con sincronizar-comun.mjs
+skills/cerebro-cliente/   ← escribe piezas leyendo todo esto
+skills/destilar-voz/      ← convierte transcripciones crudas en un voz.md medido
+scripts/                  ← cosecha, medición, empaquetado y los dos tests
 docs/                     ← cómo usarlo sin terminal
 ```
 
@@ -170,9 +176,18 @@ y reiniciar la sesión de Claude Code.
 
 ### Sumar material a un cerebro que ya existe
 
-- **YouTube** — `yt-dlp --skip-download --write-auto-subs --sub-langs "es"
-  --sub-format vtt`, después `node scripts/subs-a-transcripcion.mjs <slug>`.
-  Gratis y automático; los subtítulos salen con puntuación.
+- **YouTube — es lo que más rinde, y es gratis.** Un canal entero, dos comandos:
+
+  ```bash
+  node scripts/cosechar-youtube.mjs <slug> https://www.youtube.com/@elcanal
+  node scripts/subs-a-transcripcion.mjs <slug>
+  ```
+
+  Baja el catálogo y los subtítulos automáticos **sin descargar un solo video**, y
+  es reanudable: cortarlo y volver a correrlo es seguro. Rinde tanto porque un
+  reel de 30 segundos es un guion escrito, y para imitar a alguien hace falta cómo
+  habla cuando habla largo: las muletillas, las digresiones, cómo contesta una
+  objeción.
 - **Instagram** — dos comandos, y hay que correrlos seguidos:
 
   ```bash
@@ -193,6 +208,12 @@ y reiniciar la sesión de Claude Code.
   regeneran.
 
 Los scripts de YouTube necesitan `yt-dlp` en el PATH.
+
+**Después de sumar material hay que volver a destilar la voz.** Más corpus cambia
+las frecuencias, y un `voz.md` medido sobre el corpus viejo pasa a mentir sin que
+nadie lo note. `node scripts/medir-voz.mjs <slug>` saca los conteos sobre el
+corpus de hoy y la skill `destilar-voz` los interpreta — pedíselo a Claude en
+lenguaje normal: *"destilá de nuevo la voz de Bernardo"*.
 
 ## Ojo con esto
 

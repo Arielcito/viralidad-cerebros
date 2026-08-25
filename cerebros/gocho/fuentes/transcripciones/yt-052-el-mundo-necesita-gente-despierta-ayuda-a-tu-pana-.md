@@ -3,11 +3,11 @@ n: yt-052
 url: https://www.youtube.com/watch?v=ZUVxvwuv2H4
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views:  Gocholive
+fecha: 2023-08-13
+views: 104
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 0
+duracion_seg: 7323
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 18776
@@ -17,7 +17,7 @@ vende:
 
 ## Título
 
-El mundo necesita + gente despierta Ayuda a tu pana emprendedor 
+El mundo necesita + gente despierta Ayuda a tu pana emprendedor | Mis Pensamientos 💭 #14 | Gocholive
 
 ## Transcript
 

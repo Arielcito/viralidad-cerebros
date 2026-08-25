@@ -3,8 +3,8 @@ n: yt-030
 url: https://www.youtube.com/watch?v=v7_sHgu4lLE
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2024-08-07
+views: 10942
 likes: SIN DATO
 comments: SIN DATO
 duracion_seg: 1295

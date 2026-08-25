@@ -1,13 +1,13 @@
 ---
 n: yt-s002
-url: https://www.youtube.com/shorts/zdewWVYWqAw
+url: https://www.youtube.com/watch?v=zdewWVYWqAw
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: 1200
+fecha: 2024-07-27
+views: 1221
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: SIN DATO
+duracion_seg: 60
 formato: short
 fuente: subtitulos-automaticos
 palabras: 186

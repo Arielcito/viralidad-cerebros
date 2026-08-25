@@ -3,11 +3,11 @@ n: yt-070
 url: https://www.youtube.com/watch?v=hHj815wKwBw
 plataforma: youtube
 cuenta: "@Gocholive"
-fecha: SIN DATO
-views: SIN DATO
+fecha: 2022-05-21
+views: 1298
 likes: SIN DATO
 comments: SIN DATO
-duracion_seg: 607
+duracion_seg: 606
 formato: video-largo
 fuente: subtitulos-automaticos
 palabras: 1497
