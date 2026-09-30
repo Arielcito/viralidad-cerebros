@@ -110,10 +110,19 @@ muestra.
 **Email / mensaje de nutrición**
 
 ```
-ASUNTO: <línea>
-CUERPO: <en su voz, párrafos cortos>
-CTA: <textual de oferta.md>
+EMAIL <n>/<N> — <día> — <objetivo: nutrición | prueba/objeción | venta>
+ASUNTO: <≤ 7 palabras, calca la estructura de un hook de hooks.md>
+PREHEADER: <una línea que continúa el asunto, no lo repite>
+CUERPO: <en su voz, sin saludo antes del gancho, una oración por línea>
+CTA: <textual de oferta.md, una sola vez>
+P.S.: <opcional: una línea verbatim o el CTA dicho de otra forma>
+DISCLAIMER: <el texto de riesgo de oferta.md, si toca resultados>
+REFERENCIA: <ig-NNN / yt-NNN / historias.md §N de donde sale cada verbatim>
 ```
+
+`DISCLAIMER` y `P.S.` se omiten si no aplican. La tanda semanal completa la
+arma la skill `email-semanal`; la cadencia de cada cliente vive en
+`cerebros/<slug>/email/estructura-semanal.md`.
 <!-- /comun: formatos -->
 
 ## Identidad

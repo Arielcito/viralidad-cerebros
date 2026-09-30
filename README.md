@@ -9,7 +9,8 @@ entra en una ventana y el resultado es mucho mejor que el de un retriever que te
 trae 3 chunks sueltos y fuera de tono.
 
 Este repo es además un **plugin de Claude Code**: se instala con un comando y
-trae la skill `cerebro-cliente` más los cerebros adentro.
+trae las skills `cerebro-cliente`, `destilar-voz` y `email-semanal` más los
+cerebros adentro.
 
 ---
 
@@ -120,6 +121,7 @@ cerebros/COMUN.md         ← las reglas y el formato que valen para los cinco;
                             se inyectan en cada CEREBRO.md con sincronizar-comun.mjs
 skills/cerebro-cliente/   ← escribe piezas leyendo todo esto
 skills/destilar-voz/      ← convierte transcripciones crudas en un voz.md medido
+skills/email-semanal/     ← arma la tanda semanal de emails (cadencia en cerebros/<slug>/email/)
 scripts/                  ← cosecha, medición, empaquetado y los dos tests
 docs/                     ← cómo usarlo sin terminal
 ```

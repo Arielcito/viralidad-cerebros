@@ -157,6 +157,13 @@ Entonces: los años de oficio, los montos, la cantidad de alumnos y los nombres 
 personas o dominios salen de `oferta.md` o de una decisión ya registrada en el
 cerebro. Si no están ahí, se preguntan.
 
+## Si piden más de un email
+
+La tanda de la semana —qué email va qué día, con qué objetivo y de qué
+material— la arma la skill `email-semanal`, sobre
+`cerebros/<slug>/email/estructura-semanal.md`. Un email suelto se escribe
+desde acá con el formato de abajo.
+
 ## Formato de salida
 
 Lo define `CEREBRO.md` del cliente, que trae el bloque canónico ya inyectado
