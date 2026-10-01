@@ -70,13 +70,33 @@ grep -rli "fondeo" cerebros/<slug>/fuentes/transcripciones/ | head
 grep -rn -B2 -A6 "empezar desde cero" cerebros/<slug>/fuentes/transcripciones/
 ```
 
+`voz.md`, `historias.md` y `oferta.md` son índices, no fuentes: cuando una
+frase te llega por ahí ("Y si tú quieres aprender…", 33 reels), grepeala igual
+y anotá el `ig-NNN` donde la leíste. Los archivos curados a veces dicen "en
+`yt-015`" y la frase está en otro video, o dicen "33 reels" sin nombrar uno. La
+ref que va a `REFERENCIA` es la que vos abriste, no la que el índice prometió.
+
 **5. Escribí la tanda** con el formato de `CEREBRO.md` (bloque "Email / mensaje
 de nutrición"). Un archivo, todos los emails, encabezado con supuestos y con la
 lista de `SIN DATO` al final.
 
-**6. Checklist** (abajo) y, si guardás en `piezas/` o `salidas/`,
-`node scripts/verificar-citas.mjs <slug>` (en el dashboard:
-`node cerebros/scripts/verificar-citas.mjs <slug>`).
+**6. Checklist** (abajo) y el test de trazabilidad sobre el archivo entregado,
+viva donde viva:
+
+```bash
+# plugin instalado
+node "$CLAUDE_PLUGIN_ROOT/skills/email-semanal/scripts/verificar-tanda.mjs" <slug> <ruta/a/emails-semana.md>
+# dashboard
+node .claude/skills/email-semanal/scripts/verificar-tanda.mjs <slug> <ruta/a/emails-semana.md>
+```
+
+Si no encuentra el cerebro solo, pasale `--cerebros <ruta a la carpeta cerebros/>`.
+
+Arma un cerebro sombra en `/tmp`, corre `verificar-citas.mjs` contra la tanda
+y lo borra; no toca el cerebro real. Si marca `✗ … atribuida a X; está en Y`,
+corregí la ref y volvé a correr: una tanda se entrega con `✓ 0 errores`. Si la
+guardaste en `cerebros/<slug>/piezas/`, alcanza con
+`node cerebros/scripts/verificar-citas.mjs <slug>`.
 
 ## Cadencia por defecto — 3 emails, tres trabajos distintos
 
@@ -99,10 +119,23 @@ El cerebro mide cómo habla. Estas son las que agrega el formato:
 
 - **El asunto se calca de un hook medido.** `hooks.md` tiene las estructuras
   que rindieron con su métrica. El asunto conserva la estructura y cambia el
-  contenido; máximo 7 palabras; cero mayúsculas de grito, cero emoji salvo que
-  el cliente los use en sus captions. Preferí los hooks con mejor **tasa de
-  comentarios**, no los de más views: en un email se mide apertura y clic, no
-  alcance.
+  contenido; cero mayúsculas de grito, cero emoji salvo que el cliente los use
+  en sus captions. Preferí los hooks con mejor **tasa de comentarios**, no los
+  de más views: en un email se mide apertura y clic, no alcance.
+- **Siete palabras como máximo, contadas.** Un celular corta el asunto cerca
+  de ahí y lo que sigue no existe. Contá las palabras de cada asunto y anotá el
+  número en `REFERENCIA` ("asunto: 6 palabras"); "Exactamente lo que yo haría
+  en tu lugar" son 8 y se nota recién al contar. Si da 8, sacá una, no la
+  dejes "porque suena bien".
+- **Las cifras del reel de la semana también son ASR.** Que el reel sea
+  literalmente sobre montos ("¿3.000? ¿1.000? Con 50…") no las vuelve dato:
+  la transcripción es automática y los números son lo primero que confunde.
+  Un email con `⚠️ cifra ASR` al lado se envía igual, con la advertencia
+  adentro. Así que el email conserva la **forma** del reel (la escalera, la
+  pregunta, el remate) y deja los números afuera: "¿cuánto necesitas? mucho
+  menos de lo que piensas"; los montos van a `SIN DATO` con el reel a abrir y
+  el minuto. Vale igual para una cifra de `historias.md` si el archivo no la
+  marca como verificada.
 - **Sin saludo antes del gancho.** Si `voz.md` dice cómo abre el cliente en su
   contenido de venta, el email abre igual. La primera línea del cuerpo hace el
   trabajo del hook hablado.
@@ -129,8 +162,13 @@ El cerebro mide cómo habla. Estas son las que agrega el formato:
 
 - ¿Cada email tiene un objetivo distinto y un ángulo distinto? Nombralos.
 - ¿Cada asunto calca una estructura de `hooks.md`? ¿Cuál, con su ref?
-- ¿Cada verbatim tiene su `ig-NNN` / `yt-NNN` / `historias.md §N` en
-  `REFERENCIA`, y lo abriste o lo grepeaste?
+- ¿Cada verbatim tiene su `ig-NNN` / `yt-NNN` en `REFERENCIA`, en la misma
+  línea que la cita, y lo abriste o lo grepeaste? `voz.md §…` o
+  `historias.md §N` acompañan a la ref del video, no la reemplazan: el
+  verificador le asigna a cada cita la ref más cercana en líneas, y una cita
+  con sólo `voz.md` al lado se lleva la del vecino.
+- ¿Cada asunto tiene su conteo de palabras y ninguno pasa de 7?
+- ¿Corriste `verificar-tanda.mjs` sobre el archivo final y dio `✓ 0 errores`?
 - ¿En qué registro escribiste y es el que `estructura-semanal.md` asigna?
 - ¿Cifras, precio, garantía, nombres propios: todos del cerebro, ninguno tuyo
   ni de un ASR sin verificar?

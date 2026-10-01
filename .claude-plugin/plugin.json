@@ -1,6 +1,6 @@
 {
   "name": "cerebros",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Cerebros de cliente de Viralidad. Contexto curado (voz medida sobre el corpus, oferta textual, audiencia, archivo de lo que funciono) para que Claude escriba ads, guiones de reel con planos, hooks, captions, emails de nutricion y VSLs que suenan al cliente y no a un redactor publicitario. Trae ademas destilar-voz, que convierte transcripciones crudas en reglas de habla medidas y citadas, y email-semanal, que arma la tanda semanal de emails con cadencia por cliente. Nada se inventa: lo que no tiene fuente va marcado SIN DATO.",
   "author": {
     "name": "Ariel Serato",
